@@ -106,7 +106,7 @@ export class ThemeBuilder {
 
       const theme = this.buildTheme(
         scheme,
-        `Aguayo Accent - ${variant.name}`,
+        `Muya Material - ${variant.name}`,
         variant.filename
       );
 

@@ -1,6 +1,6 @@
 {
-  "name": "aguayo-accent",
-  "displayName": "Aguayo Accent",
+  "name": "muya-material",
+  "displayName": "Muya Material",
   "description": "A modern Visual Studio Code theme inspired by Material Design 3",
   "version": "0.1.0",
   "type": "module",
@@ -14,24 +14,24 @@
   "contributes": {
     "themes": [
       {
-        "label": "Aguayo Accent Black",
+        "label": "Muya Material Black",
         "uiTheme": "vs-dark",
-        "path": "./themes/aguayo-black.json"
+        "path": "./themes/materialblack.json"
       },
       {
-        "label": "Aguayo Accent Dark",
+        "label": "Muya Material Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/aguayo-dark.json"
+        "path": "./themes/materialdark.json"
       },
       {
-        "label": "Aguayo Accent Light",
+        "label": "Muya Material Light",
         "uiTheme": "vs",
-        "path": "./themes/aguayo-light.json"
+        "path": "./themes/materiallight.json"
       },
       {
-        "label": "Aguayo Accent Soft",
+        "label": "Muya Material Soft",
         "uiTheme": "vs",
-        "path": "./themes/aguayo-soft.json"
+        "path": "./themes/materialsoft.json"
       }
     ]
   },
@@ -45,19 +45,18 @@
     "theme",
     "vscode-theme",
     "material-design",
-    "aguayo",
     "color-theme"
   ],
   "author": "Benito Anagua",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/benitoanagua/AguayoAccent"
+    "url": "https://github.com/benitoanagua/MuyaMaterial"
   },
   "bugs": {
-    "url": "https://github.com/benitoanagua/AguayoAccent/issues"
+    "url": "https://github.com/benitoanagua/MuyaMaterial/issues"
   },
-  "homepage": "https://github.com/benitoanagua/AguayoAccent#readme",
+  "homepage": "https://github.com/benitoanagua/MuyaMaterial#readme",
   "devDependencies": {
     "@material/material-color-utilities": "^0.3.0",
     "chalk": "^5.6.2",

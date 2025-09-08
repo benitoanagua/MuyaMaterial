@@ -1,4 +1,4 @@
-# Aguayo Accent - VSCode Theme
+# Muya Material
 
 <p align="center">
   <img src="https://img.shields.io/badge/VS%20Code-Theme-007ACC?style=for-the-badge&logo=visual-studio-code" alt="VSCode Theme">
@@ -6,172 +6,164 @@
   <img src="https://img.shields.io/badge/Type-ESM-3178C6?style=for-the-badge&logo=typescript" alt="ES Modules">
 </p>
 
-A modern Visual Studio Code theme inspired by **Material Design 3** with a sophisticated color palette based on the beautiful **Aguayo** aesthetic. This theme provides a harmonious and productive coding experience across both light and dark variants.
-
-## 🎨 Features
-
-- **Material Design 3 Compliance**: Fully implements Google's Material Design 3 color system
-- **Multiple Variants**: Four carefully crafted variants for different preferences:
-  - **Black (High Contrast)**: Deep dark theme with enhanced contrast
-  - **Dark**: Standard dark theme with balanced colors
-  - **Light**: Clean light theme for daytime coding
-  - **Soft (High Contrast)**: Light theme with improved contrast
-- **Semantic Highlighting**: Advanced syntax highlighting with semantic understanding
-- **Comprehensive Coverage**: Full support for all VSCode UI elements and syntax scopes
-
-## 🚀 Installation
+**Muya Material** is a harmonious Visual Studio Code theme that blends the organic beauty of nature with the precision of modern design. The name "Muya" (from Quechua, meaning "garden" or "orchard") combined with "Material" creates "Garden Material" - representing themes that grow and evolve naturally, just like plants in a well-tended garden.
 
 ### From Marketplace (Coming Soon)
 
 ```bash
-# Once published to VS Code Marketplace
-ext install aguayo-accent
+# Once our garden grows to the Marketplace
+ext install muya-material
 ```
 
-### Manual Installation
+### Manual
 
 1. Download the latest `.vsix` package from Releases
-2. In VSCode, go to `Extensions` → `...` → `Install from VSIX`
-3. Select the downloaded file
+2. In VSCode, navigate to `Extensions` → `...` → `Install from VSIX`
+3. Select the downloaded file to plant the theme
 
-### Development Build
+### Development
 
 ```bash
-# Clone the repository
-git clone https://github.com/benitoanagua/AguayoAccent.git
-cd AguayoAccent
+# Clone the repository garden
+git clone https://github.com/benitoanagua/MuyaMaterial.git
+cd MuyaMaterial
 
-# Install dependencies
+# Plant the dependencies
 pnpm install
 
-# Build the themes
+# Cultivate the themes
 pnpm run build
 
-# The themes will be generated in the 'themes/' directory
+# Themes will bloom in the 'themes/' directory
 ```
 
-## 🎯 Variants
+## Variants
 
-### Aguayo Accent Black
-
-- **UI Theme**: `vs-dark`
-- **Description**: Ultra-dark theme with maximum contrast for reduced eye strain
-
-### Aguayo Accent Dark
+### Muya Material Black
 
 - **UI Theme**: `vs-dark`
-- **Description**: Balanced dark theme with Material Design 3 aesthetics
+- **Description**: Deep garden soil with maximum contrast for comfortable viewing
 
-### Aguayo Accent Light
+### Muya Material Dark
+
+- **UI Theme**: `vs-dark`
+- **Description**: Balanced twilight garden with natural Material Design aesthetics
+
+### Muya Material Light
 
 - **UI Theme**: `vs`
-- **Description**: Clean light theme with subtle color accents
+- **Description**: Morning garden light with organic color accents
 
-### Aguayo Accent Soft
+### Muya Material Soft
 
 - **UI Theme**: `vs`
-- **Description**: Light theme with enhanced contrast for better readability
+- **Description**: Cultivated clarity with enhanced contrast for optimal growth
 
-## 🛠 Development
+## 🛠 Tools
 
 ### Prerequisites
 
 - Node.js 16+
 - pnpm (recommended) or npm
 
-### Building Themes
+### Commands
 
 ```bash
-# Install dependencies
+# Plant dependencies
 pnpm install
 
-# Generate all theme variants
+# Cultivate all theme variants
 pnpm run build
 
-# Development mode (build + test)
+# Development greenhouse (build + test)
 pnpm run dev
 
-# Run tests
+# Test the garden's health
 pnpm test
 
-# Create VSIX package
+# Package the harvest
 pnpm run package
 ```
 
-### Project Structure
+### Structure
 
 ```
-aguayo-accent/
+muya-material/
 ├── src/
 │   ├── theme/
-│   │   ├── colors/          # VSCode UI color definitions
-│   │   ├── scopes/          # Syntax highlighting scopes
-│   │   ├── theme-config.js  # Theme configuration
-│   │   ├── dynamic-scheme.js # MD3 color scheme generator
-│   │   └── theme-builder.js # Theme assembly logic
-│   └── index.js            # Main entry point
-├── themes/                 # Generated theme files
-├── test/                   # Test files
+│   │   ├── colors/          # Natural color definitions
+│   │   ├── scopes/          # Syntax gardening tools
+│   │   ├── theme-config.js  # Garden configuration
+│   │   ├── dynamic-scheme.js # Natural color cultivation
+│   │   └── theme-builder.js # Theme assembly greenhouse
+│   └── index.js            # Main garden entrance
+├── themes/                 # Blooming theme flowers
+├── test/                   # Garden health checks
 └── package.json
 ```
 
 ### Color System
 
-The theme uses Material Design 3's dynamic color system with:
+Our garden uses organic color principles with:
 
-- **Seed Color**: `#6750A4`
-- **Variant**: Tonal Spot (2)
-- **Automatic Contrast Adjustment**: Based on WCAG guidelines
+- **Seed Color**: `#6750A4` (Natural purple blossom)
+- **Variant**: Tonal Spot (2) - like carefully placed garden elements
+- **Natural Contrast**: Organic adjustments following WCAG guidelines
 
-## 🧪 Testing
+## Testing
 
 ```bash
-# Run color scheme tests
+# Test the garden's color harmony
 pnpm test
 
-# Test output shows color contrast validation and scheme previews
+# Watch the natural color schemes bloom in preview
 ```
 
-## 📦 Packaging
+## Packaging
 
-To create a distributable VSIX package:
+To prepare your garden's harvest for distribution:
 
 ```bash
 pnpm run package
 ```
 
-The package will be created in the root directory with naming pattern: `aguayo-accent-{version}.vsix`
+The harvest will be packaged as: `muya-material-{version}.vsix`
 
-## 🤝 Contributing
+## Community
 
-Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests.
+We welcome fellow gardeners! Feel free to plant new ideas, report issues, or contribute to our growing ecosystem.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Fork our garden repository
+2. Create a feature branch (`git checkout -b feature/new-blossom`)
+3. Commit your changes (`git commit -m 'Add new garden feature'`)
+4. Push to the branch (`git push origin feature/new-blossom`)
+5. Open a Pull Request to share your harvest
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project grows under the MIT License - see the [LICENSE](LICENSE) file for cultivation details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- **Google Material Design Team** for the Material Design 3 specification
-- **VSCode Team** for the excellent theming system
-- **Material Color Utilities** for the color generation algorithms
+- **Google Material Design Team** for the fertile design soil
+- **VSCode Team** for the excellent gardening framework
+- **Material Color Utilities** for the natural color cultivation algorithms
+- **Quechua culture** for the beautiful inspiration behind "Muya"
 
-## 📞 Support
+## Support
 
-If you encounter any issues or have questions:
+If your garden needs tending or you have questions:
 
-1. Check the [Issues](https://github.com/benitoanagua/AguayoAccent/issues) page
-2. Create a new issue with detailed information
-3. Include your VSCode version and OS information
+1. Check our [Garden Issues](https://github.com/benitoanagua/MuyaMaterial/issues)
+2. Plant a new issue with detailed information
+3. Include your VSCode version and growing environment details
 
 ---
 
 <p align="center">
-Made with ❤️ by <a href="https://github.com/benitoanagua">Benito Anagua</a>
+Cultivated with ❤️ by <a href="https://github.com/benitoanagua">Benito Anagua</a>
+</p>
+
+<p align="center">
+<em>Where code meets nature's harmony</em>
 </p>
