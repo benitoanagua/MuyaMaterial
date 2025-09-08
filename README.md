@@ -1,4 +1,4 @@
-# Muya Material
+# Muya Material Theme
 
 <p align="center">
   <img src="https://img.shields.io/badge/VS%20Code-Theme-007ACC?style=for-the-badge&logo=visual-studio-code" alt="VSCode Theme">
@@ -6,164 +6,166 @@
   <img src="https://img.shields.io/badge/Type-ESM-3178C6?style=for-the-badge&logo=typescript" alt="ES Modules">
 </p>
 
-**Muya Material** is a harmonious Visual Studio Code theme that blends the organic beauty of nature with the precision of modern design. The name "Muya" (from Quechua, meaning "garden" or "orchard") combined with "Material" creates "Garden Material" - representing themes that grow and evolve naturally, just like plants in a well-tended garden.
+**Muya Material** is a Visual Studio Code theme that combines Material Design principles with carefully curated color harmonies. The name "Muya" represents the theme's focus on balanced, organic color relationships.
+
+> ⚠️ **Work in Progress**: This theme is currently under active development. Features and color schemes may change as we refine the visual experience.
+
+## Installation
 
 ### From Marketplace (Coming Soon)
 
 ```bash
-# Once our garden grows to the Marketplace
+# Once available on the Marketplace
 ext install muya-material
 ```
 
-### Manual
+### Manual Installation
 
 1. Download the latest `.vsix` package from Releases
 2. In VSCode, navigate to `Extensions` → `...` → `Install from VSIX`
-3. Select the downloaded file to plant the theme
+3. Select the downloaded file to install the theme
 
-### Development
+## Development Setup
 
 ```bash
-# Clone the repository garden
+# Clone the repository
 git clone https://github.com/benitoanagua/MuyaMaterial.git
 cd MuyaMaterial
 
-# Plant the dependencies
+# Install dependencies
 pnpm install
 
-# Cultivate the themes
+# Build the themes
 pnpm run build
 
-# Themes will bloom in the 'themes/' directory
+# Generated themes will be available in the 'themes/' directory
 ```
 
-## Variants
+## Theme Variants
 
 ### Muya Material Black
 
 - **UI Theme**: `vs-dark`
-- **Description**: Deep garden soil with maximum contrast for comfortable viewing
+- **Description**: High-contrast dark theme for maximum readability
 
 ### Muya Material Dark
 
 - **UI Theme**: `vs-dark`
-- **Description**: Balanced twilight garden with natural Material Design aesthetics
+- **Description**: Standard dark variant with balanced Material Design aesthetics
 
 ### Muya Material Light
 
 - **UI Theme**: `vs`
-- **Description**: Morning garden light with organic color accents
+- **Description**: Light theme with carefully calibrated color relationships
 
 ### Muya Material Soft
 
 - **UI Theme**: `vs`
-- **Description**: Cultivated clarity with enhanced contrast for optimal growth
+- **Description**: Low-contrast light variant for comfortable extended use
 
-## 🛠 Tools
+## Development Tools
 
 ### Prerequisites
 
 - Node.js 16+
 - pnpm (recommended) or npm
 
-### Commands
+### Available Commands
 
 ```bash
-# Plant dependencies
+# Install dependencies
 pnpm install
 
-# Cultivate all theme variants
+# Build all theme variants
 pnpm run build
 
-# Development greenhouse (build + test)
+# Development mode (build + watch)
 pnpm run dev
 
-# Test the garden's health
+# Run tests
 pnpm test
 
-# Package the harvest
+# Package for distribution
 pnpm run package
 ```
 
-### Structure
+### Project Structure
 
 ```
 muya-material/
 ├── src/
 │   ├── theme/
-│   │   ├── colors/          # Natural color definitions
-│   │   ├── scopes/          # Syntax gardening tools
-│   │   ├── theme-config.js  # Garden configuration
-│   │   ├── dynamic-scheme.js # Natural color cultivation
-│   │   └── theme-builder.js # Theme assembly greenhouse
-│   └── index.js            # Main garden entrance
-├── themes/                 # Blooming theme flowers
-├── test/                   # Garden health checks
+│   │   ├── theme-config.js      # Theme configuration and variants
+│   │   ├── dynamic-scheme.js    # Dynamic color scheme generation
+│   │   └── theme-builder.js     # Theme assembly logic
+│   └── index.js                 # Main entry point
+├── themes/                      # Generated theme files
+├── test/                        # Test files
 └── package.json
 ```
 
 ### Color System
 
-Our garden uses organic color principles with:
+The theme uses Material Design 3 principles with:
 
-- **Seed Color**: `#6750A4` (Natural purple blossom)
-- **Variant**: Tonal Spot (2) - like carefully placed garden elements
-- **Natural Contrast**: Organic adjustments following WCAG guidelines
+- **Seed Color**: `#7D944C` (Complementary green-based palette)
+- **Variant**: Fidelity (accurate color representation)
+- **Dynamic Schemes**: Automatically generated light and dark variants
+- **Accessibility**: WCAG-compliant contrast ratios
 
 ## Testing
 
 ```bash
-# Test the garden's color harmony
+# Run test suite
 pnpm test
 
-# Watch the natural color schemes bloom in preview
+# Preview theme variations during development
 ```
 
 ## Packaging
 
-To prepare your garden's harvest for distribution:
+To create a distribution package:
 
 ```bash
 pnpm run package
 ```
 
-The harvest will be packaged as: `muya-material-{version}.vsix`
+This will generate: `muya-material-{version}.vsix`
 
-## Community
+## Contributing
 
-We welcome fellow gardeners! Feel free to plant new ideas, report issues, or contribute to our growing ecosystem.
+We welcome contributions! Please feel free to:
 
-1. Fork our garden repository
-2. Create a feature branch (`git checkout -b feature/new-blossom`)
-3. Commit your changes (`git commit -m 'Add new garden feature'`)
-4. Push to the branch (`git push origin feature/new-blossom`)
-5. Open a Pull Request to share your harvest
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/improvement`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature/improvement`)
+5. Open a Pull Request
 
 ## License
 
-This project grows under the MIT License - see the [LICENSE](LICENSE) file for cultivation details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
-- **Google Material Design Team** for the fertile design soil
-- **VSCode Team** for the excellent gardening framework
-- **Material Color Utilities** for the natural color cultivation algorithms
-- **Quechua culture** for the beautiful inspiration behind "Muya"
+- **Google Material Design Team** for the design system foundation
+- **VSCode Team** for the extensible theming framework
+- **Material Color Utilities** for the color algorithm implementations
 
 ## Support
 
-If your garden needs tending or you have questions:
+If you encounter issues or have questions:
 
-1. Check our [Garden Issues](https://github.com/benitoanagua/MuyaMaterial/issues)
-2. Plant a new issue with detailed information
-3. Include your VSCode version and growing environment details
+1. Check existing [Issues](https://github.com/benitoanagua/MuyaMaterial/issues)
+2. Create a new issue with detailed information
+3. Include your VSCode version and environment details
 
 ---
 
 <p align="center">
-Cultivated with ❤️ by <a href="https://github.com/benitoanagua">Benito Anagua</a>
+Created with ❤️ by <a href="https://github.com/benitoanagua">Benito Anagua</a>
 </p>
 
 <p align="center">
-<em>Where code meets nature's harmony</em>
+<em>Bringing Material Design harmony to code editing</em>
 </p>

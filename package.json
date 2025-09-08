@@ -16,22 +16,22 @@
       {
         "label": "Muya Material Black",
         "uiTheme": "vs-dark",
-        "path": "./themes/materialblack.json"
+        "path": "./themes/material-black.json"
       },
       {
         "label": "Muya Material Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/materialdark.json"
+        "path": "./themes/material-dark.json"
       },
       {
         "label": "Muya Material Light",
         "uiTheme": "vs",
-        "path": "./themes/materiallight.json"
+        "path": "./themes/material-light.json"
       },
       {
         "label": "Muya Material Soft",
         "uiTheme": "vs",
-        "path": "./themes/materialsoft.json"
+        "path": "./themes/material-soft.json"
       }
     ]
   },

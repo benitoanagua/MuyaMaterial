@@ -1,6 +1,6 @@
 export const themeConfig = {
-  seedColor: "#6750A4",
-  variant: 2, // TONAL_SPOT
+  seedColor: "#7D944C",
+  variant: "FIDELITY",
   name: "Muya Material",
   publisher: "Benito Anagua",
 };
@@ -8,30 +8,40 @@ export const themeConfig = {
 export const themeVariants = [
   {
     name: "Black",
-    filename: "materialblack",
+    filename: "material-black",
     isDark: true,
     contrastLevel: 0,
     uiTheme: "vs-dark",
   },
   {
     name: "Dark",
-    filename: "materialdark",
+    filename: "material-dark",
     isDark: true,
     contrastLevel: -1,
     uiTheme: "vs-dark",
   },
   {
     name: "Light",
-    filename: "materiallight",
+    filename: "material-light",
     isDark: false,
     contrastLevel: 0,
     uiTheme: "vs",
   },
   {
     name: "Soft",
-    filename: "materialsoft",
+    filename: "material-soft",
     isDark: false,
     contrastLevel: -1,
     uiTheme: "vs",
   },
+];
+
+export const AVAILABLE_VARIANTS = [
+  "TONAL_SPOT",
+  "NEUTRAL",
+  "VIBRANT",
+  "EXPRESSIVE",
+  "MONOCHROME",
+  "CONTENT",
+  "FIDELITY",
 ];

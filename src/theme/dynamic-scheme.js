@@ -1,36 +1,53 @@
 import {
-  DynamicScheme,
-  themeFromSourceColor,
   argbFromHex,
   hexFromArgb,
   MaterialDynamicColors,
+  Hct,
+  SchemeTonalSpot,
+  SchemeNeutral,
+  SchemeVibrant,
+  SchemeExpressive,
+  SchemeMonochrome,
+  SchemeContent,
+  SchemeFidelity,
 } from "@material/material-color-utilities";
 
 import { themeConfig } from "./theme-config.js";
 
 const sourceColorArgb = argbFromHex(themeConfig.seedColor);
-const theme = themeFromSourceColor(sourceColorArgb);
+
+// Mapeo de nombres de variante a constructores de esquema
+const SCHEME_CONSTRUCTORS = {
+  TONAL_SPOT: SchemeTonalSpot,
+  NEUTRAL: SchemeNeutral,
+  VIBRANT: SchemeVibrant,
+  EXPRESSIVE: SchemeExpressive,
+  MONOCHROME: SchemeMonochrome,
+  CONTENT: SchemeContent,
+  FIDELITY: SchemeFidelity,
+};
+
+// Función para obtener el esquema según la variante
+const getSchemeForVariant = (variant, isDark, contrastLevel) => {
+  const sourceColorHct = Hct.fromInt(sourceColorArgb);
+  const SchemeConstructor = SCHEME_CONSTRUCTORS[variant] || SchemeTonalSpot;
+
+  return new SchemeConstructor(sourceColorHct, isDark, contrastLevel);
+};
 
 export const createDynamicScheme = ({ isDark, contrastLevel }) => {
-  const scheme = new DynamicScheme({
-    sourceColorArgb,
-    variant: themeConfig.variant,
-    contrastLevel,
+  const scheme = getSchemeForVariant(
+    themeConfig.variant,
     isDark,
-    primaryPalette: theme.palettes.primary,
-    secondaryPalette: theme.palettes.secondary,
-    tertiaryPalette: theme.palettes.tertiary,
-    neutralPalette: theme.palettes.neutral,
-    neutralVariantPalette: theme.palettes.neutralVariant,
-  });
+    contrastLevel
+  );
 
   const extract = (prop) => {
     try {
-      const color =
-        MaterialDynamicColors[prop]?.getArgb(scheme) ?? scheme[prop];
+      const color = MaterialDynamicColors[prop]?.getArgb(scheme);
       return hexFromArgb(color);
     } catch {
-      return "#FF00FF";
+      return "#FF00FF"; // Color de fallback (magenta)
     }
   };
 
