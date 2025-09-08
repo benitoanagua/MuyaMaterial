@@ -36,10 +36,12 @@
   },
   "scripts": {
     "build": "node scripts/generate-themes.js",
-    "package": "vsce package"
+    "test": "vitest"
   },
   "devDependencies": {
     "@material/material-color-utilities": "^0.2.7",
+    "chalk": "^5.6.2",
+    "vitest": "^3.2.4",
     "vsce": "^2.15.0"
   }
 }

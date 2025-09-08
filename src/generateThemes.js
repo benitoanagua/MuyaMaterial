@@ -1,39 +1,14 @@
-import { generateColorScheme } from "./color-generator.js";
+import { createDynamicScheme } from "./dynamicScheme.js";
 import { createTheme } from "./createTheme.js";
 import { themeConfig, themeVariants } from "./theme-config.js";
 
-// Generar y escribir temas para cada variante
 export function generateAllThemes() {
-  console.log("🔥 Aguayo Accent - Generando temas Material Design...\n");
-  console.log(`🎨 Color base: ${themeConfig.seedColor}`);
-  console.log(`📦 Variante: ${themeConfig.variant}\n`);
+  console.log("🔥 Generando temas Material Design 3...\n");
 
-  themeVariants.forEach((variant) => {
-    try {
-      console.log(`🎯 Generando ${variant.name}...`);
-
-      // Generar esquema de colores Material Design 3
-      const colors = generateColorScheme(
-        themeConfig.seedColor,
-        themeConfig.variant,
-        variant.isDark,
-        variant.contrastLevel
-      );
-
-      // Crear tema VSCode
-      createTheme(
-        colors,
-        `${themeConfig.name} - ${variant.name}`,
-        variant.filename
-      );
-    } catch (error) {
-      console.error(`   ❌ Error generando ${variant.name}:`, error.message);
-    }
+  themeVariants.forEach(({ name, filename, isDark, contrastLevel }) => {
+    const scheme = createDynamicScheme({ isDark, contrastLevel });
+    createTheme(scheme, `${themeConfig.name} - ${name}`, filename);
   });
 
-  console.log("\n🎉 ¡Todos los temas generados exitosamente!");
-  console.log("📁 Ubicación: ./themes/");
+  console.log("✅ Todos los temas generados.");
 }
-
-// Ejecutar generación de temas
-generateAllThemes();
