@@ -14,22 +14,22 @@
   "contributes": {
     "themes": [
       {
-        "label": "Aguayo Accent - Black",
+        "label": "Aguayo Accent Black",
         "uiTheme": "vs-dark",
         "path": "./themes/aguayo-black.json"
       },
       {
-        "label": "Aguayo Accent - Dark",
+        "label": "Aguayo Accent Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/aguayo-dark.json"
       },
       {
-        "label": "Aguayo Accent - Light",
+        "label": "Aguayo Accent Light",
         "uiTheme": "vs",
         "path": "./themes/aguayo-light.json"
       },
       {
-        "label": "Aguayo Accent - Soft",
+        "label": "Aguayo Accent Soft",
         "uiTheme": "vs",
         "path": "./themes/aguayo-soft.json"
       }
