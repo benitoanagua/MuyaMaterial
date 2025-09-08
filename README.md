@@ -3,27 +3,79 @@
 <p align="center">
   <img src="https://img.shields.io/badge/VS%20Code-Theme-007ACC?style=for-the-badge&logo=visual-studio-code" alt="VSCode Theme">
   <img src="https://img.shields.io/badge/Material%20Design-3-757575?style=for-the-badge&logo=material-design" alt="Material Design 3">
-  <img src="https://img.shields.io/badge/Type-ESM-3178C6?style=for-the-badge&logo=typescript" alt="ES Modules">
+  <img src="https://img.shields.io/badge/Version-0.1.0-FF6D00?style=for-the-badge" alt="Version 0.1.0">
+  <img src="https://img.shields.io/visual-studio-marketplace/v/benitoanagua.muya-material?style=for-the-badge" alt="Marketplace Version">
 </p>
 
 **Muya Material** is a Visual Studio Code theme that combines Material Design principles with carefully curated color harmonies. The name "Muya" represents the theme's focus on balanced, organic color relationships.
 
-> ⚠️ **Work in Progress**: This theme is currently under active development. Features and color schemes may change as we refine the visual experience.
+> 🚧 **Pre-Release Notice**: This is an initial pre-release version (v0.1.0). Features and color schemes may evolve as we continue refining the visual experience.
+
+## Theme Preview
+
+### Muya Material Black
+
+![Muya Material Black Theme](https://files.catbox.moe/82oqu3.png)
+
+- **UI Theme**: `vs-dark`
+- **Description**: High-contrast dark theme for maximum readability
+
+### Muya Material Dark
+
+![Muya Material Dark Theme](https://files.catbox.moe/wvhiqs.png)
+
+- **UI Theme**: `vs-dark`
+- **Description**: Standard dark variant with balanced Material Design aesthetics
+
+### Muya Material Light
+
+![Muya Material Light Theme](https://files.catbox.moe/d16d2u.png)
+
+- **UI Theme**: `vs`
+- **Description**: Light theme with carefully calibrated color relationships
+
+### Muya Material Soft
+
+![Muya Material Soft Theme](https://files.catbox.moe/rfmfpl.png)
+
+- **UI Theme**: `vs`
+- **Description**: Low-contrast light variant for comfortable extended use
 
 ## Installation
 
-### From Marketplace (Coming Soon)
+### From Visual Studio Code Marketplace
+
+The theme is now available on the Visual Studio Code Marketplace!
+
+**Quick Install:**
+
+1. Open Visual Studio Code
+2. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
+3. Search for "Muya Material"
+4. Click Install
+
+**Direct Link:**
+[Install Muya Material Theme](https://marketplace.visualstudio.com/items?itemName=benitoanagua.muya-material)
+
+**Command Line:**
 
 ```bash
-# Once available on the Marketplace
-ext install muya-material
+code --install-extension benitoanagua.muya-material
 ```
 
 ### Manual Installation
 
-1. Download the latest `.vsix` package from Releases
+1. Download the latest `.vsix` package from [Releases](../../releases)
 2. In VSCode, navigate to `Extensions` → `...` → `Install from VSIX`
 3. Select the downloaded file to install the theme
+
+## Activation
+
+After installation, activate the theme by:
+
+1. Press `Ctrl+K Ctrl+T` (Windows/Linux) or `Cmd+K Cmd+T` (Mac)
+2. Select one of the Muya Material variants from the theme picker
+3. Enjoy your new coding environment!
 
 ## Development Setup
 
@@ -40,28 +92,6 @@ pnpm run build
 
 # Generated themes will be available in the 'themes/' directory
 ```
-
-## Theme Variants
-
-### Muya Material Black
-
-- **UI Theme**: `vs-dark`
-- **Description**: High-contrast dark theme for maximum readability
-
-### Muya Material Dark
-
-- **UI Theme**: `vs-dark`
-- **Description**: Standard dark variant with balanced Material Design aesthetics
-
-### Muya Material Light
-
-- **UI Theme**: `vs`
-- **Description**: Light theme with carefully calibrated color relationships
-
-### Muya Material Soft
-
-- **UI Theme**: `vs`
-- **Description**: Low-contrast light variant for comfortable extended use
 
 ## Development Tools
 
@@ -87,6 +117,9 @@ pnpm test
 
 # Package for distribution
 pnpm run package
+
+# Publish to Marketplace (requires vsce)
+pnpm run publish:pre
 ```
 
 ### Project Structure
@@ -122,15 +155,20 @@ pnpm test
 # Preview theme variations during development
 ```
 
-## Packaging
+## Publishing
 
-To create a distribution package:
+To create and publish new versions:
 
 ```bash
+# Package for distribution
 pnpm run package
-```
 
-This will generate: `muya-material-{version}.vsix`
+# Publish pre-release version
+pnpm run publish:pre
+
+# Publish stable version (when ready)
+pnpm run publish
+```
 
 ## Contributing
 
@@ -141,6 +179,15 @@ We welcome contributions! Please feel free to:
 3. Commit your changes (`git commit -m 'Add new feature'`)
 4. Push to the branch (`git push origin feature/improvement`)
 5. Open a Pull Request
+
+## Changelog
+
+### v0.1.0 (Pre-Release)
+
+- Initial public release
+- Four theme variants: Black, Dark, Light, Soft
+- Material Design 3 color system implementation
+- Complementary color harmony based on seed color #7D944C
 
 ## License
 
@@ -159,6 +206,8 @@ If you encounter issues or have questions:
 1. Check existing [Issues](https://github.com/benitoanagua/MuyaMaterial/issues)
 2. Create a new issue with detailed information
 3. Include your VSCode version and environment details
+
+**Marketplace Page**: [Muya Material on VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=benitoanagua.muya-material)
 
 ---
 

@@ -3,14 +3,15 @@
   "displayName": "Muya Material",
   "description": "A modern Visual Studio Code theme inspired by Material Design 3",
   "version": "0.1.0",
+  "publisher": "benitoanagua",
   "type": "module",
-  "main": "./src/index.js",
   "engines": {
     "vscode": "^1.103.0"
   },
   "categories": [
     "Themes"
   ],
+  "icon": "assets/icon.jpg",
   "contributes": {
     "themes": [
       {
