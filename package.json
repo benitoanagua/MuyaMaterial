@@ -1,0 +1,21 @@
+{
+  "name": "aguayo-accent",
+  "displayName": "Aguayo Accent",
+  "description": "A modern Visual Studio Code theme inspired by Material Design 3",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Aguayo Accent",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Aguayo Accent-color-theme.json"
+      }
+    ]
+  }
+}
