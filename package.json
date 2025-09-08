@@ -2,7 +2,8 @@
   "name": "aguayo-accent",
   "displayName": "Aguayo Accent",
   "description": "A modern Visual Studio Code theme inspired by Material Design 3",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "type": "module",
   "engines": {
     "vscode": "^1.103.0"
   },
@@ -12,10 +13,33 @@
   "contributes": {
     "themes": [
       {
-        "label": "Aguayo Accent",
+        "label": "Aguayo Accent - Black (High Contrast)",
         "uiTheme": "vs-dark",
-        "path": "./themes/Aguayo Accent-color-theme.json"
+        "path": "./themes/aguayo-black.json"
+      },
+      {
+        "label": "Aguayo Accent - Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/aguayo-dark.json"
+      },
+      {
+        "label": "Aguayo Accent - Light",
+        "uiTheme": "vs",
+        "path": "./themes/aguayo-light.json"
+      },
+      {
+        "label": "Aguayo Accent - Soft (High Contrast)",
+        "uiTheme": "vs",
+        "path": "./themes/aguayo-soft.json"
       }
     ]
+  },
+  "scripts": {
+    "build": "node scripts/generate-themes.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@material/material-color-utilities": "^0.2.7",
+    "vsce": "^2.15.0"
   }
 }
