@@ -4,6 +4,7 @@
   "description": "A modern Visual Studio Code theme inspired by Material Design 3",
   "version": "0.1.0",
   "type": "module",
+  "main": "./src/index.js",
   "engines": {
     "vscode": "^1.103.0"
   },
@@ -13,7 +14,7 @@
   "contributes": {
     "themes": [
       {
-        "label": "Aguayo Accent - Black (High Contrast)",
+        "label": "Aguayo Accent - Black",
         "uiTheme": "vs-dark",
         "path": "./themes/aguayo-black.json"
       },
@@ -28,20 +29,42 @@
         "path": "./themes/aguayo-light.json"
       },
       {
-        "label": "Aguayo Accent - Soft (High Contrast)",
+        "label": "Aguayo Accent - Soft",
         "uiTheme": "vs",
         "path": "./themes/aguayo-soft.json"
       }
     ]
   },
   "scripts": {
-    "build": "node scripts/generate-themes.js",
-    "test": "vitest"
+    "build": "node src/index.js",
+    "test": "vitest",
+    "dev": "npm run build && npm test",
+    "package": "vsce package"
   },
+  "keywords": [
+    "theme",
+    "vscode-theme",
+    "material-design",
+    "aguayo",
+    "color-theme"
+  ],
+  "author": "Benito Anagua",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benitoanagua/AguayoAccent"
+  },
+  "bugs": {
+    "url": "https://github.com/benitoanagua/AguayoAccent/issues"
+  },
+  "homepage": "https://github.com/benitoanagua/AguayoAccent#readme",
   "devDependencies": {
-    "@material/material-color-utilities": "^0.2.7",
+    "@material/material-color-utilities": "^0.3.0",
     "chalk": "^5.6.2",
     "vitest": "^3.2.4",
     "vsce": "^2.15.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -14,6 +14,7 @@ const theme = themeFromSourceColor(sourceColorArgb);
 export const createDynamicScheme = ({ isDark, contrastLevel }) => {
   const scheme = new DynamicScheme({
     sourceColorArgb,
+    variant: themeConfig.variant,
     contrastLevel,
     isDark,
     primaryPalette: theme.palettes.primary,
@@ -34,6 +35,8 @@ export const createDynamicScheme = ({ isDark, contrastLevel }) => {
   };
 
   return {
+    isDark,
+    contrastLevel,
     primary: extract("primary"),
     onPrimary: extract("onPrimary"),
     primaryContainer: extract("primaryContainer"),
@@ -70,17 +73,5 @@ export const createDynamicScheme = ({ isDark, contrastLevel }) => {
     inverseSurface: extract("inverseSurface"),
     inverseOnSurface: extract("inverseOnSurface"),
     inversePrimary: extract("inversePrimary"),
-    primaryFixed: extract("primaryFixed"),
-    primaryFixedDim: extract("primaryFixedDim"),
-    onPrimaryFixed: extract("onPrimaryFixed"),
-    onPrimaryFixedVariant: extract("onPrimaryFixedVariant"),
-    secondaryFixed: extract("secondaryFixed"),
-    secondaryFixedDim: extract("secondaryFixedDim"),
-    onSecondaryFixed: extract("onSecondaryFixed"),
-    onSecondaryFixedVariant: extract("onSecondaryFixedVariant"),
-    tertiaryFixed: extract("tertiaryFixed"),
-    tertiaryFixedDim: extract("tertiaryFixedDim"),
-    onTertiaryFixed: extract("onTertiaryFixed"),
-    onTertiaryFixedVariant: extract("onTertiaryFixedVariant"),
   };
 };
