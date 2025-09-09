@@ -1,0 +1,7 @@
+{
+  "watch": ["src/", "themes/"],
+  "ext": "js,json",
+  "ignore": ["themes/*.json", "node_modules/"],
+  "exec": "npm run build",
+  "delay": 1000
+}
