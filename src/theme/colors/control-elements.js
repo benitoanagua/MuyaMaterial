@@ -6,16 +6,16 @@ export default function getControlElements(scheme) {
     "button.border": scheme.outlineVariant,
     "button.separator": scheme.outlineVariant,
     "button.hoverBackground": `${scheme.primary}10`,
-    "button.secondaryForeground": scheme.onSecondary,
-    "button.secondaryBackground": scheme.secondary,
-    "button.secondaryHoverBackground": `${scheme.secondary}10`,
+    "button.secondaryForeground": scheme.onSecondaryContainer,
+    "button.secondaryBackground": scheme.secondaryContainer,
+    "button.secondaryHoverBackground": `${scheme.secondaryContainer}10`,
 
     // Checkbox control
     "checkbox.background": scheme.surfaceContainerLowest,
     "checkbox.border": scheme.outlineVariant,
     "checkbox.foreground": scheme.onSurface,
-    // "checkbox.selectBackground": scheme.primary,
-    // "checkbox.selectBorder": scheme.primary,
+    "checkbox.selectBackground": scheme.primary,
+    "checkbox.selectBorder": scheme.primary,
 
     // Radio control
     // "radio.activeForeground": scheme.onPrimary,

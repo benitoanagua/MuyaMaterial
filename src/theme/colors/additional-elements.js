@@ -1,19 +1,19 @@
 export default function getAdditionalElements(scheme) {
   return {
     // Notebook colors
-    "notebook.editorBackground": scheme.surfaceContainerLowest,
+    "notebook.editorBackground": scheme.surfaceContainerLow,
     "notebook.cellBorderColor": scheme.outlineVariant,
-    "notebook.cellHoverBackground": scheme.surfaceContainer,
+    "notebook.cellHoverBackground": scheme.primaryContainer,
     "notebook.cellInsertionIndicator": scheme.primary,
     "notebook.cellStatusBarItemHoverBackground": scheme.surfaceContainerHigh,
     "notebook.cellToolbarSeparator": scheme.outlineVariant,
-    "notebook.cellEditorBackground": scheme.surfaceContainerLowest,
+    "notebook.cellEditorBackground": scheme.surfaceContainerLow,
     "notebook.focusedCellBackground": scheme.surfaceContainer,
     "notebook.focusedCellBorder": scheme.primary,
     "notebook.focusedEditorBorder": scheme.outline,
     "notebook.inactiveFocusedCellBorder": scheme.outlineVariant,
     "notebook.inactiveSelectedCellBorder": scheme.outlineVariant,
-    "notebook.outputContainerBackgroundColor": scheme.surfaceContainerLowest,
+    "notebook.outputContainerBackgroundColor": scheme.surfaceContainerLow,
     "notebook.outputContainerBorderColor": scheme.outlineVariant,
     "notebook.selectedCellBackground": scheme.surfaceContainerHigh,
     "notebook.selectedCellBorder": scheme.outline,

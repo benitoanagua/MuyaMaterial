@@ -13,7 +13,7 @@ export default function getListsTreesAndSidebars(scheme) {
     "list.highlightForeground": scheme.primary,
     "list.hoverBackground": scheme.surfaceContainerHigh,
     "list.hoverForeground": scheme.onSurface,
-    "list.inactiveSelectionBackground": scheme.surfaceContainer,
+    "list.inactiveSelectionBackground": scheme.secondaryContainer,
     "list.inactiveSelectionForeground": scheme.onSurface,
     // "list.inactiveSelectionIconForeground": `${scheme.onSurface}80`,
     "list.inactiveFocusBackground": scheme.surfaceContainer,
@@ -35,7 +35,7 @@ export default function getListsTreesAndSidebars(scheme) {
     "tree.tableOddRowsBackground": `${scheme.surfaceContainer}20`,
 
     // Activity Bar
-    "activityBar.background": scheme.surfaceContainer,
+    "activityBar.background": scheme.surfaceContainerHighest,
     "activityBar.dropBorder": scheme.primary,
     "activityBar.foreground": scheme.onSurface,
     "activityBar.inactiveForeground": `${scheme.onSurface}60`,
@@ -66,16 +66,16 @@ export default function getListsTreesAndSidebars(scheme) {
     // "profiles.sashBorder": scheme.outlineVariant,
 
     // Side Bar
-    "sideBar.background": scheme.surfaceContainer,
+    "sideBar.background": scheme.surfaceContainerHigh,
     "sideBar.foreground": scheme.onSurface,
     "sideBar.border": scheme.outlineVariant,
     "sideBar.dropBackground": `${scheme.primary}20`,
     "sideBarTitle.foreground": scheme.onSurface,
-    "sideBarSectionHeader.background": scheme.surfaceContainerHigh,
+    "sideBarSectionHeader.background": scheme.surfaceContainerHighest,
     "sideBarSectionHeader.foreground": scheme.onSurface,
     "sideBarSectionHeader.border": scheme.outlineVariant,
     // "sideBarActivityBarTop.border": scheme.outline,
-    "sideBarTitle.background": scheme.surfaceContainerHigh,
+    "sideBarTitle.background": scheme.surfaceContainerHighest,
     "sideBarTitle.border": scheme.outlineVariant,
     "sideBarStickyScroll.background": scheme.surfaceContainerHigh,
     "sideBarStickyScroll.border": scheme.outline,

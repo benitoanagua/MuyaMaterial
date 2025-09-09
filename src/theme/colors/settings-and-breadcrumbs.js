@@ -1,7 +1,7 @@
 export default function getSettingsAndBreadcrumbs(scheme) {
   return {
     // Settings Editor colors
-    "settings.headerForeground": scheme.onSurfaceVariant,
+    "settings.headerForeground": scheme.onSurface,
     // "settings.modifiedItemIndicator": scheme.primary,
     // "settings.dropdownBackground": scheme.surfaceContainerLowest,
     // "settings.dropdownForeground": scheme.onSurface,
@@ -17,7 +17,7 @@ export default function getSettingsAndBreadcrumbs(scheme) {
     // "settings.numberInputBackground": scheme.surfaceContainerLowest,
     // "settings.numberInputForeground": scheme.onSurface,
     // "settings.numberInputBorder": scheme.outlineVariant,
-    "settings.focusedRowBackground": scheme.surfaceContainer,
+    "settings.focusedRowBackground": scheme.primaryContainer,
     // "settings.focusedRowBorder": scheme.primary,
     "settings.headerBorder": scheme.outlineVariant,
     "settings.sashBorder": scheme.outlineVariant,

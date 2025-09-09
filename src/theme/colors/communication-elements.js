@@ -2,7 +2,7 @@ export default function getCommunicationElements(scheme) {
   return {
     // Chat colors
     "chat.requestBorder": scheme.outlineVariant,
-    "chat.requestBackground": scheme.surfaceContainer,
+    "chat.requestBackground": scheme.primaryContainer,
     // "chat.slashCommandBackground": scheme.primary,
     // "chat.slashCommandForeground": scheme.onPrimary,
     // "chat.avatarBackground": scheme.surfaceContainerHigh,

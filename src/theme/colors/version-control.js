@@ -1,8 +1,8 @@
 export default function getVersionControl(scheme) {
   return {
     // Git colors
-    "gitDecoration.addedResourceForeground": scheme.secondary,
-    "gitDecoration.modifiedResourceForeground": scheme.primary,
+    "gitDecoration.addedResourceForeground": scheme.tertiary,
+    "gitDecoration.modifiedResourceForeground": scheme.secondary,
     "gitDecoration.deletedResourceForeground": scheme.error,
     // "gitDecoration.renamedResourceForeground": scheme.tertiary,
     "gitDecoration.stageModifiedResourceForeground": scheme.primary,

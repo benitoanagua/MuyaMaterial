@@ -1,7 +1,7 @@
 export default function getPanelsAndStatusBar(scheme) {
   return {
     // Panel colors
-    "panel.background": scheme.surfaceContainer,
+    "panel.background": scheme.surfaceContainerHigh,
     "panel.border": scheme.outlineVariant,
     "panel.dropBorder": scheme.primary,
     "panelTitle.activeBorder": scheme.primary,
@@ -17,11 +17,11 @@ export default function getPanelsAndStatusBar(scheme) {
     "panelStickyScroll.border": scheme.outlineVariant,
     // "panelStickyScroll.shadow": `${scheme.outline}20`,
     "panelSectionHeader.border": scheme.outlineVariant,
-    "outputView.background": scheme.surfaceContainerLowest,
+    "outputView.background": scheme.surfaceContainerLow,
     // "outputViewStickyScroll.background": scheme.surfaceContainerHigh,
 
     // Status Bar colors
-    "statusBar.background": scheme.surfaceContainerHigh,
+    "statusBar.background": scheme.surfaceContainerHighest,
     "statusBar.foreground": scheme.onSurface,
     "statusBar.border": scheme.outlineVariant,
     "statusBar.debuggingBackground": scheme.error,

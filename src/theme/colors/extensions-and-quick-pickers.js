@@ -18,7 +18,7 @@ export default function getExtensionsAndQuickPickers(scheme) {
     // Quick picker colors
     "pickerGroup.border": scheme.outlineVariant,
     "pickerGroup.foreground": scheme.primary,
-    "quickInput.background": scheme.surfaceContainerLowest,
+    "quickInput.background": scheme.surfaceContainerLow,
     "quickInput.foreground": scheme.onSurface,
     "quickInputList.focusBackground": scheme.surfaceContainer,
     "quickInputList.focusForeground": scheme.onSurface,

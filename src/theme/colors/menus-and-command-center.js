@@ -1,7 +1,7 @@
 export default function getMenusAndCommandCenter(scheme) {
   return {
     // Title Bar colors
-    "titleBar.activeBackground": scheme.surfaceContainer,
+    "titleBar.activeBackground": scheme.surfaceContainerHighest,
     "titleBar.activeForeground": scheme.onSurface,
     "titleBar.inactiveBackground": scheme.surfaceContainerLow,
     "titleBar.inactiveForeground": `${scheme.onSurface}80`,
@@ -12,7 +12,7 @@ export default function getMenusAndCommandCenter(scheme) {
     "menubar.selectionBackground": scheme.primary,
     // "menubar.selectionBorder": scheme.outlineVariant,
     "menu.foreground": scheme.onSurface,
-    "menu.background": scheme.surfaceContainer,
+    "menu.background": scheme.surfaceContainerHigh,
     "menu.selectionForeground": scheme.onPrimary,
     "menu.selectionBackground": scheme.primary,
     // "menu.selectionBorder": scheme.outline,

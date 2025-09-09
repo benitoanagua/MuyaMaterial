@@ -18,7 +18,7 @@ export default function getTestingAndWelcomePage(scheme) {
     "testing.peekHeaderBackground": scheme.surfaceContainer,
     "testing.message.error.lineBackground": `${scheme.error}20`,
     "testing.message.info.decorationForeground": scheme.onSurface,
-    "testing.message.info.lineBackground": `${scheme.primary}20`,
+    "testing.message.info.lineBackground": `${scheme.primaryContainer}30`,
     // "testing.messagePeekBorder": scheme.outlineVariant,
     // "testing.messagePeekHeaderBackground": scheme.surfaceContainer,
     // "testing.coveredBackground": `${scheme.secondary}20`,
@@ -35,7 +35,7 @@ export default function getTestingAndWelcomePage(scheme) {
     // "testing.message.error.badgeForeground": scheme.error,
 
     // Welcome page colors
-    "welcomePage.background": scheme.surfaceContainerLowest,
+    "welcomePage.background": scheme.surfaceContainerLow,
     "welcomePage.progress.background": scheme.surfaceContainer,
     "welcomePage.progress.foreground": scheme.primary,
     "welcomePage.tileBackground": scheme.surfaceContainer,

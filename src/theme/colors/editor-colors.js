@@ -2,7 +2,7 @@ export default function getEditorColors(scheme) {
   return {
     "editor.background": scheme.background,
     "editor.foreground": scheme.onBackground,
-    "editorLineNumber.foreground": scheme.outline,
+    "editorLineNumber.foreground": scheme.onSurfaceVariant,
     "editorLineNumber.activeForeground": scheme.primary,
     // "editorLineNumber.dimmedForeground": `${scheme.outline}60`,
     "editorCursor.background": scheme.surfaceContainer,
@@ -16,7 +16,7 @@ export default function getEditorColors(scheme) {
 
     "editor.selectionBackground": `${scheme.primaryContainer}40`,
     // "editor.selectionForeground": scheme.onPrimaryContainer,
-    "editor.inactiveSelectionBackground": `${scheme.secondaryContainer}40`,
+    "editor.inactiveSelectionBackground": `${scheme.surfaceContainer}60`,
     "editor.selectionHighlightBackground": `${scheme.primaryContainer}20`,
     "editor.selectionHighlightBorder": scheme.primary,
 
@@ -27,8 +27,8 @@ export default function getEditorColors(scheme) {
     // "editor.wordHighlightTextBackground": `${scheme.tertiaryContainer}40`,
     // "editor.wordHighlightTextBorder": scheme.tertiary,
 
-    "editor.findMatchBackground": `${scheme.tertiary}60`,
-    "editor.findMatchForeground": scheme.onTertiary,
+    "editor.findMatchBackground": `${scheme.tertiary}40`,
+    "editor.findMatchForeground": scheme.onTertiaryContainer,
     // "editor.findMatchHighlightForeground": scheme.onTertiaryContainer,
     "editor.findMatchHighlightBackground": `${scheme.tertiary}30`,
     "editor.findRangeHighlightBackground": `${scheme.surfaceVariant}50`,
@@ -44,7 +44,7 @@ export default function getEditorColors(scheme) {
 
     "editor.hoverHighlightBackground": `${scheme.secondaryContainer}50`,
 
-    "editor.lineHighlightBackground": `${scheme.surfaceVariant}20`,
+    "editor.lineHighlightBackground": `${scheme.surfaceContainer}30`,
     "editor.lineHighlightBorder": scheme.outlineVariant,
 
     "editorWatermark.foreground": `${scheme.onSurfaceVariant}60`,
@@ -110,7 +110,7 @@ export default function getEditorColors(scheme) {
     // "editorBracketPairGuide.background4": `${scheme.error}10`,
     // "editorBracketPairGuide.background5": `${scheme.primary}10`,
     // "editorBracketPairGuide.background6": `${scheme.secondary}10`,
-    "editor.foldBackground": `${scheme.primaryContainer}50`,
+    "editor.foldBackground": `${scheme.tertiaryContainer}60`,
     "editor.foldPlaceholderForeground": scheme.outlineVariant,
     "editorOverviewRuler.background": scheme.surfaceContainer,
     "editorOverviewRuler.border": scheme.outlineVariant,
@@ -145,7 +145,7 @@ export default function getEditorColors(scheme) {
     "problemsInfoIcon.foreground": scheme.primary,
     // "editorUnnecessaryCode.border": scheme.outlineVariant,
     // "editorUnnecessaryCode.opacity": `${scheme.outline}40`,
-    "editorGutter.background": `${scheme.surfaceContainer}40`,
+    "editorGutter.background": scheme.surfaceContainer,
     "editorGutter.modifiedBackground": scheme.primary,
     "editorGutter.addedBackground": scheme.secondary,
     "editorGutter.deletedBackground": scheme.error,

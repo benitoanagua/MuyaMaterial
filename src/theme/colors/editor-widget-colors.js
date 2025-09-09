@@ -5,7 +5,7 @@ export default function getEditorWidgetColors(scheme) {
     "editorWidget.border": scheme.outlineVariant,
     "editorWidget.resizeBorder": scheme.outline,
 
-    "editorSuggestWidget.background": scheme.surfaceContainerLowest,
+    "editorSuggestWidget.background": scheme.surfaceContainerLow,
     "editorSuggestWidget.border": scheme.outlineVariant,
     "editorSuggestWidget.foreground": scheme.onSurface,
     "editorSuggestWidget.highlightForeground": scheme.primary,
@@ -15,7 +15,7 @@ export default function getEditorWidgetColors(scheme) {
     "editorSuggestWidgetStatus.foreground": scheme.onSurfaceVariant,
 
     "editorHoverWidget.foreground": scheme.onSurface,
-    "editorHoverWidget.background": scheme.surfaceContainerLowest,
+    "editorHoverWidget.background": scheme.surfaceContainerLow,
     "editorHoverWidget.border": scheme.outlineVariant,
     "editorHoverWidget.highlightForeground": scheme.primary,
     "editorHoverWidget.statusBarBackground": scheme.surfaceContainer,
