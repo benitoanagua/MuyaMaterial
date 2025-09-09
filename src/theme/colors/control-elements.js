@@ -5,7 +5,7 @@ export default function getControlElements(scheme) {
     "button.foreground": scheme.onPrimary,
     "button.border": scheme.outlineVariant,
     "button.separator": scheme.outlineVariant,
-    "button.hoverBackground": `${scheme.primary}10`,
+    "button.hoverBackground": scheme.primaryContainer,
     "button.secondaryForeground": scheme.onSecondaryContainer,
     "button.secondaryBackground": scheme.secondaryContainer,
     "button.secondaryHoverBackground": `${scheme.secondaryContainer}10`,

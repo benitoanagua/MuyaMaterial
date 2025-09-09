@@ -28,7 +28,7 @@ export default function getEditorColors(scheme) {
     // "editor.wordHighlightTextBorder": scheme.tertiary,
 
     "editor.findMatchBackground": `${scheme.tertiary}40`,
-    "editor.findMatchForeground": scheme.onTertiaryContainer,
+    "editor.findMatchForeground": scheme.onSurface,
     // "editor.findMatchHighlightForeground": scheme.onTertiaryContainer,
     "editor.findMatchHighlightBackground": `${scheme.tertiary}30`,
     "editor.findRangeHighlightBackground": `${scheme.surfaceVariant}50`,
