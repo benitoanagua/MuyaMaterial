@@ -102,6 +102,7 @@ export class ThemeBuilder {
       const scheme = createScheme({
         isDark: variant.isDark,
         contrastLevel: variant.contrastLevel,
+        seedColorType: variant.seedColor, // Pasamos el tipo de color semilla
       });
 
       const theme = this.buildTheme(

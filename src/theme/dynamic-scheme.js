@@ -14,8 +14,6 @@ import {
 
 import { themeConfig } from "./theme-config.js";
 
-const sourceColorArgb = argbFromHex(themeConfig.seedColor);
-
 // Mapeo de nombres de variante a constructores de esquema
 const SCHEME_CONSTRUCTORS = {
   TONAL_SPOT: SchemeTonalSpot,
@@ -27,19 +25,36 @@ const SCHEME_CONSTRUCTORS = {
   FIDELITY: SchemeFidelity,
 };
 
+// Función para obtener el color semilla según la configuración
+const getSeedColor = (seedColorType) => {
+  const colorMap = {
+    default: themeConfig.seedColorDefault,
+    complement: themeConfig.seedColorComplement,
+  };
+
+  return colorMap[seedColorType] || themeConfig.seedColorDefault;
+};
+
 // Función para obtener el esquema según la variante
-const getSchemeForVariant = (variant, isDark, contrastLevel) => {
+const getSchemeForVariant = (variant, isDark, contrastLevel, seedColor) => {
+  const sourceColorArgb = argbFromHex(seedColor);
   const sourceColorHct = Hct.fromInt(sourceColorArgb);
   const SchemeConstructor = SCHEME_CONSTRUCTORS[variant] || SchemeTonalSpot;
 
   return new SchemeConstructor(sourceColorHct, isDark, contrastLevel);
 };
 
-export const createDynamicScheme = ({ isDark, contrastLevel }) => {
+export const createDynamicScheme = ({
+  isDark,
+  contrastLevel,
+  seedColorType = "default",
+}) => {
+  const seedColor = getSeedColor(seedColorType);
   const scheme = getSchemeForVariant(
     themeConfig.variant,
     isDark,
-    contrastLevel
+    contrastLevel,
+    seedColor
   );
 
   const extract = (prop) => {
@@ -54,6 +69,8 @@ export const createDynamicScheme = ({ isDark, contrastLevel }) => {
   return {
     isDark,
     contrastLevel,
+    seedColor,
+    seedColorType,
     primary: extract("primary"),
     onPrimary: extract("onPrimary"),
     primaryContainer: extract("primaryContainer"),

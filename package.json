@@ -1,8 +1,8 @@
 {
   "name": "muya-material",
   "displayName": "Muya Material",
-  "description": "A modern Visual Studio Code theme inspired by Material Design 3",
-  "version": "0.1.2",
+  "description": "A modern Visual Studio Code theme inspired by Material Design 3 with Olive and Mystic color palettes",
+  "version": "0.2.0",
   "publisher": "benitoanagua",
   "type": "module",
   "engines": {
@@ -15,24 +15,24 @@
   "contributes": {
     "themes": [
       {
-        "label": "Muya Material Black",
+        "label": "Muya Material - Olive Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/material-black.json"
+        "path": "./themes/olive-dark.json"
       },
       {
-        "label": "Muya Material Dark",
+        "label": "Muya Material - Mystic Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/material-dark.json"
+        "path": "./themes/mystic-dark.json"
       },
       {
-        "label": "Muya Material Light",
+        "label": "Muya Material - Olive Light",
         "uiTheme": "vs",
-        "path": "./themes/material-light.json"
+        "path": "./themes/olive-light.json"
       },
       {
-        "label": "Muya Material Soft",
+        "label": "Muya Material - Mystic Light",
         "uiTheme": "vs",
-        "path": "./themes/material-soft.json"
+        "path": "./themes/mystic-light.json"
       }
     ]
   },
@@ -48,7 +48,11 @@
     "theme",
     "vscode-theme",
     "material-design",
-    "color-theme"
+    "color-theme",
+    "olive",
+    "mystic",
+    "nature",
+    "earth-tones"
   ],
   "author": "Benito Anagua",
   "license": "MIT",

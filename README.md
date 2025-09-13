@@ -3,54 +3,56 @@
 <p align="center">
   <img src="https://img.shields.io/badge/VS%20Code-Theme-007ACC?style=for-the-badge&logo=visual-studio-code" alt="VSCode Theme">
   <img src="https://img.shields.io/badge/Material%20Design-3-757575?style=for-the-badge&logo=material-design" alt="Material Design 3">
-  <img src="https://img.shields.io/badge/Version-0.1.0-FF6D00?style=for-the-badge" alt="Version 0.1.0">
+  <img src="https://img.shields.io/badge/Version-0.2.0-FF6D00?style=for-the-badge" alt="Version 0.2.0">
   <img src="https://img.shields.io/visual-studio-marketplace/v/benitoanagua.muya-material?style=for-the-badge" alt="Marketplace Version">
 </p>
 
-**Muya Material** is a Visual Studio Code theme that combines Material Design principles with carefully curated color harmonies. The name "Muya" represents the theme's focus on balanced, organic color relationships.
+**Muya Material** is a Visual Studio Code theme that combines Material Design 3 principles with carefully curated color harmonies inspired by nature's organic tones. The name "Muya" represents the theme's focus on balanced, earth-inspired color relationships with two distinct personalities: **Olive** and **Mystic**.
 
-> 🚧 **Pre-Release Notice**: This is an initial pre-release version (v0.1.0). Features and color schemes may evolve as we continue refining the visual experience.
+## Theme Variants
 
-## Theme Preview
+Experience two unique color personalities, each available in light and dark variants:
 
-### Muya Material Black
+### Olive Collection
 
-![Muya Material Black Theme](https://files.catbox.moe/82oqu3.png)
+**Earthy, natural tones inspired by Mediterranean landscapes**
 
-- **UI Theme**: `vs-dark`
-- **Description**: High-contrast dark theme for maximum readability
+#### Olive Dark
 
-### Muya Material Dark
+![Olive Dark Theme](https://i.ibb.co/mCtKzmzx/olive-dark.png)
 
-![Muya Material Dark Theme](https://files.catbox.moe/wvhiqs.png)
+#### Olive Light
 
-- **UI Theme**: `vs-dark`
-- **Description**: Standard dark variant with balanced Material Design aesthetics
+![Olive Light Theme](https://i.ibb.co/MkQm67td/olive-light.png)
 
-### Muya Material Light
+### Mystic Collection
 
-![Muya Material Light Theme](https://files.catbox.moe/d16d2u.png)
+**Sophisticated purple tones with an air of mystery and elegance**
 
-- **UI Theme**: `vs`
-- **Description**: Light theme with carefully calibrated color relationships
+#### Mystic Dark
 
-### Muya Material Soft
+![Mystic Dark Theme](https://i.ibb.co/D6r5m2m/mystic-dark.png)
 
-![Muya Material Soft Theme](https://files.catbox.moe/rfmfpl.png)
+#### Mystic Light
 
-- **UI Theme**: `vs`
-- **Description**: Low-contrast light variant for comfortable extended use
+![Mystic Light Theme - Preview](https://i.ibb.co/Y4yYthjG/olive-mystic.png)
+
+## Features
+
+- **Dual Color Personalities**: Choose between earthy Olive or mystical Purple aesthetics
+- **Material Design 3**: Built with Google's latest design system principles
+- **Dynamic Color Generation**: Scientifically balanced color relationships
+- **Accessibility Focused**: WCAG-compliant contrast ratios for comfortable coding
+- **Semantic Highlighting**: Enhanced code readability with meaningful color associations
 
 ## Installation
 
 ### From Visual Studio Code Marketplace
 
-The theme is now available on the Visual Studio Code Marketplace!
-
 **Quick Install:**
 
 1. Open Visual Studio Code
-2. Go to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
+2. Go to Extensions (`Ctrl+Shift+X` / `Cmd+Shift+X`)
 3. Search for "Muya Material"
 4. Click Install
 
@@ -71,11 +73,15 @@ code --install-extension benitoanagua.muya-material
 
 ## Activation
 
-After installation, activate the theme by:
+After installation, activate your preferred theme:
 
 1. Press `Ctrl+K Ctrl+T` (Windows/Linux) or `Cmd+K Cmd+T` (Mac)
-2. Select one of the Muya Material variants from the theme picker
-3. Enjoy your new coding environment!
+2. Select from the available options:
+   - **Muya Material - Olive Dark**
+   - **Muya Material - Olive Light**
+   - **Muya Material - Mystic Dark**
+   - **Muya Material - Mystic Light**
+3. Enjoy your personalized coding environment!
 
 ## Development Setup
 
@@ -85,10 +91,10 @@ git clone https://github.com/benitoanagua/MuyaMaterial.git
 cd MuyaMaterial
 
 # Install dependencies
-pnpm install
+npm install
 
-# Build the themes
-pnpm run build
+# Build all theme variants
+npm run build
 
 # Generated themes will be available in the 'themes/' directory
 ```
@@ -98,28 +104,28 @@ pnpm run build
 ### Prerequisites
 
 - Node.js 16+
-- pnpm (recommended) or npm
+- npm or pnpm
 
 ### Available Commands
 
 ```bash
 # Install dependencies
-pnpm install
+npm install
 
 # Build all theme variants
-pnpm run build
+npm run build
 
 # Development mode (build + watch)
-pnpm run dev
+npm run dev
 
 # Run tests
-pnpm test
+npm test
 
 # Package for distribution
-pnpm run package
+npm run package
 
-# Publish to Marketplace (requires vsce)
-pnpm run publish:pre
+# Watch for changes during development
+npm run watch
 ```
 
 ### Project Structure
@@ -128,9 +134,11 @@ pnpm run publish:pre
 muya-material/
 ├── src/
 │   ├── theme/
-│   │   ├── theme-config.js      # Theme configuration and variants
+│   │   ├── theme-config.js      # Theme configuration and color definitions
 │   │   ├── dynamic-scheme.js    # Dynamic color scheme generation
-│   │   └── theme-builder.js     # Theme assembly logic
+│   │   ├── theme-builder.js     # Theme assembly logic
+│   │   ├── colors/              # UI color definitions
+│   │   └── scopes/              # Syntax highlighting rules
 │   └── index.js                 # Main entry point
 ├── themes/                      # Generated theme files
 ├── test/                        # Test files
@@ -139,20 +147,22 @@ muya-material/
 
 ### Color System
 
-The theme uses Material Design 3 principles with:
+The theme leverages Material Design 3's dynamic color system with two seed colors:
 
-- **Seed Color**: `#7D944C` (Complementary green-based palette)
+- **Olive Seed**: `#7D944C` - Earthy green representing natural growth and stability
+- **Mystic Seed**: `#6B5693` - Muted purple evoking sophistication and mystery
 - **Variant**: Fidelity (accurate color representation)
 - **Dynamic Schemes**: Automatically generated light and dark variants
-- **Accessibility**: WCAG-compliant contrast ratios
+- **Accessibility**: WCAG-compliant contrast ratios across all variants
 
 ## Testing
 
 ```bash
 # Run test suite
-pnpm test
+npm test
 
-# Preview theme variations during development
+# Watch tests during development
+npm run watch:test
 ```
 
 ## Publishing
@@ -161,13 +171,9 @@ To create and publish new versions:
 
 ```bash
 # Package for distribution
-pnpm run package
+npm run package
 
-# Publish pre-release version
-pnpm run publish:pre
-
-# Publish stable version (when ready)
-pnpm run publish
+# This creates a .vsix file ready for publishing
 ```
 
 ## Contributing
@@ -180,14 +186,12 @@ We welcome contributions! Please feel free to:
 4. Push to the branch (`git push origin feature/improvement`)
 5. Open a Pull Request
 
-## Changelog
+### Contribution Guidelines
 
-### v0.1.0 (Pre-Release)
-
-- Initial public release
-- Four theme variants: Black, Dark, Light, Soft
-- Material Design 3 color system implementation
-- Complementary color harmony based on seed color #7D944C
+- Follow the existing code structure and naming conventions
+- Test your changes across all theme variants
+- Update documentation if you add new features
+- Ensure accessibility standards are maintained
 
 ## License
 
@@ -195,13 +199,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- **Google Material Design Team** for the design system foundation
+- **Google Material Design Team** for the Material Design 3 foundation
 - **VSCode Team** for the extensible theming framework
-- **Material Color Utilities** for the color algorithm implementations
+- **Material Color Utilities** for advanced color algorithm implementations
+- **Community** for feedback and inspiration
 
 ## Support
 
-If you encounter issues or have questions:
+If you encounter issues or have suggestions:
 
 1. Check existing [Issues](https://github.com/benitoanagua/MuyaMaterial/issues)
 2. Create a new issue with detailed information
@@ -213,8 +218,4 @@ If you encounter issues or have questions:
 
 <p align="center">
 Created with ❤️ by <a href="https://github.com/benitoanagua">Benito Anagua</a>
-</p>
-
-<p align="center">
-<em>Bringing Material Design harmony to code editing</em>
 </p>
