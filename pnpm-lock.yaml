@@ -38,6 +38,12 @@ importers:
         specifier: ^3.1.10
         version: 3.1.10
 
+  packages/zed:
+    dependencies:
+      '@muya-material/core':
+        specifier: workspace:*
+        version: link:../../core
+
 packages:
 
   '@esbuild/aix-ppc64@0.25.10':

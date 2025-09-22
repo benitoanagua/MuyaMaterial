@@ -1,0 +1,23 @@
+{
+  "name": "@muya-material/zed",
+  "version": "0.2.0",
+  "description": "Muya Material theme for Zed editor",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node src/index.js",
+    "dev": "npm run build",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "@muya-material/core": "workspace:*"
+  },
+  "keywords": [
+    "zed",
+    "theme",
+    "material-design",
+    "muya-material"
+  ],
+  "author": "Benito Anagua",
+  "license": "MIT"
+}
