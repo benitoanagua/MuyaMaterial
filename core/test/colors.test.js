@@ -1,6 +1,5 @@
 import { describe, it } from "vitest";
-import { createDynamicScheme } from "../src/theme/dynamic-scheme.js";
-import { themeVariants } from "../src/theme/theme-config.js";
+import { createDynamicScheme, themeVariants } from "../src/index";
 import chalk from "chalk";
 
 chalk.level = 3;

@@ -1,0 +1,27 @@
+# Exclude EVERYTHING by default
+*
+
+# Include ONLY essential files
+!package.json
+!README.md
+!CHANGELOG.md
+!LICENSE
+!assets/
+!themes/
+
+# Explicitly exclude parent directories and their contents
+../
+../../
+../../core/
+../../.vscode/
+../../packages/zed/
+
+# Exclude local development files and directories
+.vscode/
+.vscode-test/
+src/
+node_modules/
+.gitignore
+vsc-extension-quickstart.md
+nodemon.json
+vitest.config.js

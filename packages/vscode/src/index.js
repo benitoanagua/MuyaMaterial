@@ -1,6 +1,5 @@
+import { createDynamicScheme, themeVariants } from "@muya-material/core";
 import { ThemeBuilder } from "./theme/theme-builder.js";
-import { themeVariants } from "./theme/theme-config.js";
-import { createDynamicScheme } from "./theme/dynamic-scheme.js";
 
 // Generar todos los temas
 const generatedThemes = ThemeBuilder.generateAllThemes(

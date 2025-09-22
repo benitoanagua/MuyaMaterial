@@ -1,0 +1,64 @@
+{
+  "name": "muya-material",
+  "displayName": "Muya Material",
+  "description": "A modern Visual Studio Code theme inspired by Material Design 3 with Olive and Mystic color palettes",
+  "version": "0.2.1",
+  "type": "module",
+  "publisher": "benitoanagua",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+  "author": "Benito Anagua",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benitoanagua/MuyaMaterial"
+  },
+  "bugs": {
+    "url": "https://github.com/benitoanagua/MuyaMaterial/issues"
+  },
+  "homepage": "https://github.com/benitoanagua/MuyaMaterial#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "icon": "assets/icon.jpg",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Muya Material - Olive Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/olive-dark.json"
+      },
+      {
+        "label": "Muya Material - Mystic Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mystic-dark.json"
+      },
+      {
+        "label": "Muya Material - Olive Light",
+        "uiTheme": "vs",
+        "path": "./themes/olive-light.json"
+      },
+      {
+        "label": "Muya Material - Mystic Light",
+        "uiTheme": "vs",
+        "path": "./themes/mystic-light.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node src/index.js",
+    "dev": "npm run build && npm test",
+    "watch": "nodemon --watch src --ext js,json --exec \"npm run build\"",
+    "watch:test": "nodemon --watch src --ext js,json --exec \"npm run dev\""
+  },
+  "dependencies": {
+    "@muya-material/core": "workspace:*"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

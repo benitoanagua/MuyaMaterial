@@ -1,58 +1,32 @@
 {
   "name": "muya-material",
-  "displayName": "Muya Material",
-  "description": "A modern Visual Studio Code theme inspired by Material Design 3 with Olive and Mystic color palettes",
-  "version": "0.2.0",
-  "publisher": "benitoanagua",
-  "type": "module",
-  "engines": {
-    "vscode": "^1.103.0"
-  },
-  "categories": [
-    "Themes"
-  ],
-  "icon": "assets/icon.jpg",
-  "contributes": {
-    "themes": [
-      {
-        "label": "Muya Material - Olive Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/olive-dark.json"
-      },
-      {
-        "label": "Muya Material - Mystic Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/mystic-dark.json"
-      },
-      {
-        "label": "Muya Material - Olive Light",
-        "uiTheme": "vs",
-        "path": "./themes/olive-light.json"
-      },
-      {
-        "label": "Muya Material - Mystic Light",
-        "uiTheme": "vs",
-        "path": "./themes/mystic-light.json"
-      }
-    ]
-  },
+  "version": "1.0.0",
+  "description": "Muya Material theme for multiple code editors",
+  "private": true,
   "scripts": {
-    "build": "node src/index.js",
-    "test": "vitest",
-    "dev": "npm run build && npm test",
-    "package": "vsce package",
-    "watch": "nodemon --watch src --ext js,json --exec \"npm run build\"",
-    "watch:test": "nodemon --watch src --ext js,json --exec \"npm run dev\""
+    "build": "npm run build --workspaces",
+    "build:vscode": "npm run build --workspace=packages/vscode",
+    "build:zed": "npm run build --workspace=packages/zed",
+    "test": "npm run test --workspaces",
+    "dev": "npm run dev --workspaces",
+    "clean": "npm run clean --workspaces"
+  },
+  "workspaces": [
+    "packages/*",
+    "core"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
   },
   "keywords": [
     "theme",
-    "vscode-theme",
     "material-design",
-    "color-theme",
-    "olive",
-    "mystic",
-    "nature",
-    "earth-tones"
+    "vscode",
+    "zed",
+    "vim",
+    "emacs",
+    "sublime-text"
   ],
   "author": "Benito Anagua",
   "license": "MIT",
@@ -63,15 +37,5 @@
   "bugs": {
     "url": "https://github.com/benitoanagua/MuyaMaterial/issues"
   },
-  "homepage": "https://github.com/benitoanagua/MuyaMaterial#readme",
-  "devDependencies": {
-    "@material/material-color-utilities": "^0.3.0",
-    "chalk": "^5.6.2",
-    "nodemon": "^3.1.10",
-    "vitest": "^3.2.4",
-    "vsce": "^2.15.0"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+  "homepage": "https://github.com/benitoanagua/MuyaMaterial#readme"
 }
