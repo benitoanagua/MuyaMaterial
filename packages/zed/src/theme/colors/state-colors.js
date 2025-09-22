@@ -3,8 +3,7 @@ import { SchemeValidator } from "../scheme-validator.js";
 export class StateColors {
   static mapStateColors(scheme) {
     return {
-      // Interactive states using proper  containers
-      "element.hover": `${scheme.onSurface}${SchemeValidator.getOpacity(
+      "element.hover": `${scheme.primary}${SchemeValidator.getOpacity(
         "hover"
       )}`,
       "element.active": scheme.primaryContainer,
@@ -13,7 +12,7 @@ export class StateColors {
         "disabled"
       )}`,
 
-      "ghost_element.hover": `${scheme.onSurface}${SchemeValidator.getOpacity(
+      "ghost_element.hover": `${scheme.secondary}${SchemeValidator.getOpacity(
         "hover"
       )}`,
       "ghost_element.active": scheme.surfaceContainerHigh,
@@ -22,25 +21,29 @@ export class StateColors {
         scheme.onSurface
       }${SchemeValidator.getOpacity("disabled")}`,
 
-      // Focus states using  primary color
-      "border.focused": scheme.primary,
-      "border.selected": scheme.primary,
+      "border.focused": scheme.inversePrimary,
+      "border.selected": scheme.inversePrimary,
 
-      // Error states using  error colors
       "error.background": scheme.errorContainer,
       "error.border": scheme.error,
+      "error.foreground": scheme.onError,
 
-      // Success states using tertiary container
       "success.background": scheme.tertiaryContainer,
       "success.border": scheme.tertiary,
+      "success.foreground": scheme.onTertiary,
 
-      // Warning states using secondary container
       "warning.background": scheme.secondaryContainer,
       "warning.border": scheme.secondary,
+      "warning.foreground": scheme.onSecondary,
 
-      // Info states using primary container
       "info.background": scheme.primaryContainer,
       "info.border": scheme.primary,
+      "info.foreground": scheme.onPrimary,
+
+      "element.focus.background": `${
+        scheme.inversePrimary
+      }${SchemeValidator.getOpacity("focus")}`,
+      "element.pressed.background": scheme.surfaceContainerHighest,
     };
   }
 }

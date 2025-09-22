@@ -12,35 +12,19 @@ export class ZedColorsMapper {
     SchemeValidator.validateScheme(scheme);
 
     return {
-      // Core  color system (all properties)
       ...CoreColors.mapCoreColors(scheme),
-
-      //  elevation system (all surface levels)
       ...ElevationColors.mapElevationColors(scheme),
-
-      //  state system (interactive states)
       ...StateColors.mapStateColors(scheme),
-
-      //  text system (text hierarchy)
       ...TextColors.mapTextColors(scheme),
-
-      // Editor-specific  adaptations
       ...EditorColors.mapEditorColors(scheme),
-
-      // Special  colors (shadows, inverse, etc.)
       ...SpecialColors.mapSpecialColors(scheme),
-
-      // Terminal colors mapped to
       ...TerminalColors.mapTerminalColors(scheme),
-
-      // Additional Zed-specific mappings
       ...this.mapZedSpecificColors(scheme),
     };
   }
 
   static mapZedSpecificColors(scheme) {
     return {
-      // Zed-specific border variants
       "border.variant": scheme.outlineVariant,
       "border.disabled": `${scheme.outline}${SchemeValidator.getOpacity(
         "disabled"
@@ -49,13 +33,32 @@ export class ZedColorsMapper {
         "divider"
       )}`,
 
-      // Scrollbar colors using  surfaces
       "scrollbar.thumb.background": scheme.surfaceVariant,
       "scrollbar.thumb.hover_background": scheme.primary,
-      "scrollbar.track.background": scheme.surfaceContainerLow,
+      "scrollbar.track.background": scheme.surfaceContainer,
 
-      // Accent system using  color roles
       accents: [scheme.primary, scheme.secondary, scheme.tertiary],
+
+      "border.focused": scheme.inversePrimary,
+      "border.selected": scheme.inversePrimary,
+      "element.focus.background": `${
+        scheme.inversePrimary
+      }${SchemeValidator.getOpacity("focus")}`,
+
+      "sidebar.background": scheme.surfaceDim,
+      "sidebar.foreground": scheme.onSurface,
+      "sidebar.section_header.background": scheme.surfaceContainerHigh,
+
+      "panel.background": scheme.surfaceDim,
+      "panel.foreground": scheme.onSurface,
+
+      "status_bar.background": scheme.surfaceContainerHighest,
+      "status_bar.foreground": scheme.onSurface,
+
+      "tab.active_background": scheme.background,
+      "tab.inactive_background": scheme.surfaceContainerHigh,
+      "tab.active_foreground": scheme.onBackground,
+      "tab.inactive_foreground": scheme.onSurfaceVariant,
     };
   }
 }

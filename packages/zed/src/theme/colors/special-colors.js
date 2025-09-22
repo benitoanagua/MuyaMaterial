@@ -3,16 +3,13 @@ import { SchemeValidator } from "../scheme-validator.js";
 export class SpecialColors {
   static mapSpecialColors(scheme) {
     return {
-      // Shadow and overlay colors
       shadow: scheme.shadow,
       scrim: scheme.scrim,
 
-      // Inverse colors for contrast
       "inverse.surface": scheme.inverseSurface,
       "inverse.on_surface": scheme.inverseOnSurface,
       "inverse.primary": scheme.inversePrimary,
 
-      // Version control states using  semantic colors
       "created.background": scheme.secondaryContainer,
       "created.border": scheme.secondary,
 
@@ -28,7 +25,6 @@ export class SpecialColors {
       "renamed.background": scheme.secondaryContainer,
       "renamed.border": scheme.secondary,
 
-      // Player colors for collaboration
       players: [
         {
           cursor: scheme.primary,
@@ -47,7 +43,6 @@ export class SpecialColors {
         },
       ],
 
-      // Drop target using primary container
       "drop_target.background": scheme.primaryContainer,
     };
   }

@@ -3,126 +3,120 @@ import { SchemeValidator } from "../scheme-validator.js";
 export class SyntaxBase {
   static mapBaseSyntax(scheme) {
     return {
-      // Keywords ->  secondary color
       keyword: {
         color: scheme.secondary,
         font_style: "normal",
-        font_weight: null,
+        font_weight: 700,
       },
       "keyword.control": {
-        color: scheme.secondary,
+        color: scheme.inversePrimary,
         font_style: "normal",
-        font_weight: null,
+        font_weight: 700,
       },
       "keyword.operator": {
         color: scheme.secondary,
         font_style: "normal",
-        font_weight: null,
+        font_weight: 700,
       },
 
-      // Types/Classes ->  primary color
       type: {
         color: scheme.primary,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 700,
       },
       "type.builtin": {
-        color: scheme.primary,
+        color: scheme.inversePrimary,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 700,
       },
       class: {
         color: scheme.primary,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 700,
       },
       struct: {
         color: scheme.primary,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 700,
       },
       enum: {
         color: scheme.primary,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 700,
       },
       interface: {
         color: scheme.primary,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 700,
       },
 
-      // Functions ->  primary color
       function: {
         color: scheme.primary,
         font_style: "italic",
-        font_weight: null,
+        font_weight: 600,
       },
       "function.builtin": {
-        color: scheme.primary,
+        color: scheme.inversePrimary,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 700,
       },
       "function.method": {
         color: scheme.primary,
         font_style: "italic",
-        font_weight: null,
+        font_weight: 600,
       },
 
-      // Variables ->  onSurface
       variable: {
         color: scheme.onSurface,
         font_style: "normal",
-        font_weight: null,
+        font_weight: 600,
       },
       "variable.parameter": {
         color: scheme.tertiary,
         font_style: "normal",
-        font_weight: null,
+        font_weight: 600,
       },
       "variable.builtin": {
-        color: scheme.onSurface,
+        color: scheme.inversePrimary,
         font_style: "italic",
-        font_weight: null,
+        font_weight: 600,
       },
 
-      // Constants/Strings ->  tertiary color
       constant: {
-        color: scheme.tertiary,
-        font_style: "normal",
-        font_weight: null,
-      },
-      "constant.builtin": {
         color: scheme.tertiary,
         font_style: "normal",
         font_weight: 600,
       },
+      "constant.builtin": {
+        color: scheme.inversePrimary,
+        font_style: "normal",
+        font_weight: 700,
+      },
       "constant.numeric": {
         color: scheme.tertiary,
         font_style: "normal",
-        font_weight: null,
+        font_weight: 600,
       },
       string: {
         color: scheme.tertiary,
         font_style: "normal",
-        font_weight: null,
+        font_weight: 600,
       },
       "string.regexp": {
-        color: scheme.tertiary,
+        color: scheme.inversePrimary,
         font_style: "normal",
-        font_weight: null,
+        font_weight: 600,
       },
 
-      // Comments ->  outline color
       comment: {
         color: scheme.outline,
         font_style: "italic",
-        font_weight: null,
+        font_weight: 500,
       },
       "comment.documentation": {
-        color: scheme.outline,
+        color: scheme.outlineVariant,
         font_style: "italic",
-        font_weight: null,
+        font_weight: 500,
       },
     };
   }

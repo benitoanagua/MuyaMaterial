@@ -42,7 +42,7 @@ export class SchemeValidator {
     const missing = requiredProperties.filter((prop) => !scheme[prop]);
 
     if (missing.length > 0) {
-      throw new Error(`Missing  properties: ${missing.join(", ")}`);
+      throw new Error(`Missing properties: ${missing.join(", ")}`);
     }
 
     return true;
@@ -50,15 +50,15 @@ export class SchemeValidator {
 
   static getOpacity(level) {
     const opacities = {
-      disabled: "60", // 60% for disabled elements
-      hover: "08", // 8% for hover states
-      focus: "12", // 12% for focus states
-      pressed: "12", // 12% for pressed states
-      dragged: "16", // 16% for dragged states
-      selected: "08", // 8% for selected states
-      divider: "12", // 12% for dividers
-      scrim: "32", // 32% for scrim overlay
-      shadow: "40", // 40% for shadows
+      disabled: "90",
+      hover: "25",
+      focus: "30",
+      pressed: "30",
+      dragged: "35",
+      selected: "25",
+      divider: "30",
+      scrim: "60",
+      shadow: "70",
     };
 
     return opacities[level] || "ff";

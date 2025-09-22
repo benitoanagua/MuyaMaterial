@@ -3,33 +3,39 @@ import { SchemeValidator } from "../scheme-validator.js";
 export class EditorColors {
   static mapEditorColors(scheme) {
     return {
-      // Editor core ( background system)
       "editor.background": scheme.background,
       "editor.foreground": scheme.onBackground,
-      "editor.gutter.background": scheme.surfaceContainerLowest,
+      "editor.gutter.background": scheme.surfaceContainerLow,
 
-      // Editor states (using  containers)
-      "editor.active_line.background": scheme.surfaceContainerLow,
-      "editor.highlighted_line.background": scheme.surfaceContainer,
+      "editor.active_line.background": scheme.surfaceContainerLowest,
+      "editor.highlighted_line.background": scheme.surfaceContainerLow,
 
-      // Editor text ( text hierarchy)
       "editor.line_number": scheme.onSurfaceVariant,
-      "editor.active_line_number": scheme.primary,
+      "editor.active_line_number": scheme.inversePrimary,
+      "editor.error_line_number": scheme.error,
 
-      // Editor guides ( outline system)
       "editor.indent_guide": scheme.outlineVariant,
-      "editor.indent_guide_active": scheme.primary,
+      "editor.indent_guide_active": scheme.inversePrimary,
       "editor.wrap_guide": scheme.outlineVariant,
-      "editor.active_wrap_guide": scheme.primary,
+      "editor.active_wrap_guide": scheme.inversePrimary,
       "editor.invisible": scheme.outlineVariant,
 
-      // Document highlighting ( container colors)
       "editor.document_highlight.read_background": scheme.secondaryContainer,
       "editor.document_highlight.write_background": scheme.primaryContainer,
       "editor.document_highlight.bracket_background": scheme.tertiaryContainer,
 
-      // Search and selection
       "search.match_background": scheme.tertiaryContainer,
+      "search.match_border": scheme.tertiary,
+      "selection.background": scheme.primaryContainer,
+      "selection.foreground": scheme.onPrimaryContainer,
+
+      "editor.find_match.background": scheme.secondaryContainer,
+      "editor.find_match.border": scheme.secondary,
+      "editor.current_find_match.background": scheme.primaryContainer,
+      "editor.current_find_match.border": scheme.primary,
+
+      "editor.selection.background": scheme.inversePrimary,
+      "editor.inactive_selection.background": scheme.surfaceContainer,
     };
   }
 }
