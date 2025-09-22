@@ -7,7 +7,6 @@ export default function getCommentSettings(scheme) {
       "comment.block",
       "comment.block.documentation",
       "punctuation.definition.comment",
-      "meta.toc-list",
     ],
     settings: {
       foreground: scheme.outline,

@@ -1,26 +1,15 @@
 export default function getEntitySettings(scheme) {
   return [
     {
-      name: "Entities, which refer to larger chunks of documents, such as chapters, classes, functions, or tags.",
+      name: "Class names, types, and structural entities",
       scope: [
         "entity.name.class",
         "entity.name.struct",
         "entity.name.enum",
-        "entity.name.union",
-        "entity.name.trait",
         "entity.name.interface",
-        "entity.name.impl",
         "entity.name.type",
-        "entity.name.class.ford-decl",
-        "entity.other.inherited-class",
-        "entity.name.function.constructor",
-        "entity.name.function.destructor",
         "entity.name.namespace",
-        "entity.name.constant",
-        "entity.name.label",
         "entity.name.tag",
-        "entity.name.section",
-        "entity.other.attribute-name",
       ],
       settings: {
         foreground: scheme.primary,
@@ -28,11 +17,11 @@ export default function getEntitySettings(scheme) {
       },
     },
     {
-      name: "Methods and functions in classes",
+      name: "Function and method names",
       scope: [
         "entity.name.function",
         "entity.name.function.constructor",
-        "entity.name.function.destructor",
+        "entity.name.method",
       ],
       settings: {
         foreground: scheme.primary,

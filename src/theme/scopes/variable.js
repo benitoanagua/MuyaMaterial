@@ -1,50 +1,32 @@
 export default function getVariableSettings(scheme) {
   return [
     {
-      name: "Variables, Parameters",
-      scope: [
-        "variable",
-        "variable.other",
-        "variable.other.readwrite",
-
-        "punctuation.definition.variable",
-        "variable.other.constant",
-        "variable.language",
-
-        "variable.parameter",
-
-        "variable.other.member",
-        "variable.function",
-        "variable.annotation",
-        "punctuation.definition.annotation",
-      ],
+      name: "Local variables",
+      scope: ["variable", "variable.other"],
       settings: {
         foreground: scheme.onSurface,
-        fontStyle: "",
       },
     },
     {
-      name: "Language reserved variables, such as this, super, self, etc.",
+      name: "Function parameters",
+      scope: ["variable.parameter"],
+      settings: {
+        foreground: scheme.tertiary,
+      },
+    },
+    {
+      name: "Object properties and members",
+      scope: ["variable.other.member", "variable.other.property"],
+      settings: {
+        foreground: scheme.secondary,
+      },
+    },
+    {
+      name: "Language-specific variables (this, self, etc.)",
       scope: ["variable.language"],
       settings: {
         foreground: scheme.onSurface,
         fontStyle: "italic",
-      },
-    },
-    {
-      name: "Fields, properties, members of classes or other data structures",
-      scope: ["variable.other", "variable.other.member"],
-      settings: {
-        foreground: scheme.secondary,
-        fontStyle: "",
-      },
-    },
-    {
-      name: "Passed parameters of functions",
-      scope: ["variable.parameter"],
-      settings: {
-        foreground: scheme.tertiary,
-        fontStyle: "",
       },
     },
   ];
