@@ -1,218 +1,212 @@
 export class ZedColorsMapper {
   static mapSchemeToZed(scheme) {
     return {
-      // Colores base
+      // Base colors
+      ...this.mapBaseColors(scheme),
+
+      // Text colors
+      ...this.mapTextColors(scheme),
+
+      // Border colors
+      ...this.mapBorderColors(scheme),
+
+      // Element states
+      ...this.mapElementColors(scheme),
+
+      // Editor colors
+      ...this.mapEditorColors(scheme),
+
+      // UI component colors
+      ...this.mapUIComponentColors(scheme),
+
+      // System state colors
+      ...this.mapSystemStateColors(scheme),
+
+      // Terminal colors
+      ...this.mapTerminalColors(scheme),
+
+      // Accents and players
+      ...this.mapAccentColors(scheme),
+    };
+  }
+
+  static mapBaseColors(scheme) {
+    return {
       background: scheme.background,
-      surface: { background: scheme.surface },
-      elevated_surface: { background: scheme.surfaceContainerHigh },
+      "surface.background": scheme.surface,
+      "elevated_surface.background": scheme.surfaceContainerHigh,
+    };
+  }
 
-      // Texto
+  static mapTextColors(scheme) {
+    return {
       text: scheme.onSurface,
-      text: { accent: scheme.primary },
-      text: { muted: scheme.onSurfaceVariant },
-      text: { disabled: `${scheme.onSurface}60` },
-      text: { placeholder: `${scheme.onSurfaceVariant}80` },
+      "text.accent": scheme.primary,
+      "text.muted": scheme.onSurfaceVariant,
+      "text.disabled": `${scheme.onSurface}60`,
+      "text.placeholder": `${scheme.onSurfaceVariant}80`,
+    };
+  }
 
-      // Bordes
+  static mapBorderColors(scheme) {
+    return {
       border: scheme.outline,
-      border: { variant: scheme.outlineVariant },
-      border: { focused: scheme.primary },
-      border: { selected: scheme.primary },
-      border: { disabled: `${scheme.outline}40` },
-      border: { transparent: `${scheme.outline}20` },
+      "border.variant": scheme.outlineVariant,
+      "border.focused": scheme.primary,
+      "border.selected": scheme.primary,
+      "border.disabled": `${scheme.outline}40`,
+      "border.transparent": `${scheme.outline}20`,
+    };
+  }
 
-      // Elementos de UI
-      element: {
-        background: scheme.surfaceContainer,
-        hover: scheme.surfaceContainerHigh,
-        active: scheme.primaryContainer,
-        selected: scheme.primaryContainer,
-        disabled: `${scheme.surfaceContainer}60`,
-      },
+  static mapElementColors(scheme) {
+    return {
+      "element.background": scheme.surfaceContainer,
+      "element.hover": scheme.surfaceContainerHigh,
+      "element.active": scheme.primaryContainer,
+      "element.selected": scheme.primaryContainer,
+      "element.disabled": `${scheme.surfaceContainer}60`,
 
-      ghost_element: {
-        background: scheme.surface,
-        hover: scheme.surfaceContainer,
-        active: scheme.surfaceContainerHigh,
-        selected: scheme.surfaceContainerHigh,
-        disabled: `${scheme.surface}60`,
-      },
+      "ghost_element.background": scheme.surface,
+      "ghost_element.hover": scheme.surfaceContainer,
+      "ghost_element.active": scheme.surfaceContainerHigh,
+      "ghost_element.selected": scheme.surfaceContainerHigh,
+      "ghost_element.disabled": `${scheme.surface}60`,
+    };
+  }
 
-      // Editor
-      editor: {
-        background: scheme.background,
-        foreground: scheme.onBackground,
-        gutter: { background: scheme.surfaceContainer },
-        active_line: { background: `${scheme.surfaceContainer}50` },
-        highlighted_line: { background: `${scheme.surfaceContainer}30` },
-        line_number: scheme.onSurfaceVariant,
-        active_line_number: scheme.primary,
-        indent_guide: `${scheme.outline}30`,
-        indent_guide_active: `${scheme.primary}50`,
-        wrap_guide: `${scheme.outline}20`,
-        active_wrap_guide: `${scheme.primary}30`,
-        invisible: `${scheme.outline}40`,
-        subheader: { background: scheme.surfaceContainer },
-      },
+  static mapEditorColors(scheme) {
+    return {
+      "editor.background": scheme.background,
+      "editor.foreground": scheme.onBackground,
+      "editor.gutter.background": scheme.surfaceContainer,
+      "editor.active_line.background": `${scheme.surfaceContainer}50`,
+      "editor.highlighted_line.background": `${scheme.surfaceContainer}30`,
+      "editor.line_number": scheme.onSurfaceVariant,
+      "editor.active_line_number": scheme.primary,
+      "editor.indent_guide": `${scheme.outline}30`,
+      "editor.indent_guide_active": `${scheme.primary}50`,
+      "editor.wrap_guide": `${scheme.outline}20`,
+      "editor.active_wrap_guide": `${scheme.primary}30`,
+      "editor.invisible": `${scheme.outline}40`,
+      "editor.subheader.background": scheme.surfaceContainer,
 
-      // Resaltado de documento
-      editor: {
-        document_highlight: {
-          read_background: `${scheme.secondaryContainer}30`,
-          write_background: `${scheme.primaryContainer}30`,
-          bracket_background: `${scheme.primary}20`,
-        },
-      },
+      "editor.document_highlight.read_background": `${scheme.secondaryContainer}30`,
+      "editor.document_highlight.write_background": `${scheme.primaryContainer}30`,
+      "editor.document_highlight.bracket_background": `${scheme.primary}20`,
+    };
+  }
 
-      // Pestañas
-      tab: {
-        active_background: scheme.surface,
-        inactive_background: scheme.surfaceContainerHigh,
-      },
-      tab_bar: { background: scheme.surfaceContainerHighest },
+  static mapUIComponentColors(scheme) {
+    return {
+      // Tabs
+      "tab.active_background": scheme.surface,
+      "tab.inactive_background": scheme.surfaceContainerHigh,
+      "tab_bar.background": scheme.surfaceContainerHighest,
 
-      // Barra de estado
-      status_bar: { background: scheme.surfaceContainerHighest },
+      // Status bar
+      "status_bar.background": scheme.surfaceContainerHighest,
 
-      // Paneles
-      panel: { background: scheme.surfaceContainerHigh },
-      panel: { focused_border: scheme.primary },
+      // Panels and panes
+      "panel.background": scheme.surfaceContainerHigh,
+      "panel.focused_border": scheme.primary,
+      "pane.focused_border": scheme.primary,
+      "pane_group.border": scheme.outlineVariant,
 
-      // Pane
-      pane: { focused_border: scheme.primary },
-      pane_group: { border: scheme.outlineVariant },
+      // Scrollbars
+      "scrollbar.thumb.background": `${scheme.outline}40`,
+      "scrollbar.thumb.border": `${scheme.outlineVariant}50`,
+      "scrollbar.thumb.hover_background": scheme.primary,
+      "scrollbar.track.background": `${scheme.outline}20`,
+      "scrollbar.track.border": `${scheme.outlineVariant}30`,
 
-      // Barras de desplazamiento
-      scrollbar: {
-        thumb: {
-          background: `${scheme.outline}40`,
-          hover_background: `${scheme.outline}60`,
-          border: scheme.outlineVariant,
-        },
-        track: {
-          background: `${scheme.outline}20`,
-          border: scheme.outlineVariant,
-        },
-      },
-
-      // Iconos
+      // Icons
       icon: scheme.onSurfaceVariant,
-      icon: { accent: scheme.primary },
-      icon: { muted: `${scheme.onSurfaceVariant}60` },
-      icon: { disabled: `${scheme.onSurfaceVariant}40` },
-      icon: { placeholder: `${scheme.onSurfaceVariant}50` },
+      "icon.accent": scheme.primary,
+      "icon.muted": `${scheme.onSurfaceVariant}60`,
+      "icon.disabled": `${scheme.onSurfaceVariant}40`,
+      "icon.placeholder": `${scheme.onSurfaceVariant}50`,
 
-      // Estados del sistema
+      // Title bar and toolbar
+      "title_bar.background": scheme.surfaceContainerHighest,
+      "title_bar.inactive_background": scheme.surfaceContainerHigh,
+      "toolbar.background": scheme.surfaceContainerHigh,
+
+      // Search and drop target
+      "search.match_background": `${scheme.tertiary}40`,
+      "drop_target.background": `${scheme.primary}20`,
+    };
+  }
+
+  static mapSystemStateColors(scheme) {
+    const stateColors = {
       error: scheme.error,
-      error: { background: `${scheme.error}20`, border: scheme.error },
-
       warning: scheme.tertiary,
-      warning: { background: `${scheme.tertiary}20`, border: scheme.tertiary },
-
       info: scheme.primary,
-      info: { background: `${scheme.primary}20`, border: scheme.primary },
-
       success: scheme.secondary,
-      success: {
-        background: `${scheme.secondary}20`,
-        border: scheme.secondary,
-      },
-
       hint: scheme.secondary,
-      hint: { background: `${scheme.secondary}20`, border: scheme.secondary },
-
-      // Control de versiones
       created: scheme.secondary,
-      created: {
-        background: `${scheme.secondary}20`,
-        border: scheme.secondary,
-      },
-
       modified: scheme.primary,
-      modified: { background: `${scheme.primary}20`, border: scheme.primary },
-
       deleted: scheme.error,
-      deleted: { background: `${scheme.error}20`, border: scheme.error },
-
       conflicted: scheme.tertiary,
-      conflicted: {
-        background: `${scheme.tertiary}20`,
-        border: scheme.tertiary,
-      },
-
       renamed: scheme.secondary,
-      renamed: {
-        background: `${scheme.secondary}20`,
-        border: scheme.secondary,
-      },
-
       ignored: scheme.onSurfaceVariant,
-      ignored: {
-        background: `${scheme.onSurfaceVariant}20`,
-        border: scheme.onSurfaceVariant,
-      },
-
       hidden: scheme.onSurfaceVariant,
-      hidden: {
-        background: `${scheme.onSurfaceVariant}20`,
-        border: scheme.onSurfaceVariant,
-      },
+    };
 
-      // Búsqueda
-      search: { match_background: `${scheme.tertiary}40` },
+    const result = {};
 
-      // Objetivo de drop
-      drop_target: { background: `${scheme.primary}20` },
+    for (const [key, color] of Object.entries(stateColors)) {
+      result[key] = color;
+      result[`${key}.background`] = `${color}20`;
+      result[`${key}.border`] = color;
+    }
 
-      // Barra de título
-      title_bar: {
-        background: scheme.surfaceContainerHighest,
-        inactive_background: scheme.surfaceContainerHigh,
-      },
+    return result;
+  }
 
-      // Barra de herramientas
-      toolbar: { background: scheme.surfaceContainerHigh },
+  static mapTerminalColors(scheme) {
+    return {
+      "terminal.background": scheme.surfaceContainerLow,
+      "terminal.foreground": scheme.onSurface,
+      "terminal.bright_foreground": scheme.onSurface,
+      "terminal.dim_foreground": `${scheme.onSurface}80`,
 
-      // Terminal
-      terminal: {
-        background: scheme.surfaceContainerLow,
-        foreground: scheme.onSurface,
-        bright_foreground: scheme.onSurface,
-        dim_foreground: `${scheme.onSurface}80`,
-        ansi: {
-          black: scheme.outlineVariant,
-          red: scheme.error,
-          green: scheme.tertiary,
-          yellow: scheme.tertiary,
-          blue: scheme.primary,
-          magenta: scheme.secondary,
-          cyan: scheme.tertiary,
-          white: scheme.onSurface,
-          bright_black: scheme.outline,
-          bright_red: scheme.error,
-          bright_green: scheme.tertiary,
-          bright_yellow: scheme.tertiary,
-          bright_blue: scheme.primary,
-          bright_magenta: scheme.error,
-          bright_cyan: scheme.tertiary,
-          bright_white: scheme.onSurface,
-        },
-      },
+      // ANSI colors
+      "terminal.ansi.black": scheme.outlineVariant,
+      "terminal.ansi.red": scheme.error,
+      "terminal.ansi.green": scheme.tertiary,
+      "terminal.ansi.yellow": scheme.tertiary,
+      "terminal.ansi.blue": scheme.primary,
+      "terminal.ansi.magenta": scheme.secondary,
+      "terminal.ansi.cyan": scheme.tertiary,
+      "terminal.ansi.white": scheme.onSurface,
 
-      // Acentos
+      "terminal.ansi.bright_black": scheme.outline,
+      "terminal.ansi.bright_red": scheme.error,
+      "terminal.ansi.bright_green": scheme.tertiary,
+      "terminal.ansi.bright_yellow": scheme.tertiary,
+      "terminal.ansi.bright_blue": scheme.primary,
+      "terminal.ansi.bright_magenta": scheme.error,
+      "terminal.ansi.bright_cyan": scheme.tertiary,
+      "terminal.ansi.bright_white": scheme.onSurface,
+    };
+  }
+
+  static mapAccentColors(scheme) {
+    return {
       accents: [scheme.primary, scheme.secondary, scheme.tertiary],
 
-      // Jugadores (colaboración)
       players: [
         {
-          background: scheme.primaryContainer,
           cursor: scheme.primary,
           selection: `${scheme.primary}40`,
+          background: scheme.primaryContainer,
         },
         {
-          background: scheme.secondaryContainer,
           cursor: scheme.secondary,
           selection: `${scheme.secondary}40`,
+          background: scheme.secondaryContainer,
         },
       ],
     };

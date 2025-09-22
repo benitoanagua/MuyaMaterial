@@ -7,19 +7,24 @@ import { ZedSyntaxMapper } from "./zed-syntax-mapper.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export class ZedThemeBuilder {
-  static buildTheme(scheme, name) {
+  static buildTheme(scheme, name, appearance) {
     const colors = ZedColorsMapper.mapSchemeToZed(scheme);
     const syntax = ZedSyntaxMapper.mapSchemeToSyntax(scheme);
 
     return {
       $schema: "https://zed.dev/schema/themes/v0.2.0.json",
       name: `Muya Material - ${name}`,
-      appearance: scheme.isDark ? "dark" : "light",
       author: "Benito Anagua",
-      style: {
-        ...colors,
-        syntax,
-      },
+      themes: [
+        {
+          name: `Muya Material - ${name}`,
+          appearance: appearance,
+          style: {
+            ...colors,
+            syntax,
+          },
+        },
+      ],
     };
   }
 
@@ -29,19 +34,33 @@ export class ZedThemeBuilder {
       name: "Muya Material",
       author: "Benito Anagua",
       themes: variants.map((variant) => ({
-        name: variant.name,
+        name: `Muya Material - ${variant.name}`,
         appearance: variant.isDark ? "dark" : "light",
-        style: ZedColorsMapper.mapSchemeToZed(variant.scheme),
+        style: {
+          ...ZedColorsMapper.mapSchemeToZed(variant.scheme),
+          syntax: ZedSyntaxMapper.mapSchemeToSyntax(variant.scheme),
+        },
       })),
     };
   }
 
+  static toKebabCase(str) {
+    return str
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  static ensureDirectoryExists(dir) {
+    if (!existsSync(dir)) {
+      mkdirSync(dir, { recursive: true });
+    }
+  }
+
   static saveTheme(theme, filename) {
     const themesDir = resolve(__dirname, "../../themes");
-
-    if (!existsSync(themesDir)) {
-      mkdirSync(themesDir, { recursive: true });
-    }
+    this.ensureDirectoryExists(themesDir);
 
     const themePath = resolve(themesDir, `${filename}.json`);
     writeFileSync(themePath, JSON.stringify(theme, null, 2));
@@ -52,7 +71,7 @@ export class ZedThemeBuilder {
   static generateAllThemes(variants, createScheme) {
     const generated = [];
 
-    // Generar temas individuales
+    // Generate individual themes
     for (const variant of variants) {
       const scheme = createScheme({
         isDark: variant.isDark,
@@ -60,8 +79,14 @@ export class ZedThemeBuilder {
         seedColorType: variant.seedColor,
       });
 
-      const theme = this.buildTheme(scheme, variant.name);
-      const path = this.saveTheme(theme, variant.filename);
+      const theme = this.buildTheme(
+        scheme,
+        variant.name,
+        variant.isDark ? "dark" : "light"
+      );
+
+      const filename = this.toKebabCase(`muya-material-${variant.name}`);
+      const path = this.saveTheme(theme, filename);
 
       generated.push({
         variant: { ...variant, scheme },
@@ -69,7 +94,7 @@ export class ZedThemeBuilder {
       });
     }
 
-    // Generar familia de temas
+    // Generate theme family
     const themeFamily = this.buildThemeFamily(generated.map((g) => g.variant));
     const familyPath = this.saveTheme(themeFamily, "muya-material-family");
     generated.push({ variant: { name: "Theme Family" }, path: familyPath });
