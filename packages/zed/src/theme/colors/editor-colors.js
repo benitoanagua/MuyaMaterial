@@ -1,5 +1,3 @@
-import { SchemeValidator } from "../scheme-validator.js";
-
 export class EditorColors {
   static mapEditorColors(scheme) {
     return {
@@ -20,13 +18,13 @@ export class EditorColors {
       "editor.active_wrap_guide": scheme.inversePrimary,
       "editor.invisible": scheme.outlineVariant,
 
-      "editor.document_highlight.read_background": scheme.secondaryContainer,
-      "editor.document_highlight.write_background": scheme.primaryContainer,
-      "editor.document_highlight.bracket_background": scheme.tertiaryContainer,
+      "editor.document_highlight.read_background": `${scheme.secondaryContainer}4d`,
+      "editor.document_highlight.write_background": `${scheme.primaryContainer}4d`,
+      "editor.document_highlight.bracket_background": `${scheme.tertiaryContainer}4d`,
 
       "search.match_background": scheme.tertiaryContainer,
       "search.match_border": scheme.tertiary,
-      "selection.background": scheme.primaryContainer,
+      "selection.background": `${scheme.primaryContainer}4d`,
       "selection.foreground": scheme.onPrimaryContainer,
 
       "editor.find_match.background": scheme.secondaryContainer,
@@ -34,7 +32,7 @@ export class EditorColors {
       "editor.current_find_match.background": scheme.primaryContainer,
       "editor.current_find_match.border": scheme.primary,
 
-      "editor.selection.background": scheme.inversePrimary,
+      "editor.selection.background": scheme.primaryContainer,
       "editor.inactive_selection.background": scheme.surfaceContainer,
     };
   }

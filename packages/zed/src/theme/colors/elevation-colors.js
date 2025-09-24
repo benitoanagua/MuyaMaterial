@@ -1,5 +1,3 @@
-import { SchemeValidator } from "../scheme-validator.js";
-
 export class ElevationColors {
   static mapElevationColors(scheme) {
     return {
@@ -22,19 +20,5 @@ export class ElevationColors {
 
       "terminal.background": scheme.surfaceContainerLowest,
     };
-  }
-
-  static getSurfaceForElevation(scheme, elevation) {
-    const elevationMap = {
-      lowest: scheme.surfaceContainerLowest,
-      low: scheme.surfaceContainerLow,
-      medium: scheme.surfaceContainer,
-      high: scheme.surfaceContainerHigh,
-      highest: scheme.surfaceContainerHighest,
-      dim: scheme.surfaceDim,
-      bright: scheme.surfaceBright,
-    };
-
-    return elevationMap[elevation] || scheme.surface;
   }
 }

@@ -1,5 +1,3 @@
-import { SchemeValidator } from "../scheme-validator.js";
-
 export class SpecialColors {
   static mapSpecialColors(scheme) {
     return {
@@ -28,17 +26,17 @@ export class SpecialColors {
       players: [
         {
           cursor: scheme.primary,
-          selection: scheme.primaryContainer,
+          selection: `${scheme.primary}4d`,
           background: scheme.primary,
         },
         {
           cursor: scheme.secondary,
-          selection: scheme.secondaryContainer,
+          selection: `${scheme.secondary}4d`,
           background: scheme.secondary,
         },
         {
           cursor: scheme.tertiary,
-          selection: scheme.tertiaryContainer,
+          selection: `${scheme.tertiary}4d`,
           background: scheme.tertiary,
         },
       ],

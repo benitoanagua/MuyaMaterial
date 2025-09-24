@@ -5,12 +5,9 @@ import { TextColors } from "./colors/text-colors.js";
 import { EditorColors } from "./colors/editor-colors.js";
 import { SpecialColors } from "./colors/special-colors.js";
 import { TerminalColors } from "./colors/terminal-colors.js";
-import { SchemeValidator } from "./scheme-validator.js";
 
 export class ZedColorsMapper {
   static mapSchemeToZed(scheme) {
-    SchemeValidator.validateScheme(scheme);
-
     return {
       ...CoreColors.mapCoreColors(scheme),
       ...ElevationColors.mapElevationColors(scheme),
@@ -26,12 +23,8 @@ export class ZedColorsMapper {
   static mapZedSpecificColors(scheme) {
     return {
       "border.variant": scheme.outlineVariant,
-      "border.disabled": `${scheme.outline}${SchemeValidator.getOpacity(
-        "disabled"
-      )}`,
-      "border.transparent": `${scheme.outline}${SchemeValidator.getOpacity(
-        "divider"
-      )}`,
+      "border.disabled": `${scheme.outline}90`,
+      "border.transparent": `${scheme.outline}30`,
 
       "scrollbar.thumb.background": scheme.surfaceVariant,
       "scrollbar.thumb.hover_background": scheme.primary,
@@ -41,9 +34,7 @@ export class ZedColorsMapper {
 
       "border.focused": scheme.inversePrimary,
       "border.selected": scheme.inversePrimary,
-      "element.focus.background": `${
-        scheme.inversePrimary
-      }${SchemeValidator.getOpacity("focus")}`,
+      "element.focus.background": `${scheme.inversePrimary}4d`,
 
       "sidebar.background": scheme.surfaceDim,
       "sidebar.foreground": scheme.onSurface,

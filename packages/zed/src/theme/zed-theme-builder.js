@@ -3,14 +3,11 @@ import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { ZedColorsMapper } from "./zed-colors-mapper.js";
 import { ZedSyntaxMapper } from "./zed-syntax-mapper.js";
-import { SchemeValidator } from "./scheme-validator.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export class ZedThemeBuilder {
   static buildTheme(scheme, name, appearance) {
-    SchemeValidator.validateScheme(scheme);
-
     const colors = ZedColorsMapper.mapSchemeToZed(scheme);
     const syntax = ZedSyntaxMapper.mapSchemeToSyntax(scheme);
 
@@ -74,7 +71,6 @@ export class ZedThemeBuilder {
   static generateAllThemes(variants, createScheme) {
     const generated = [];
 
-    // Generate individual themes
     for (const variant of variants) {
       const scheme = createScheme({
         isDark: variant.isDark,
@@ -97,7 +93,6 @@ export class ZedThemeBuilder {
       });
     }
 
-    // Generate theme family
     const themeFamily = this.buildThemeFamily(generated.map((g) => g.variant));
     const familyPath = this.saveTheme(themeFamily, "muya-material-family");
     generated.push({ variant: { name: "Theme Family" }, path: familyPath });

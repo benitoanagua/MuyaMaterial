@@ -1,9 +1,5 @@
-import { SchemeValidator } from "../scheme-validator.js";
-
 export class CoreColors {
   static mapCoreColors(scheme) {
-    SchemeValidator.validateScheme(scheme);
-
     return {
       primary: scheme.primary,
       onPrimary: scheme.onPrimary,
@@ -28,7 +24,7 @@ export class CoreColors {
       background: scheme.background,
       onBackground: scheme.onBackground,
 
-      surface: scheme.surfaceDim,
+      surface: scheme.surface,
       onSurface: scheme.onSurface,
 
       surfaceVariant: scheme.surfaceVariant,

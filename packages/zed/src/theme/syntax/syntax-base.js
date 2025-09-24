@@ -1,5 +1,3 @@
-import { SchemeValidator } from "../scheme-validator.js";
-
 export class SyntaxBase {
   static mapBaseSyntax(scheme) {
     return {

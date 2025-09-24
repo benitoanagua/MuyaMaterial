@@ -1,25 +1,15 @@
-import { SchemeValidator } from "../scheme-validator.js";
-
 export class StateColors {
   static mapStateColors(scheme) {
     return {
-      "element.hover": `${scheme.primary}${SchemeValidator.getOpacity(
-        "hover"
-      )}`,
+      "element.hover": `${scheme.primary}40`,
       "element.active": scheme.primaryContainer,
       "element.selected": scheme.secondaryContainer,
-      "element.disabled": `${scheme.onSurface}${SchemeValidator.getOpacity(
-        "disabled"
-      )}`,
+      "element.disabled": `${scheme.onSurface}90`,
 
-      "ghost_element.hover": `${scheme.secondary}${SchemeValidator.getOpacity(
-        "hover"
-      )}`,
+      "ghost_element.hover": `${scheme.secondary}40`,
       "ghost_element.active": scheme.surfaceContainerHigh,
       "ghost_element.selected": scheme.surfaceContainer,
-      "ghost_element.disabled": `${
-        scheme.onSurface
-      }${SchemeValidator.getOpacity("disabled")}`,
+      "ghost_element.disabled": `${scheme.onSurface}90`,
 
       "border.focused": scheme.inversePrimary,
       "border.selected": scheme.inversePrimary,
@@ -40,9 +30,7 @@ export class StateColors {
       "info.border": scheme.primary,
       "info.foreground": scheme.onPrimary,
 
-      "element.focus.background": `${
-        scheme.inversePrimary
-      }${SchemeValidator.getOpacity("focus")}`,
+      "element.focus.background": `${scheme.inversePrimary}4d`,
       "element.pressed.background": scheme.surfaceContainerHighest,
     };
   }
