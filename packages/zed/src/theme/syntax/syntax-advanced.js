@@ -7,13 +7,13 @@ export class SyntaxAdvanced {
         font_weight: 500,
       },
       attribute: {
-        color: scheme.secondary,
+        color: scheme.tertiary,
         font_style: "normal",
         font_weight: 500,
       },
 
       operator: {
-        color: scheme.onSurfaceVariant,
+        color: scheme.error,
         font_style: "normal",
         font_weight: 500,
       },
@@ -24,7 +24,7 @@ export class SyntaxAdvanced {
         font_weight: 400,
       },
       "punctuation.delimiter": {
-        color: scheme.onSurfaceVariant,
+        color: scheme.error,
         font_style: "normal",
         font_weight: 500,
       },
@@ -35,7 +35,7 @@ export class SyntaxAdvanced {
         font_weight: 500,
       },
       "support.function": {
-        color: scheme.primary,
+        color: scheme.error,
         font_style: "normal",
         font_weight: 500,
       },
@@ -52,17 +52,17 @@ export class SyntaxAdvanced {
       },
 
       tag: {
-        color: scheme.primary,
+        color: scheme.secondary,
         font_style: "normal",
         font_weight: 600,
       },
       "entity.name.tag": {
-        color: scheme.primary,
+        color: scheme.secondary,
         font_style: "normal",
         font_weight: 600,
       },
       "entity.other.attribute-name": {
-        color: scheme.secondary,
+        color: scheme.tertiary,
         font_style: "normal",
         font_weight: 500,
       },
@@ -83,7 +83,7 @@ export class SyntaxAdvanced {
         font_weight: 500,
       },
       "markup.link": {
-        color: scheme.primary,
+        color: scheme.error,
         font_style: "normal",
         font_weight: 500,
       },
@@ -93,7 +93,7 @@ export class SyntaxAdvanced {
         font_weight: 400,
       },
       "markup.raw": {
-        color: scheme.tertiary,
+        color: scheme.error,
         font_style: "normal",
         font_weight: 400,
       },

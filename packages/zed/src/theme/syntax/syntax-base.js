@@ -12,7 +12,7 @@ export class SyntaxBase {
         font_weight: 700,
       },
       "keyword.operator": {
-        color: scheme.onSurfaceVariant,
+        color: scheme.error,
         font_style: "normal",
         font_weight: 600,
       },
@@ -33,18 +33,18 @@ export class SyntaxBase {
         font_weight: 600,
       },
       struct: {
-        color: scheme.primary,
+        color: scheme.secondary,
         font_style: "normal",
         font_weight: 600,
       },
       enum: {
-        color: scheme.primary,
+        color: scheme.tertiary,
         font_style: "normal",
         font_weight: 600,
       },
       interface: {
         color: scheme.primary,
-        font_style: "normal",
+        font_style: "italic",
         font_weight: 600,
       },
 
@@ -54,12 +54,12 @@ export class SyntaxBase {
         font_weight: 600,
       },
       "function.builtin": {
-        color: scheme.primary,
+        color: scheme.error,
         font_style: "italic",
         font_weight: 600,
       },
       "function.method": {
-        color: scheme.primary,
+        color: scheme.secondary,
         font_style: "normal",
         font_weight: 600,
       },
@@ -75,7 +75,7 @@ export class SyntaxBase {
         font_weight: 500,
       },
       "variable.builtin": {
-        color: scheme.primary,
+        color: scheme.error,
         font_style: "italic",
         font_weight: 600,
       },
@@ -91,7 +91,7 @@ export class SyntaxBase {
         font_weight: 600,
       },
       "constant.numeric": {
-        color: scheme.tertiary,
+        color: scheme.error,
         font_style: "normal",
         font_weight: 500,
       },
@@ -101,7 +101,7 @@ export class SyntaxBase {
         font_weight: 400,
       },
       "string.regexp": {
-        color: scheme.secondary,
+        color: scheme.error,
         font_style: "normal",
         font_weight: 600,
       },
@@ -112,7 +112,7 @@ export class SyntaxBase {
         font_weight: 400,
       },
       "comment.documentation": {
-        color: scheme.outlineVariant,
+        color: scheme.secondary,
         font_style: "italic",
         font_weight: 400,
       },
