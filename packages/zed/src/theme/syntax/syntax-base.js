@@ -23,7 +23,7 @@ export class SyntaxBase {
         font_weight: 600,
       },
       "type.builtin": {
-        color: scheme.primary,
+        color: scheme.tertiary,
         font_style: "italic",
         font_weight: 600,
       },
@@ -86,7 +86,7 @@ export class SyntaxBase {
         font_weight: 500,
       },
       "constant.builtin": {
-        color: scheme.primary,
+        color: scheme.secondary,
         font_style: "normal",
         font_weight: 600,
       },

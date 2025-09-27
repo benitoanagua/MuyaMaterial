@@ -10,7 +10,7 @@ export class SyntaxEspecific {
         color: scheme.tertiary,
         font_style: "normal",
         font_weight: 400,
-        background_color: `${scheme.surfaceContainerLow}80`,
+        background_color: `${scheme.surfaceContainerLow}99`,
       },
       "constant.character.escape": {
         color: scheme.secondary,
