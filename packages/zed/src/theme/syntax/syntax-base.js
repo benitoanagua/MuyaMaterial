@@ -4,78 +4,78 @@ export class SyntaxBase {
       keyword: {
         color: scheme.secondary,
         font_style: "normal",
-        font_weight: 700,
+        font_weight: 600,
       },
       "keyword.control": {
-        color: scheme.inversePrimary,
+        color: scheme.primary,
         font_style: "normal",
         font_weight: 700,
       },
       "keyword.operator": {
-        color: scheme.secondary,
+        color: scheme.onSurfaceVariant,
         font_style: "normal",
-        font_weight: 700,
+        font_weight: 600,
       },
 
       type: {
         color: scheme.primary,
         font_style: "normal",
-        font_weight: 700,
+        font_weight: 600,
       },
       "type.builtin": {
-        color: scheme.inversePrimary,
-        font_style: "normal",
-        font_weight: 700,
-      },
-      class: {
-        color: scheme.primary,
-        font_style: "normal",
-        font_weight: 700,
-      },
-      struct: {
-        color: scheme.primary,
-        font_style: "normal",
-        font_weight: 700,
-      },
-      enum: {
-        color: scheme.primary,
-        font_style: "normal",
-        font_weight: 700,
-      },
-      interface: {
-        color: scheme.primary,
-        font_style: "normal",
-        font_weight: 700,
-      },
-
-      function: {
         color: scheme.primary,
         font_style: "italic",
         font_weight: 600,
       },
-      "function.builtin": {
-        color: scheme.inversePrimary,
+      class: {
+        color: scheme.primary,
         font_style: "normal",
-        font_weight: 700,
+        font_weight: 600,
+      },
+      struct: {
+        color: scheme.primary,
+        font_style: "normal",
+        font_weight: 600,
+      },
+      enum: {
+        color: scheme.primary,
+        font_style: "normal",
+        font_weight: 600,
+      },
+      interface: {
+        color: scheme.primary,
+        font_style: "normal",
+        font_weight: 600,
+      },
+
+      function: {
+        color: scheme.primary,
+        font_style: "normal",
+        font_weight: 600,
+      },
+      "function.builtin": {
+        color: scheme.primary,
+        font_style: "italic",
+        font_weight: 600,
       },
       "function.method": {
         color: scheme.primary,
-        font_style: "italic",
+        font_style: "normal",
         font_weight: 600,
       },
 
       variable: {
         color: scheme.onSurface,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 400,
       },
       "variable.parameter": {
         color: scheme.tertiary,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 500,
       },
       "variable.builtin": {
-        color: scheme.inversePrimary,
+        color: scheme.primary,
         font_style: "italic",
         font_weight: 600,
       },
@@ -83,25 +83,25 @@ export class SyntaxBase {
       constant: {
         color: scheme.tertiary,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 500,
       },
       "constant.builtin": {
-        color: scheme.inversePrimary,
+        color: scheme.primary,
         font_style: "normal",
-        font_weight: 700,
+        font_weight: 600,
       },
       "constant.numeric": {
         color: scheme.tertiary,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 500,
       },
       string: {
         color: scheme.tertiary,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 400,
       },
       "string.regexp": {
-        color: scheme.inversePrimary,
+        color: scheme.secondary,
         font_style: "normal",
         font_weight: 600,
       },
@@ -109,12 +109,12 @@ export class SyntaxBase {
       comment: {
         color: scheme.outline,
         font_style: "italic",
-        font_weight: 500,
+        font_weight: 400,
       },
       "comment.documentation": {
         color: scheme.outlineVariant,
         font_style: "italic",
-        font_weight: 500,
+        font_weight: 400,
       },
     };
   }

@@ -10,11 +10,10 @@ export class TextColors {
       icon: scheme.onSurfaceVariant,
       "icon.accent": scheme.primary,
       "icon.disabled": `${scheme.onSurfaceVariant}90`,
+      "icon.muted": `${scheme.onSurfaceVariant}80`,
+      "icon.placeholder": `${scheme.onSurfaceVariant}60`,
 
-      "text.high_contrast": scheme.inverseOnSurface,
-      "text.emphasis": scheme.inversePrimary,
-      "text.warning": scheme.error,
-      "text.success": scheme.tertiary,
+      "link_text.hover": scheme.primary,
     };
   }
 }

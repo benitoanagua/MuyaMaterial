@@ -8,10 +8,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export class ZedThemeBuilder {
   static buildTheme(scheme, name, appearance) {
-    const colors = ZedColorsMapper.mapSchemeToZed(scheme);
+    const style = ZedColorsMapper.mapSchemeToZed(scheme);
     const syntax = ZedSyntaxMapper.mapSchemeToSyntax(scheme);
 
-    return {
+    const theme = {
       $schema: "https://zed.dev/schema/themes/v0.2.0.json",
       name: `Muya Material - ${name}`,
       author: "Benito Anagua",
@@ -20,27 +20,31 @@ export class ZedThemeBuilder {
           name: `Muya Material - ${name}`,
           appearance: appearance,
           style: {
-            ...colors,
-            syntax,
+            ...style,
+            syntax: syntax,
           },
         },
       ],
     };
+
+    return theme;
   }
 
   static buildThemeFamily(variants) {
+    const themes = variants.map((variant) => ({
+      name: `Muya Material - ${variant.name}`,
+      appearance: variant.isDark ? "dark" : "light",
+      style: {
+        ...ZedColorsMapper.mapSchemeToZed(variant.scheme),
+        syntax: ZedSyntaxMapper.mapSchemeToSyntax(variant.scheme),
+      },
+    }));
+
     return {
       $schema: "https://zed.dev/schema/themes/v0.2.0.json",
       name: "Muya Material",
       author: "Benito Anagua",
-      themes: variants.map((variant) => ({
-        name: `Muya Material - ${variant.name}`,
-        appearance: variant.isDark ? "dark" : "light",
-        style: {
-          ...ZedColorsMapper.mapSchemeToZed(variant.scheme),
-          syntax: ZedSyntaxMapper.mapSchemeToSyntax(variant.scheme),
-        },
-      })),
+      themes: themes,
     };
   }
 
