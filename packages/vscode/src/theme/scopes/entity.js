@@ -10,6 +10,7 @@ export default function getEntitySettings(scheme) {
         "entity.name.type",
         "entity.name.namespace",
         "entity.name.tag",
+        "entity.name.section",
       ],
       settings: {
         foreground: scheme.primary,
@@ -26,6 +27,13 @@ export default function getEntitySettings(scheme) {
       settings: {
         foreground: scheme.primary,
         fontStyle: "italic",
+      },
+    },
+    {
+      name: "Inherited class and implementation",
+      scope: ["entity.other.inherited-class", "entity.other.attribute-name"],
+      settings: {
+        foreground: scheme.secondary,
       },
     },
   ];

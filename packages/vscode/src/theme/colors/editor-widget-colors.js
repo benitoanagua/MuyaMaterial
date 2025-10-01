@@ -8,10 +8,11 @@ export default function getEditorWidgetColors(scheme) {
     "editorSuggestWidget.background": scheme.surfaceContainerLow,
     "editorSuggestWidget.border": scheme.outlineVariant,
     "editorSuggestWidget.foreground": scheme.onSurface,
+    "editorSuggestWidget.focusHighlightForeground": scheme.primary,
     "editorSuggestWidget.highlightForeground": scheme.primary,
     "editorSuggestWidget.selectedBackground": scheme.surfaceContainer,
     "editorSuggestWidget.selectedForeground": scheme.onSurface,
-    // "editorSuggestWidget.selectedIconForeground": scheme.primary,
+    "editorSuggestWidget.selectedIconForeground": scheme.primary,
     "editorSuggestWidgetStatus.foreground": scheme.onSurfaceVariant,
 
     "editorHoverWidget.foreground": scheme.onSurface,
@@ -26,7 +27,8 @@ export default function getEditorWidgetColors(scheme) {
 
     "editorStickyScroll.background": scheme.surfaceContainer,
     "editorStickyScroll.border": scheme.outlineVariant,
-    // "editorStickyScroll.shadow": `${scheme.outline}20`,
+    "editorStickyScroll.shadow": `${scheme.outline}20`,
+    "editorStickyScrollGutter.background": scheme.surfaceContainerHigh,
     "editorStickyScrollHover.background": scheme.surfaceContainerHigh,
 
     "debugExceptionWidget.background": scheme.surfaceContainerLow,
@@ -36,8 +38,8 @@ export default function getEditorWidgetColors(scheme) {
     "editorMarkerNavigationError.background": scheme.error,
     "editorMarkerNavigationWarning.background": scheme.tertiary,
     "editorMarkerNavigationInfo.background": scheme.primary,
-    // "editorMarkerNavigationError.headerBackground": `${scheme.error}20`,
-    // "editorMarkerNavigationWarning.headerBackground": `${scheme.tertiary}20`,
-    // "editorMarkerNavigationInfo.headerBackground": `${scheme.primary}20`,
+    "editorMarkerNavigationError.headerBackground": `${scheme.error}20`,
+    "editorMarkerNavigationWarning.headerBackground": `${scheme.tertiary}20`,
+    "editorMarkerNavigationInfo.headerBackground": `${scheme.primary}20`,
   };
 }

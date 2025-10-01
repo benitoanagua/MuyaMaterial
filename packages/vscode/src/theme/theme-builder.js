@@ -29,6 +29,7 @@ import getEntitySettings from "./scopes/entity.js";
 import getKeywordSettings from "./scopes/keywords.js";
 import getMarkupSettings from "./scopes/markup.js";
 import getMetaSettings from "./scopes/meta.js";
+import getOperatorSettings from "./scopes/operators.js";
 import getStorageSettings from "./scopes/storage.js";
 import getStringSettings from "./scopes/string.js";
 import getSupportSettings from "./scopes/support.js";
@@ -72,6 +73,7 @@ export class ThemeBuilder {
         ...getMarkupSettings(scheme),
         getMetaSettings(scheme),
         getStorageSettings(scheme),
+        getOperatorSettings(scheme),
         getStringSettings(scheme),
         ...getSupportSettings(scheme),
         ...getVariableSettings(scheme),

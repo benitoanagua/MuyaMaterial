@@ -21,34 +21,45 @@ export default function getAdditionalElements(scheme) {
     "notebookScrollbarSlider.activeBackground": `${scheme.outline}40`,
     "notebookScrollbarSlider.background": `${scheme.outline}20`,
     "notebookScrollbarSlider.hoverBackground": `${scheme.outline}60`,
-    // "notebookStatusErrorIcon.foreground": scheme.error,
-    // "notebookStatusRunningIcon.foreground": scheme.primary,
-    // "notebookStatusSuccessIcon.foreground": scheme.tertiary,
-    // "notebookEditorOverviewRuler.runningCellForeground": scheme.primary,
+    "notebookStatusErrorIcon.foreground": scheme.error,
+    "notebookStatusRunningIcon.foreground": scheme.primary,
+    "notebookStatusSuccessIcon.foreground": scheme.tertiary,
+    "notebookEditorOverviewRuler.runningCellForeground": scheme.primary,
 
     // Chart colors
-    // "charts.foreground": scheme.onSurface,
-    // "charts.lines": scheme.outlineVariant,
-    // "charts.red": scheme.error,
-    // "charts.blue": scheme.primary,
-    // "charts.yellow": scheme.tertiary,
-    // "charts.green": scheme.secondary,
-    // "charts.cyan": scheme.tertiary,
-    // "chart.line": scheme.outlineVariant,
-    // "chart.axis": scheme.outline,
-    // "chart.guide": scheme.outlineVariant,
+    "charts.foreground": scheme.onSurface,
+    "charts.lines": scheme.outlineVariant,
+    "charts.red": scheme.error,
+    "charts.blue": scheme.primary,
+    "charts.yellow": scheme.tertiary,
+    "charts.green": scheme.secondary,
+    "charts.cyan": scheme.tertiary,
+    "charts.orange": scheme.tertiary,
+    "charts.purple": scheme.primary,
+    "chart.line": scheme.outlineVariant,
+    "chart.axis": scheme.outline,
+    "chart.guide": scheme.outlineVariant,
 
     // Ports colors
-    // "ports.iconRunningProcessForeground": scheme.primary,
+    "ports.iconRunningProcessForeground": scheme.primary,
 
     // Comments View colors
-    // "commentsView.resolvedIcon": scheme.tertiary,
-    // "commentsView.unresolvedIcon": scheme.primary,
+    "commentsView.resolvedIcon": scheme.tertiary,
+    "commentsView.unresolvedIcon": scheme.primary,
 
     // Action Bar colors
-    // "actionBar.toggledBackground": scheme.primary,
+    "actionBar.toggledBackground": scheme.primary,
 
     // Simple Find Widget colors
-    // "simpleFindWidget.sashBorder": scheme.outlineVariant,
+    "simpleFindWidget.sashBorder": scheme.outlineVariant,
+
+    // Gauge colors
+    "gauge.background": scheme.surfaceContainer,
+    "gauge.foreground": scheme.onSurface,
+    "gauge.border": scheme.outline,
+    "gauge.warningBackground": scheme.tertiary,
+    "gauge.warningForeground": scheme.onTertiary,
+    "gauge.errorBackground": scheme.error,
+    "gauge.errorForeground": scheme.onError,
   };
 }
