@@ -4,7 +4,7 @@ export class ElevationColors {
       background: scheme.background,
       "surface.background": scheme.surface,
       "elevated_surface.background": scheme.surfaceContainerHigh,
-      "panel.background": scheme.surfaceContainerLow,
+      "panel.background": scheme.surfaceContainerHighest,
       "status_bar.background": scheme.surfaceContainerHighest,
       "tab_bar.background": scheme.surfaceContainerHigh,
       "title_bar.background": scheme.surfaceContainerHighest,

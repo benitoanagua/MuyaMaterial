@@ -1,15 +1,15 @@
 export class StateColors {
   static mapStateColors(scheme) {
     return {
-      "element.hover": `${scheme.primary}15`,
-      "element.active": `${scheme.primaryContainer}80`,
-      "element.selected": `${scheme.secondaryContainer}80`,
-      "element.disabled": `${scheme.onSurface}08`,
+      "element.hover": `${scheme.primaryContainer}40`,
+      "element.active": `${scheme.secondaryContainer}80`,
+      "element.selected": `${scheme.primaryContainer}80`,
+      "element.disabled": `${scheme.onSurface}20`,
 
-      "ghost_element.hover": `${scheme.secondary}12`,
+      "ghost_element.hover": `${scheme.secondary}40`,
       "ghost_element.active": scheme.surfaceContainerHigh,
       "ghost_element.selected": `${scheme.tertiaryContainer}60`,
-      "ghost_element.disabled": `${scheme.onSurface}08`,
+      "ghost_element.disabled": `${scheme.onSurface}40`,
 
       "error.background": scheme.errorContainer,
       "error.border": scheme.error,
