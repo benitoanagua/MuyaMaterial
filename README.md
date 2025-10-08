@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Multi%20Editor-Themes-FF6D00?style=for-the-badge" alt="Multi-Editor Themes">
   <img src="https://img.shields.io/badge/Material%20Design-3-757575?style=for-the-badge&logo=material-design" alt="Material Design 3">
-  <img src="https://img.shields.io/badge/Version-0.2.0-FF6D00?style=for-the-badge" alt="Version 0.2.0">
+  <img src="https://img.shields.io/badge/Version-1.0.0-FF6D00?style=for-the-badge" alt="Version 1.0.0">
 </p>
 
 **Muya Material** is a comprehensive theme suite that brings Material Design 3 principles to your entire development workflow. Experience consistent, beautiful theming across all your favorite tools with carefully curated color harmonies inspired by nature's organic tones.
@@ -55,8 +55,6 @@
 code --install-extension benitoanagua.muya-material
 ```
 
-**[VS Code Documentation](./packages/vscode/README.md)**
-
 #### Zed Editor
 
 [![Zed Ready](https://img.shields.io/badge/Zed-Themes-000000?style=flat-square)](https://zed.dev)
@@ -67,17 +65,39 @@ code --install-extension benitoanagua.muya-material
 - Collaborative editing support
 - Advanced syntax highlighting
 - Player colors for real-time collaboration
+- v0.2.0 schema compatible
 
 **Installation:**
 
 ```bash
 # Copy to Zed themes directory
-cp themes/*.json ~/Library/Application\ Support/Zed/themes/
+cp packages/zed/themes/*.json ~/Library/Application\ Support/Zed/themes/
 ```
 
-**[Zed Documentation](./packages/zed/README.md)**
-
 ### Terminal & Multiplexers
+
+#### Alacritty Terminal
+
+[![Alacritty Compatible](https://img.shields.io/badge/Alacritty-Themes-F74D00?style=flat-square)](https://alacritty.org)
+
+**Features:**
+
+- Complete 16-color palette support with normal, bright, and dim variants
+- Strict TOML validation using `@iarna/toml` library
+- No alpha channel - all colors are solid `#RRGGBB` format
+- Search and selection theming with proper contrast
+- Cursor and vi-mode colors optimized for visibility
+- Material Design 3 color relationships maintained
+
+**Installation:**
+
+```bash
+# Import in alacritty.toml
+import = ['~/.config/alacritty/themes/muya-material-olive-dark.toml']
+
+# Or copy and use directly
+cp packages/alacritty/themes/*.toml ~/.config/alacritty/themes/
+```
 
 #### Zellij Terminal Multiplexer
 
@@ -89,21 +109,20 @@ cp themes/*.json ~/Library/Application\ Support/Zed/themes/
 - Multiplayer session colors
 - Pane and tab theming
 - Status bar integration
+- KDL format support
 
 **Installation:**
 
 ```bash
 # Copy to Zellij themes directory
-cp themes/*.kdl ~/.config/zellij/themes/
+cp packages/zellij/themes/*.kdl ~/.config/zellij/themes/
 ```
-
-**[Zellij Documentation](./packages/zellij/README.md)**
 
 ## Quick Start
 
 ### Prerequisites
 
-- Node.js 16+
+- Node.js 18+
 - npm or pnpm
 
 ### Installation & Build
@@ -123,6 +142,7 @@ npm run build
 npm run build:vscode
 npm run build:zed
 npm run build:zellij
+npm run build:alacritty
 
 # Development mode with file watching
 npm run dev
@@ -135,8 +155,9 @@ muya-material/
 ├── core/                 # Shared theme engine & color system
 ├── packages/
 │   ├── vscode/          # VS Code extension package
-│   ├── zed/             # Zed editor themes
-│   └── zellij/          # Zellij terminal themes
+│   ├── zed/             # Zed editor themes (v0.2.0 compatible)
+│   ├── zellij/          # Zellij terminal themes (KDL format)
+│   └── alacritty/       # Alacritty terminal themes (TOML format)
 ├── themes/              # Generated theme files
 └── package.json         # Workspace configuration
 ```
@@ -156,13 +177,23 @@ muya-material/
 2. Copy generated JSON files to Zed themes directory
 3. Restart Zed and select theme from settings
 
+### Alacritty
+
+1. Build themes: `npm run build:alacritty`
+2. Import in your `alacritty.toml`:
+
+```toml
+# Import theme
+import = ['~/.config/alacritty/themes/muya-material-olive-dark.toml']
+```
+
 ### Zellij
 
 1. Build themes: `npm run build:zellij`
 2. Copy KDL files to `~/.config/zellij/themes/`
 3. Add to config: `theme "muya-material-olive-dark"`
 
-## Color System Architecture
+## 🎨 Color System Architecture
 
 The theme suite leverages a sophisticated color generation system:
 
@@ -183,9 +214,7 @@ const scheme = createDynamicScheme({
 - **Dynamic Schemes**: Automatically generated light/dark variants
 - **Platform Adaptation**: Colors optimized for each tool's rendering
 
-## Development
-
-### Contributing
+## Contributing
 
 We welcome contributions to expand platform support!
 
@@ -203,32 +232,17 @@ We welcome contributions to expand platform support!
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/new-platform`)
 3. Implement platform support
-4. Add comprehensive documentation
-5. Submit Pull Request
 
-### Getting Help
+4. Submit Pull Request
 
-- [Documentation](https://github.com/benitoanagua/MuyaMaterial#readme)
-- [Issue Tracker](https://github.com/benitoanagua/MuyaMaterial/issues)
-- [Discussions](https://github.com/benitoanagua/MuyaMaterial/discussions)
+### Current Package Details
 
-### Contributing
-
-We welcome contributions of all kinds:
-
-- New platform support
-- Additional color variants
-- Documentation improvements
-- Bug fixes and performance optimizations
-- Accessibility enhancements
-
-### Roadmap
-
-- [ ] JetBrains IDE support
-- [ ] Vim/Neovim themes
-- [ ] Terminal profile generators
-- [ ] Web version for code examples
-- [ ] Theme customization tools
+| Platform  | Format        | Status      | Features                           |
+| --------- | ------------- | ----------- | ---------------------------------- |
+| VS Code   | JSON          | ✅ Complete | 400+ tokens, semantic highlighting |
+| Zed       | JSON (v0.2.0) | ✅ Complete | Syntax highlighting, player colors |
+| Alacritty | TOML          | ✅ Complete | 16-color palette, validation       |
+| Zellij    | KDL           | ✅ Complete | UI components, multiplayer         |
 
 ## License
 
@@ -239,8 +253,10 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 - **Google Material Design Team** for the Material Design 3 foundation
 - **VS Code Team** for the extensible theming framework
 - **Zed Team** for the modern editor architecture
+- **Alacritty Team** for the high-performance terminal
 - **Zellij Team** for the powerful terminal multiplexer
 - **Material Color Utilities** for advanced color algorithms
+- **@iarna/toml** for robust TOML handling
 - **Community** for feedback, testing, and inspiration
 
 ---
@@ -252,5 +268,7 @@ Made with ❤️ by <a href="https://github.com/benitoanagua">Benito Anagua</a>
 <div align="center">
 
 ### Consistent Material Design Experience Across Your Entire Workflow 🪄
+
+**From code editors to terminals - one unified design language**
 
 </div>

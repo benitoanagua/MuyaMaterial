@@ -10,6 +10,8 @@ import {
   SchemeMonochrome,
   SchemeContent,
   SchemeFidelity,
+  SchemeRainbow,
+  SchemeFruitSalad,
 } from "@material/material-color-utilities";
 
 import { themeConfig } from "./theme-config.js";
@@ -23,6 +25,8 @@ const SCHEME_CONSTRUCTORS = {
   MONOCHROME: SchemeMonochrome,
   CONTENT: SchemeContent,
   FIDELITY: SchemeFidelity,
+  RAINBOW: SchemeRainbow,
+  FRUIT_SALAD: SchemeFruitSalad,
 };
 
 // Función para obtener el color semilla según la configuración

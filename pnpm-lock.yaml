@@ -28,6 +28,15 @@ importers:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@20.19.17)
 
+  packages/alacritty:
+    dependencies:
+      '@iarna/toml':
+        specifier: ^2.2.5
+        version: 2.2.5
+      '@muya-material/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/vscode:
     dependencies:
       '@muya-material/core':
@@ -207,6 +216,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@iarna/toml@2.2.5':
+    resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
 
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
@@ -773,6 +785,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.10':
     optional: true
+
+  '@iarna/toml@2.2.5': {}
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 

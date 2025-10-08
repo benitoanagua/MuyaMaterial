@@ -49,4 +49,6 @@ export const AVAILABLE_VARIANTS = [
   "MONOCHROME",
   "CONTENT",
   "FIDELITY",
+  "RAINBOW",
+  "FRUIT_SALAD",
 ];

@@ -1,0 +1,23 @@
+{
+  "name": "@muya-material/alacritty",
+  "version": "1.0.0",
+  "description": "Alacritty themes for Muya Material Design System",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "@muya-material/core": "workspace:*"
+  },
+  "keywords": [
+    "alacritty",
+    "theme",
+    "material-design",
+    "terminal"
+  ],
+  "author": "Benito Anagua",
+  "license": "MIT"
+}
