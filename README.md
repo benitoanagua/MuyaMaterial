@@ -47,7 +47,21 @@
 code --install-extension benitoanagua.muya-material
 ```
 
-**[VS Code Documentation](./packages/vscode/README.md)**
+#### Olive Dark
+
+![Olive Dark Theme](https://i.ibb.co/mCtKzmzx/olive-dark.png)
+
+#### Olive Light
+
+![Olive Light Theme](https://i.ibb.co/MkQm67td/olive-light.png)
+
+#### Mystic Dark
+
+![Mystic Dark Theme](https://i.ibb.co/D6r5m2m/mystic-dark.png)
+
+#### Mystic Light
+
+![Mystic Light Theme - Preview](https://i.ibb.co/Y4yYthjG/olive-mystic.png)
 
 #### Zed Editor
 
@@ -71,7 +85,21 @@ cp packages/zed/themes/*.json ~/Library/Application\ Support/Zed/themes/
 # In Zed: Open Command Palette → "Change Color Theme" → Select Muya Material variant
 ```
 
-**[Zed Documentation](./packages/zed/README.md)**
+#### Olive Dark
+
+![Olive Dark](https://i.ibb.co/p6Svr7wp/olive-dark.png)
+
+#### Olive Light
+
+![Olive Light](https://i.ibb.co/SDDH6c15/olive-light.png)
+
+#### Mystic Dark
+
+![Mystic Dark](https://i.ibb.co/mFJvcTbZ/mystic-dark.png)
+
+#### Mystic Light
+
+![Mystic Light](https://i.ibb.co/fdj61Khy/mystic-light.png)
 
 ### Terminal & Multiplexers
 
