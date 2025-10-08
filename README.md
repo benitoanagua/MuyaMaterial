@@ -1,11 +1,5 @@
 # Muya Material Theme Suite
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Multi%20Editor-Themes-FF6D00?style=for-the-badge" alt="Multi-Editor Themes">
-  <img src="https://img.shields.io/badge/Material%20Design-3-757575?style=for-the-badge&logo=material-design" alt="Material Design 3">
-  <img src="https://img.shields.io/badge/Version-1.0.0-FF6D00?style=for-the-badge" alt="Version 1.0.0">
-</p>
-
 **Muya Material** is a comprehensive theme suite that brings Material Design 3 principles to your entire development workflow. Experience consistent, beautiful theming across all your favorite tools with carefully curated color harmonies inspired by nature's organic tones.
 
 ## Features
@@ -39,8 +33,6 @@
 
 #### Visual Studio Code
 
-[![VS Code Version](https://img.shields.io/visual-studio-marketplace/v/benitoanagua.muya-material?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=benitoanagua.muya-material)
-
 **Features:**
 
 - Four complete theme variants
@@ -55,9 +47,9 @@
 code --install-extension benitoanagua.muya-material
 ```
 
-#### Zed Editor
+**[VS Code Documentation](./packages/vscode/README.md)**
 
-[![Zed Ready](https://img.shields.io/badge/Zed-Themes-000000?style=flat-square)](https://zed.dev)
+#### Zed Editor
 
 **Features:**
 
@@ -70,15 +62,20 @@ code --install-extension benitoanagua.muya-material
 **Installation:**
 
 ```bash
+# Build themes first
+pnpm build:zed
+
 # Copy to Zed themes directory
 cp packages/zed/themes/*.json ~/Library/Application\ Support/Zed/themes/
+
+# In Zed: Open Command Palette → "Change Color Theme" → Select Muya Material variant
 ```
+
+**[Zed Documentation](./packages/zed/README.md)**
 
 ### Terminal & Multiplexers
 
 #### Alacritty Terminal
-
-[![Alacritty Compatible](https://img.shields.io/badge/Alacritty-Themes-F74D00?style=flat-square)](https://alacritty.org)
 
 **Features:**
 
@@ -87,21 +84,23 @@ cp packages/zed/themes/*.json ~/Library/Application\ Support/Zed/themes/
 - No alpha channel - all colors are solid `#RRGGBB` format
 - Search and selection theming with proper contrast
 - Cursor and vi-mode colors optimized for visibility
-- Material Design 3 color relationships maintained
 
 **Installation:**
 
 ```bash
+# Build themes first
+pnpm build:alacritty
+
 # Import in alacritty.toml
 import = ['~/.config/alacritty/themes/muya-material-olive-dark.toml']
 
-# Or copy and use directly
+# Or copy themes to config directory
 cp packages/alacritty/themes/*.toml ~/.config/alacritty/themes/
 ```
 
-#### Zellij Terminal Multiplexer
+**[Alacritty Documentation](./packages/alacritty/README.md)**
 
-[![Zellij Compatible](https://img.shields.io/badge/Zellij-Themes-FF6D00?style=flat-square)](https://zellij.dev)
+#### Zellij Terminal Multiplexer
 
 **Features:**
 
@@ -114,16 +113,26 @@ cp packages/alacritty/themes/*.toml ~/.config/alacritty/themes/
 **Installation:**
 
 ```bash
+# Build themes first
+pnpm build:zellij
+
 # Copy to Zellij themes directory
 cp packages/zellij/themes/*.kdl ~/.config/zellij/themes/
+
+# Start session with theme
+zellij --theme muya-material-olive-dark
+
+# Or set in config file: theme "muya-material-olive-dark"
 ```
+
+**[Zellij Documentation](./packages/zellij/README.md)**
 
 ## Quick Start
 
 ### Prerequisites
 
-- Node.js 18+
-- npm or pnpm
+- **Node.js 18+**
+- **pnpm** (recommended for reliable builds) or npm
 
 ### Installation & Build
 
@@ -132,20 +141,23 @@ cp packages/zellij/themes/*.kdl ~/.config/zellij/themes/
 git clone https://github.com/benitoanagua/MuyaMaterial.git
 cd MuyaMaterial
 
-# Install dependencies
+# Install dependencies with pnpm (recommended)
+pnpm install
+
+# Or with npm
 npm install
 
 # Build all themes
-npm run build
+pnpm build
 
 # Or build specific packages
-npm run build:vscode
-npm run build:zed
-npm run build:zellij
-npm run build:alacritty
+pnpm build:vscode
+pnpm build:zed
+pnpm build:zellij
+pnpm build:alacritty
 
 # Development mode with file watching
-npm run dev
+pnpm dev
 ```
 
 ### Project Structure
@@ -173,27 +185,23 @@ muya-material/
 
 ### Zed Editor
 
-1. Build themes: `npm run build:zed`
+1. Build themes: `pnpm build:zed`
 2. Copy generated JSON files to Zed themes directory
 3. Restart Zed and select theme from settings
 
 ### Alacritty
 
-1. Build themes: `npm run build:alacritty`
-2. Import in your `alacritty.toml`:
-
-```toml
-# Import theme
-import = ['~/.config/alacritty/themes/muya-material-olive-dark.toml']
-```
+1. Build themes: `pnpm build:alacritty`
+2. Import theme in your `alacritty.toml` or copy theme files
+3. Restart Alacritty to apply changes
 
 ### Zellij
 
-1. Build themes: `npm run build:zellij`
-2. Copy KDL files to `~/.config/zellij/themes/`
-3. Add to config: `theme "muya-material-olive-dark"`
+1. Build themes: `pnpm build:zellij`
+2. Copy KDL files to Zellij themes directory
+3. Use theme in Zellij config or start session with theme flag
 
-## 🎨 Color System Architecture
+## Color System Architecture
 
 The theme suite leverages a sophisticated color generation system:
 
@@ -232,17 +240,8 @@ We welcome contributions to expand platform support!
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/new-platform`)
 3. Implement platform support
-
-4. Submit Pull Request
-
-### Current Package Details
-
-| Platform  | Format        | Status      | Features                           |
-| --------- | ------------- | ----------- | ---------------------------------- |
-| VS Code   | JSON          | ✅ Complete | 400+ tokens, semantic highlighting |
-| Zed       | JSON (v0.2.0) | ✅ Complete | Syntax highlighting, player colors |
-| Alacritty | TOML          | ✅ Complete | 16-color palette, validation       |
-| Zellij    | KDL           | ✅ Complete | UI components, multiplayer         |
+4. Add comprehensive documentation
+5. Submit Pull Request
 
 ## License
 
@@ -256,19 +255,8 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 - **Alacritty Team** for the high-performance terminal
 - **Zellij Team** for the powerful terminal multiplexer
 - **Material Color Utilities** for advanced color algorithms
-- **@iarna/toml** for robust TOML handling
 - **Community** for feedback, testing, and inspiration
 
 ---
 
-<p align="center">
-Made with ❤️ by <a href="https://github.com/benitoanagua">Benito Anagua</a>
-</p>
-
-<div align="center">
-
-### Consistent Material Design Experience Across Your Entire Workflow 🪄
-
-**From code editors to terminals - one unified design language**
-
-</div>
+Made with ❤️ by [Benito Anagua](https://github.com/benitoanagua)
