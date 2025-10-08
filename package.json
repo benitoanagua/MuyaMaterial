@@ -7,6 +7,7 @@
     "build": "npm run build --workspaces",
     "build:vscode": "npm run build --workspace=packages/vscode",
     "build:zed": "npm run build --workspace=packages/zed",
+    "build:zellij": "npm run build --workspace=packages/zellij",
     "test": "npm run test --workspaces",
     "dev": "npm run dev --workspaces",
     "clean": "npm run clean --workspaces"

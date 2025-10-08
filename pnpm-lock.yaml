@@ -44,6 +44,12 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/zellij:
+    dependencies:
+      '@muya-material/core':
+        specifier: workspace:*
+        version: link:../../core
+
 packages:
 
   '@esbuild/aix-ppc64@0.25.10':

@@ -1,0 +1,22 @@
+{
+  "name": "@muya-material/zellij",
+  "version": "1.0.0",
+  "description": "Zellij themes for Muya Material Design System",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "@muya-material/core": "workspace:*"
+  },
+  "keywords": [
+    "zellij",
+    "theme",
+    "material-design",
+    "terminal"
+  ],
+  "author": "Benito Anagua",
+  "license": "MIT"
+}
