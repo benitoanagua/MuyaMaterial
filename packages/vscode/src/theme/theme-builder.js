@@ -97,7 +97,7 @@ export class ThemeBuilder {
     return themePath;
   }
 
-  static generateAllThemes(variants, createScheme, themeConfig = null) {
+  static generateAllThemes(variants, createScheme) {
     const generated = [];
 
     for (const variant of variants) {
@@ -105,7 +105,6 @@ export class ThemeBuilder {
         isDark: variant.isDark,
         contrastLevel: variant.contrastLevel,
         seedColorType: variant.seedColor,
-        themeConfig: themeConfig,
       });
 
       const theme = this.buildTheme(

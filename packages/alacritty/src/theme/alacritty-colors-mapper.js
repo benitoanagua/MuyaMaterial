@@ -2,10 +2,10 @@ export class AlacrittyColorsMapper {
   static mapSchemeToAlacritty(scheme) {
     return {
       primary: {
-        background: scheme.background,
-        foreground: scheme.onBackground,
-        dim_foreground: scheme.onSurfaceVariant,
-        bright_foreground: scheme.onSurface,
+        background: scheme.surfaceContainer,
+        foreground: scheme.onSurfaceVariant,
+        dim_foreground: scheme.surfaceContainerHighest,
+        bright_foreground: scheme.surfaceContainerLowest,
       },
       cursor: {
         text: scheme.background,

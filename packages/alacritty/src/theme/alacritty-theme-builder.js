@@ -140,26 +140,24 @@ export class AlacrittyThemeBuilder {
     return themePath;
   }
 
-  static generateAllThemes(variants, createScheme) {
-    const generated = [];
+  static generateThemeForVariant(variant, createScheme, themeConfig = null) {
+    const scheme = createScheme({
+      isDark: variant.isDark,
+      contrastLevel: themeConfig?.contrastLevel ?? variant.contrastLevel,
+      seedColorType: variant.seedColor,
+      themeConfig,
+    });
 
-    for (const variant of variants) {
-      const scheme = createScheme({
-        isDark: variant.isDark,
-        contrastLevel: variant.contrastLevel,
-        seedColorType: variant.seedColor,
-      });
+    const themeObject = this.buildTheme(scheme, variant.name);
+    const filename = this.toKebabCase(`muya-material-${variant.name}`);
+    const path = this.saveTheme(themeObject, variant.name, filename);
 
-      const themeObject = this.buildTheme(scheme, variant.name);
-      const filename = this.toKebabCase(`muya-material-${variant.name}`);
-      const path = this.saveTheme(themeObject, variant.name, filename);
+    return { variant, path };
+  }
 
-      generated.push({
-        variant,
-        path,
-      });
-    }
-
-    return generated;
+  static generateAllThemes(variants, createScheme, themeConfig = null) {
+    return variants.map((variant) =>
+      this.generateThemeForVariant(variant, createScheme, themeConfig)
+    );
   }
 }

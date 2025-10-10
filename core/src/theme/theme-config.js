@@ -4,6 +4,7 @@ export const defaultThemeConfig = {
   variant: "FIDELITY",
   name: "Muya Material",
   publisher: "Benito Anagua",
+  contrastLevel: 0,
 };
 
 export const themeConfig = { ...defaultThemeConfig };
@@ -20,7 +21,7 @@ export const themeVariants = [
     name: "Olive Dark",
     filename: "olive-dark",
     isDark: true,
-    contrastLevel: 0,
+    contrastLevel: defaultThemeConfig.contrastLevel,
     uiTheme: "vs-dark",
     seedColor: "default",
   },
@@ -28,7 +29,7 @@ export const themeVariants = [
     name: "Mystic Dark",
     filename: "mystic-dark",
     isDark: true,
-    contrastLevel: 0,
+    contrastLevel: defaultThemeConfig.contrastLevel,
     uiTheme: "vs-dark",
     seedColor: "complement",
   },
@@ -36,7 +37,7 @@ export const themeVariants = [
     name: "Olive Light",
     filename: "olive-light",
     isDark: false,
-    contrastLevel: 0,
+    contrastLevel: defaultThemeConfig.contrastLevel,
     uiTheme: "vs",
     seedColor: "default",
   },
@@ -44,7 +45,7 @@ export const themeVariants = [
     name: "Mystic Light",
     filename: "mystic-light",
     isDark: false,
-    contrastLevel: 0,
+    contrastLevel: defaultThemeConfig.contrastLevel,
     uiTheme: "vs",
     seedColor: "complement",
   },

@@ -53,11 +53,14 @@ export const createDynamicScheme = ({
 }) => {
   const config = themeConfig ? getThemeConfig(themeConfig) : defaultThemeConfig;
 
+  const finalContrastLevel =
+    contrastLevel !== undefined ? contrastLevel : config.contrastLevel;
+
   const seedColor = getSeedColor(seedColorType, config);
   const scheme = getSchemeForVariant(
     config.variant,
     isDark,
-    contrastLevel,
+    finalContrastLevel,
     seedColor
   );
 
@@ -72,7 +75,7 @@ export const createDynamicScheme = ({
 
   return {
     isDark,
-    contrastLevel,
+    contrastLevel: finalContrastLevel,
     seedColor,
     seedColorType,
     primary: extract("primary"),
