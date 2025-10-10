@@ -68,7 +68,7 @@ export class ZellijThemeBuilder {
     return themePath;
   }
 
-  static generateAllThemes(variants, createScheme) {
+  static generateAllThemes(variants, createScheme, themeConfig = null) {
     const generated = [];
 
     for (const variant of variants) {
@@ -76,6 +76,7 @@ export class ZellijThemeBuilder {
         isDark: variant.isDark,
         contrastLevel: variant.contrastLevel,
         seedColorType: variant.seedColor,
+        themeConfig: themeConfig,
       });
 
       const themeContent = this.buildTheme(scheme, variant.name);

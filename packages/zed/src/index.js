@@ -1,18 +1,29 @@
-import { createDynamicScheme, themeVariants } from "@muya-material/core";
+import {
+  createDynamicScheme,
+  themeVariants,
+  getThemeConfig,
+} from "@muya-material/core";
 import { ZedThemeBuilder } from "./theme/zed-theme-builder.js";
 
 class ZedThemeGenerator {
-  static async generateThemes() {
+  static async generateThemes(customThemeConfig = null) {
     try {
       console.log("🎨 Generating Zed themes (v0.2.0 compatible)...");
 
+      const config = customThemeConfig
+        ? getThemeConfig(customThemeConfig)
+        : null;
+
       const generatedThemes = ZedThemeBuilder.generateAllThemes(
         themeVariants,
-        createDynamicScheme
+        createDynamicScheme,
+        config
       );
 
       this.displaySuccessMessage(generatedThemes);
       this.displayThemeStructure();
+
+      return generatedThemes;
     } catch (error) {
       this.displayErrorMessage(error);
       process.exit(1);
@@ -21,9 +32,19 @@ class ZedThemeGenerator {
 
   static displaySuccessMessage(generatedThemes) {
     console.log("\n✅ Zed themes generated successfully (v0.2.0 compatible):");
+
     generatedThemes.forEach(({ variant, path }) => {
-      console.log(`   • ${variant.name} → ${path}`);
+      if (variant && variant.name !== "Theme Family") {
+        console.log(`   • ${variant.name} → ${path}`);
+      }
     });
+
+    const familyTheme = generatedThemes.find(
+      (t) => t.variant && t.variant.name === "Theme Family"
+    );
+    if (familyTheme) {
+      console.log(`   • Theme Family → ${familyTheme.path}`);
+    }
   }
 
   static displayThemeStructure() {
@@ -45,5 +66,16 @@ class ZedThemeGenerator {
   }
 }
 
-// Execute theme generation
-await ZedThemeGenerator.generateThemes();
+export const generateZedThemes = async (customThemeConfig = null) => {
+  return await ZedThemeGenerator.generateThemes(customThemeConfig);
+};
+
+export const generateCustomZedThemes = (config) => {
+  return generateZedThemes(config);
+};
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  await ZedThemeGenerator.generateThemes();
+}
+
+export default ZedThemeGenerator;

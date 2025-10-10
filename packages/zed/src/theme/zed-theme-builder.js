@@ -72,7 +72,7 @@ export class ZedThemeBuilder {
     return themePath;
   }
 
-  static generateAllThemes(variants, createScheme) {
+  static generateAllThemes(variants, createScheme, themeConfig = null) {
     const generated = [];
 
     for (const variant of variants) {
@@ -80,6 +80,7 @@ export class ZedThemeBuilder {
         isDark: variant.isDark,
         contrastLevel: variant.contrastLevel,
         seedColorType: variant.seedColor,
+        themeConfig: themeConfig,
       });
 
       const theme = this.buildTheme(

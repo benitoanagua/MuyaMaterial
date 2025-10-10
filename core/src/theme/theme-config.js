@@ -1,9 +1,18 @@
-export const themeConfig = {
-  seedColorDefault: "#7D944C", // Olive - verde terroso
-  seedColorComplement: "#6B5693", // Mystic - púrpura tenue
+export const defaultThemeConfig = {
+  seedColorDefault: "#7D944C",
+  seedColorComplement: "#6B5693",
   variant: "FIDELITY",
   name: "Muya Material",
   publisher: "Benito Anagua",
+};
+
+export const themeConfig = { ...defaultThemeConfig };
+
+export const getThemeConfig = (customConfig = {}) => {
+  return {
+    ...defaultThemeConfig,
+    ...customConfig,
+  };
 };
 
 export const themeVariants = [

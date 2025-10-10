@@ -1,18 +1,29 @@
-import { createDynamicScheme, themeVariants } from "@muya-material/core";
+import {
+  createDynamicScheme,
+  themeVariants,
+  getThemeConfig,
+} from "@muya-material/core";
 import { ZellijThemeBuilder } from "./theme/zellij-theme-builder.js";
 
 class ZellijThemeGenerator {
-  static async generateThemes() {
+  static async generateThemes(customThemeConfig = null) {
     try {
       console.log("🎨 Generating Zellij themes...");
 
+      const config = customThemeConfig
+        ? getThemeConfig(customThemeConfig)
+        : null;
+
       const generatedThemes = ZellijThemeBuilder.generateAllThemes(
         themeVariants,
-        createDynamicScheme
+        createDynamicScheme,
+        config
       );
 
       this.displaySuccessMessage(generatedThemes);
       this.displayThemeStructure();
+
+      return generatedThemes;
     } catch (error) {
       this.displayErrorMessage(error);
       process.exit(1);
@@ -31,6 +42,7 @@ class ZellijThemeGenerator {
     console.log("   - Schema: Zellij theme specification");
     console.log("   - Components: text, ribbon, table, list, frame");
     console.log("   - Format: RGB color values (0-255)");
+    console.log("   - File format: .kdl (KDL configuration files)");
   }
 
   static displayErrorMessage(error) {
@@ -42,5 +54,16 @@ class ZellijThemeGenerator {
   }
 }
 
-// Execute theme generation
-await ZellijThemeGenerator.generateThemes();
+export const generateZellijThemes = async (customThemeConfig = null) => {
+  return await ZellijThemeGenerator.generateThemes(customThemeConfig);
+};
+
+export const generateCustomZellijThemes = (config) => {
+  return generateZellijThemes(config);
+};
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  await ZellijThemeGenerator.generateThemes();
+}
+
+export default ZellijThemeGenerator;

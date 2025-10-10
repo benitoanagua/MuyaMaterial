@@ -14,9 +14,8 @@ import {
   SchemeFruitSalad,
 } from "@material/material-color-utilities";
 
-import { themeConfig } from "./theme-config.js";
+import { getThemeConfig, defaultThemeConfig } from "./theme-config.js";
 
-// Mapeo de nombres de variante a constructores de esquema
 const SCHEME_CONSTRUCTORS = {
   TONAL_SPOT: SchemeTonalSpot,
   NEUTRAL: SchemeNeutral,
@@ -29,8 +28,7 @@ const SCHEME_CONSTRUCTORS = {
   FRUIT_SALAD: SchemeFruitSalad,
 };
 
-// Función para obtener el color semilla según la configuración
-const getSeedColor = (seedColorType) => {
+const getSeedColor = (seedColorType, themeConfig) => {
   const colorMap = {
     default: themeConfig.seedColorDefault,
     complement: themeConfig.seedColorComplement,
@@ -39,7 +37,6 @@ const getSeedColor = (seedColorType) => {
   return colorMap[seedColorType] || themeConfig.seedColorDefault;
 };
 
-// Función para obtener el esquema según la variante
 const getSchemeForVariant = (variant, isDark, contrastLevel, seedColor) => {
   const sourceColorArgb = argbFromHex(seedColor);
   const sourceColorHct = Hct.fromInt(sourceColorArgb);
@@ -52,10 +49,13 @@ export const createDynamicScheme = ({
   isDark,
   contrastLevel,
   seedColorType = "default",
+  themeConfig = null,
 }) => {
-  const seedColor = getSeedColor(seedColorType);
+  const config = themeConfig ? getThemeConfig(themeConfig) : defaultThemeConfig;
+
+  const seedColor = getSeedColor(seedColorType, config);
   const scheme = getSchemeForVariant(
-    themeConfig.variant,
+    config.variant,
     isDark,
     contrastLevel,
     seedColor
@@ -66,7 +66,7 @@ export const createDynamicScheme = ({
       const color = MaterialDynamicColors[prop]?.getArgb(scheme);
       return hexFromArgb(color);
     } catch {
-      return "#FF00FF"; // Color de fallback (magenta)
+      return "#FF00FF";
     }
   };
 

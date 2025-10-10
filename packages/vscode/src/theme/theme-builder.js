@@ -39,7 +39,7 @@ import getVariousSettings from "./scopes/various.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export class ThemeBuilder {
-  static buildTheme(scheme, name, filename) {
+  static buildTheme(scheme, name) {
     const theme = {
       name,
       type: scheme.isDark ? "dark" : "light",
@@ -97,14 +97,15 @@ export class ThemeBuilder {
     return themePath;
   }
 
-  static generateAllThemes(variants, createScheme) {
+  static generateAllThemes(variants, createScheme, themeConfig = null) {
     const generated = [];
 
     for (const variant of variants) {
       const scheme = createScheme({
         isDark: variant.isDark,
         contrastLevel: variant.contrastLevel,
-        seedColorType: variant.seedColor, // Pasamos el tipo de color semilla
+        seedColorType: variant.seedColor,
+        themeConfig: themeConfig,
       });
 
       const theme = this.buildTheme(
