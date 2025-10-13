@@ -2,17 +2,17 @@ export class AlacrittyColorsMapper {
   static mapSchemeToAlacritty(scheme) {
     return {
       primary: {
-        background: scheme.surfaceContainer,
-        foreground: scheme.onSurfaceVariant,
-        dim_foreground: scheme.surfaceContainerHighest,
-        bright_foreground: scheme.surfaceContainerLowest,
+        background: scheme.surface,
+        foreground: scheme.onSurface,
+        dim_foreground: scheme.onSurfaceVariant,
+        bright_foreground: scheme.inverseSurface,
       },
       cursor: {
-        text: scheme.background,
+        text: scheme.onPrimary,
         cursor: scheme.primary,
       },
       vi_mode_cursor: {
-        text: scheme.background,
+        text: scheme.onSecondary,
         cursor: scheme.secondary,
       },
       selection: {
@@ -21,7 +21,7 @@ export class AlacrittyColorsMapper {
       },
       search: {
         matches: {
-          foreground: scheme.onTertiary,
+          foreground: scheme.onTertiaryContainer,
           background: scheme.tertiaryContainer,
         },
         focused_match: {
@@ -31,31 +31,31 @@ export class AlacrittyColorsMapper {
       },
       hints: {
         start: {
-          foreground: scheme.background,
+          foreground: scheme.onTertiary,
           background: scheme.tertiary,
         },
         end: {
-          foreground: scheme.background,
-          background: scheme.primaryContainer,
+          foreground: scheme.onSecondary,
+          background: scheme.secondary,
         },
       },
       line_indicator: {
-        foreground: scheme.primary,
-        background: scheme.surfaceContainer,
+        foreground: scheme.onSurfaceVariant,
+        background: scheme.surfaceContainerHigh,
       },
       footer_bar: {
-        background: scheme.surfaceContainerHigh,
+        background: scheme.surfaceContainerHighest,
         foreground: scheme.onSurface,
       },
       normal: {
-        black: scheme.surfaceContainerHighest,
+        black: scheme.surfaceContainerLowest,
         red: scheme.error,
         green: scheme.tertiary,
         yellow: scheme.secondary,
         blue: scheme.primary,
-        magenta: scheme.tertiaryContainer,
-        cyan: scheme.secondaryContainer,
-        white: scheme.onSurfaceVariant,
+        magenta: scheme.secondaryContainer,
+        cyan: scheme.tertiaryContainer,
+        white: scheme.onSurface,
       },
       bright: {
         black: scheme.surfaceContainerHigh,
@@ -65,10 +65,10 @@ export class AlacrittyColorsMapper {
         blue: scheme.onPrimaryContainer,
         magenta: scheme.tertiary,
         cyan: scheme.secondary,
-        white: scheme.onSurface,
+        white: scheme.inverseSurface,
       },
       dim: {
-        black: scheme.surfaceContainer,
+        black: scheme.surface,
         red: scheme.errorContainer,
         green: scheme.tertiaryContainer,
         yellow: scheme.secondaryContainer,

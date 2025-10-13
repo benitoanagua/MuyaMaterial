@@ -8,7 +8,7 @@ export default function getControlElements(scheme) {
     "button.hoverBackground": scheme.primaryContainer,
     "button.secondaryForeground": scheme.onSecondaryContainer,
     "button.secondaryBackground": scheme.secondaryContainer,
-    "button.secondaryHoverBackground": `${scheme.secondaryContainer}10`,
+    "button.secondaryHoverBackground": `${scheme.secondaryContainer}1A`,
 
     // Checkbox control
     "checkbox.background": scheme.surfaceContainerLowest,
@@ -16,8 +16,8 @@ export default function getControlElements(scheme) {
     "checkbox.foreground": scheme.onSurface,
     "checkbox.selectBackground": scheme.primary,
     "checkbox.selectBorder": scheme.primary,
-    "checkbox.disabled.background": `${scheme.surfaceContainerLowest}60`,
-    "checkbox.disabled.foreground": `${scheme.onSurface}40`,
+    "checkbox.disabled.background": `${scheme.surfaceContainer}99`,
+    "checkbox.disabled.foreground": `${scheme.onSurface}66`,
 
     // Radio control
     "radio.activeForeground": scheme.onPrimary,
@@ -38,25 +38,25 @@ export default function getControlElements(scheme) {
     "input.background": scheme.surfaceContainerLowest,
     "input.border": scheme.outlineVariant,
     "input.foreground": scheme.onSurface,
-    "input.placeholderForeground": `${scheme.onSurfaceVariant}80`,
-    "inputOption.activeBackground": `${scheme.primary}20`,
+    "input.placeholderForeground": `${scheme.onSurfaceVariant}90`,
+    "inputOption.activeBackground": `${scheme.primaryContainer}33`,
     "inputOption.activeBorder": scheme.primary,
     "inputOption.activeForeground": scheme.primary,
     "inputOption.hoverBackground": scheme.surfaceContainer,
-    "inputValidation.errorBackground": `${scheme.error}20`,
+    "inputValidation.errorBackground": `${scheme.errorContainer}26`,
     "inputValidation.errorForeground": scheme.error,
     "inputValidation.errorBorder": scheme.error,
-    "inputValidation.infoBackground": `${scheme.primary}20`,
+    "inputValidation.infoBackground": `${scheme.primaryContainer}26`,
     "inputValidation.infoForeground": scheme.primary,
     "inputValidation.infoBorder": scheme.primary,
-    "inputValidation.warningBackground": `${scheme.tertiary}20`,
+    "inputValidation.warningBackground": `${scheme.tertiaryContainer}26`,
     "inputValidation.warningForeground": scheme.tertiary,
     "inputValidation.warningBorder": scheme.tertiary,
 
     // Scrollbar control
-    "scrollbar.shadow": `${scheme.outline}40`,
-    "scrollbarSlider.activeBackground": `${scheme.primary}60`,
-    "scrollbarSlider.background": `${scheme.outline}40`,
-    "scrollbarSlider.hoverBackground": `${scheme.outline}60`,
+    "scrollbar.shadow": `${scheme.outline}66`,
+    "scrollbarSlider.activeBackground": `${scheme.primary}99`,
+    "scrollbarSlider.background": `${scheme.outline}66`,
+    "scrollbarSlider.hoverBackground": `${scheme.primary}80`,
   };
 }

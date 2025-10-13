@@ -11,7 +11,7 @@ try {
   const themeConfig = {
     ...defaultThemeConfig,
     variant: "FIDELITY",
-    contrastLevel: 0,
+    contrastLevel: -1,
   };
 
   const generatedThemes = AlacrittyThemeBuilder.generateAllThemes(

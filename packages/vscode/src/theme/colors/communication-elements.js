@@ -19,13 +19,13 @@ export default function getCommunicationElements(scheme) {
     "inlineChat.background": scheme.surfaceContainerLowest,
     "inlineChat.foreground": scheme.onSurface,
     "inlineChat.border": scheme.outlineVariant,
-    "inlineChat.shadow": `${scheme.outline}20`,
+    "inlineChat.shadow": `${scheme.outline}33`,
     "inlineChatInput.border": scheme.outlineVariant,
     "inlineChatInput.focusBorder": scheme.primary,
-    "inlineChatInput.placeholderForeground": `${scheme.onSurfaceVariant}80`,
+    "inlineChatInput.placeholderForeground": `${scheme.onSurfaceVariant}CC`,
     "inlineChatInput.background": scheme.surfaceContainer,
-    "inlineChatDiff.inserted": `${scheme.secondary}20`,
-    "inlineChatDiff.removed": `${scheme.error}20`,
+    "inlineChatDiff.inserted": `${scheme.secondaryContainer}33`,
+    "inlineChatDiff.removed": `${scheme.errorContainer}33`,
 
     // Panel Chat colors
     "interactive.activeCodeBorder": scheme.primary,
