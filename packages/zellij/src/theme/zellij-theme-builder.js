@@ -6,8 +6,8 @@ import { ZellijColorsMapper } from "./zellij-colors-mapper.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export class ZellijThemeBuilder {
-  static buildTheme(scheme, name) {
-    const colors = ZellijColorsMapper.mapSchemeToZellij(scheme);
+  static buildTheme(scheme, terminalColors, name) {
+    const colors = ZellijColorsMapper.mapSchemeToZellij(scheme, terminalColors);
 
     // Build KDL document
     const kdlContent = this.generateKDL(name, colors);
@@ -68,26 +68,47 @@ export class ZellijThemeBuilder {
     return themePath;
   }
 
-  static generateAllThemes(variants, createScheme) {
-    const generated = [];
+  static generateThemeForVariant(
+    variant,
+    createScheme,
+    generateTerminalColors,
+    themeConfig = null
+  ) {
+    // Generate Material 3 scheme
+    const scheme = createScheme({
+      isDark: variant.isDark,
+      contrastLevel: themeConfig?.contrastLevel ?? variant.contrastLevel,
+      seedColorType: variant.seedColor,
+      themeConfig,
+    });
 
-    for (const variant of variants) {
-      const scheme = createScheme({
-        isDark: variant.isDark,
-        contrastLevel: variant.contrastLevel,
-        seedColorType: variant.seedColor,
-      });
+    // Generate terminal colors separately
+    const terminalColors = generateTerminalColors({
+      isDark: variant.isDark,
+      seedColorType: variant.seedColor,
+      themeConfig,
+    });
 
-      const themeContent = this.buildTheme(scheme, variant.name);
-      const filename = this.toKebabCase(`muya-material-${variant.name}`);
-      const path = this.saveTheme(themeContent, filename);
+    const themeContent = this.buildTheme(scheme, terminalColors, variant.name);
+    const filename = this.toKebabCase(`muya-material-${variant.name}`);
+    const path = this.saveTheme(themeContent, filename);
 
-      generated.push({
+    return { variant, path };
+  }
+
+  static generateAllThemes(
+    variants,
+    createScheme,
+    generateTerminalColors,
+    themeConfig = null
+  ) {
+    return variants.map((variant) =>
+      this.generateThemeForVariant(
         variant,
-        path,
-      });
-    }
-
-    return generated;
+        createScheme,
+        generateTerminalColors,
+        themeConfig
+      )
+    );
   }
 }

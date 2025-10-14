@@ -58,6 +58,9 @@ importers:
       '@muya-material/core':
         specifier: workspace:*
         version: link:../../core
+      hex-rgb:
+        specifier: ^5.0.0
+        version: 5.0.0
 
 packages:
 
@@ -475,6 +478,10 @@ packages:
   has-flag@3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
     engines: {node: '>=4'}
+
+  hex-rgb@5.0.0:
+    resolution: {integrity: sha512-NQO+lgVUCtHxZ792FodgW0zflK+ozS9X9dwGp9XvvmPlH7pyxd588cn24TD3rmPm/N0AIRXF10Otah8yKqGw4w==}
+    engines: {node: '>=12'}
 
   ignore-by-default@1.0.1:
     resolution: {integrity: sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA==}
@@ -1021,6 +1028,8 @@ snapshots:
       is-glob: 4.0.3
 
   has-flag@3.0.0: {}
+
+  hex-rgb@5.0.0: {}
 
   ignore-by-default@1.0.1: {}
 
