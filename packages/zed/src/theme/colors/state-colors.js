@@ -2,14 +2,14 @@ export class StateColors {
   static mapStateColors(scheme, term) {
     return {
       "element.hover": scheme.surfaceContainerHigh,
-      "element.active": scheme.surfaceContainerHighest,
-      "element.selected": scheme.primaryContainer,
-      "element.disabled": scheme.surfaceContainer,
+      "element.active": `${scheme.onSurfaceVariant}4D`,
+      "element.selected": `${scheme.outlineVariant}4D`,
+      "element.disabled": scheme.onSurfaceVariant,
 
-      "ghost_element.hover": scheme.surfaceContainer,
-      "ghost_element.active": scheme.surfaceContainerHigh,
-      "ghost_element.selected": scheme.secondaryContainer,
-      "ghost_element.disabled": scheme.surfaceContainerLow,
+      "ghost_element.hover": `${scheme.surfaceContainerHigh}4D`,
+      "ghost_element.active": `${scheme.onSurfaceVariant}99`,
+      "ghost_element.selected": `${scheme.onSurfaceVariant}66`,
+      "ghost_element.disabled": scheme.onSurfaceVariant,
 
       "error.background": scheme.errorContainer,
       "error.border": scheme.error,
@@ -28,12 +28,12 @@ export class StateColors {
       info: scheme.primary,
       success: scheme.secondary,
 
-      hint: scheme.tertiary,
-      "hint.background": scheme.tertiaryContainer,
-      "hint.border": scheme.tertiary,
+      hint: scheme.onSurfaceVariant,
+      "hint.background": scheme.surfaceContainer,
+      "hint.border": scheme.outlineVariant,
 
-      predictive: scheme.primary,
-      "predictive.background": scheme.primaryContainer,
+      predictive: scheme.onSurfaceVariant,
+      "predictive.background": scheme.surfaceContainer,
       "predictive.border": scheme.primary,
     };
   }
