@@ -1,25 +1,25 @@
 export class SpecialColors {
-  static mapSpecialColors(scheme) {
+  static mapSpecialColors(scheme, term) {
     return {
-      created: scheme.secondary,
+      created: term.normal.green,
       "created.background": scheme.secondaryContainer,
-      "created.border": scheme.secondary,
+      "created.border": term.normal.green,
 
-      modified: scheme.primary,
+      modified: term.normal.blue,
       "modified.background": scheme.primaryContainer,
-      "modified.border": scheme.primary,
+      "modified.border": term.normal.blue,
 
-      deleted: scheme.error,
+      deleted: term.normal.red,
       "deleted.background": scheme.errorContainer,
-      "deleted.border": scheme.error,
+      "deleted.border": term.normal.red,
 
-      conflict: scheme.tertiary,
+      conflict: term.normal.yellow,
       "conflict.background": scheme.tertiaryContainer,
-      "conflict.border": scheme.tertiary,
+      "conflict.border": term.normal.yellow,
 
-      renamed: scheme.secondary,
+      renamed: term.normal.green,
       "renamed.background": scheme.secondaryContainer,
-      "renamed.border": scheme.secondary,
+      "renamed.border": term.normal.green,
 
       ignored: scheme.onSurfaceVariant,
       "ignored.background": scheme.surfaceContainer,
@@ -29,9 +29,9 @@ export class SpecialColors {
       "hidden.background": scheme.surfaceContainer,
       "hidden.border": scheme.outlineVariant,
 
-      unreachable: scheme.error,
+      unreachable: term.normal.red,
       "unreachable.background": scheme.errorContainer,
-      "unreachable.border": scheme.error,
+      "unreachable.border": term.normal.red,
 
       players: [
         {
@@ -50,9 +50,9 @@ export class SpecialColors {
           background: scheme.tertiary,
         },
         {
-          cursor: scheme.error,
-          selection: `${scheme.error}4d`,
-          background: scheme.error,
+          cursor: term.normal.red,
+          selection: `${term.normal.red}4d`,
+          background: term.normal.red,
         },
       ],
 

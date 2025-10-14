@@ -7,8 +7,8 @@ import { ZedSyntaxMapper } from "./zed-syntax-mapper.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export class ZedThemeBuilder {
-  static buildTheme(scheme, name, appearance) {
-    const style = ZedColorsMapper.mapSchemeToZed(scheme);
+  static buildTheme(scheme, terminalColors, name, appearance) {
+    const style = ZedColorsMapper.mapSchemeToZed(scheme, terminalColors);
     const syntax = ZedSyntaxMapper.mapSchemeToSyntax(scheme);
 
     const theme = {
@@ -35,7 +35,10 @@ export class ZedThemeBuilder {
       name: `Muya Material - ${variant.name}`,
       appearance: variant.isDark ? "dark" : "light",
       style: {
-        ...ZedColorsMapper.mapSchemeToZed(variant.scheme),
+        ...ZedColorsMapper.mapSchemeToZed(
+          variant.scheme,
+          variant.terminalColors
+        ),
         syntax: ZedSyntaxMapper.mapSchemeToSyntax(variant.scheme),
       },
     }));
@@ -72,7 +75,7 @@ export class ZedThemeBuilder {
     return themePath;
   }
 
-  static generateAllThemes(variants, createScheme) {
+  static generateAllThemes(variants, createScheme, generateTerminalColors) {
     const generated = [];
 
     for (const variant of variants) {
@@ -82,8 +85,14 @@ export class ZedThemeBuilder {
         seedColorType: variant.seedColor,
       });
 
+      const terminalColors = generateTerminalColors({
+        isDark: variant.isDark,
+        seedColorType: variant.seedColor,
+      });
+
       const theme = this.buildTheme(
         scheme,
+        terminalColors,
         variant.name,
         variant.isDark ? "dark" : "light"
       );
@@ -92,7 +101,7 @@ export class ZedThemeBuilder {
       const path = this.saveTheme(theme, filename);
 
       generated.push({
-        variant: { ...variant, scheme },
+        variant: { ...variant, scheme, terminalColors },
         path,
       });
     }

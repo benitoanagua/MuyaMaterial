@@ -1,18 +1,25 @@
-import { createDynamicScheme, themeVariants } from "@muya-material/core";
+import {
+  createDynamicScheme,
+  generateTerminalColors,
+  themeVariants,
+} from "@muya-material/core";
 import { ZedThemeBuilder } from "./theme/zed-theme-builder.js";
 
-console.log("🎨 Generating Zed themes (v0.2.0 compatible)...");
+console.log("🎨 Generating Zed themes with terminal colors...");
 
 try {
   const generatedThemes = ZedThemeBuilder.generateAllThemes(
     themeVariants,
-    createDynamicScheme
+    createDynamicScheme,
+    generateTerminalColors
   );
 
-  console.log("\n✅ Zed themes generated successfully (v0.2.0 compatible):");
+  console.log("\n✅ Zed themes generated successfully:");
   generatedThemes.forEach(({ variant, path }) => {
     if (variant && variant.name !== "Theme Family") {
       console.log(`   • ${variant.name} → ${path}`);
+    } else if (variant && variant.name === "Theme Family") {
+      console.log(`   • Theme Family → ${path}`);
     }
   });
 } catch (error) {

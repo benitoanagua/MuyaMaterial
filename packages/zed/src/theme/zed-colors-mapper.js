@@ -7,14 +7,14 @@ import { TerminalColors } from "./colors/terminal-colors.js";
 import { SpecificColors } from "./colors/specific-colors.js";
 
 export class ZedColorsMapper {
-  static mapSchemeToZed(scheme) {
+  static mapSchemeToZed(scheme, terminalColors) {
     const allColors = {
       ...ElevationColors.mapElevationColors(scheme),
-      ...StateColors.mapStateColors(scheme),
+      ...StateColors.mapStateColors(scheme, terminalColors),
       ...TextColors.mapTextColors(scheme),
       ...EditorColors.mapEditorColors(scheme),
-      ...SpecialColors.mapSpecialColors(scheme),
-      ...TerminalColors.mapTerminalColors(scheme),
+      ...SpecialColors.mapSpecialColors(scheme, terminalColors),
+      ...TerminalColors.mapTerminalColors(scheme, terminalColors),
       ...SpecificColors.mapSpecificColors(scheme),
     };
 

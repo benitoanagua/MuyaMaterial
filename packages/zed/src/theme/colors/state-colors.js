@@ -1,5 +1,5 @@
 export class StateColors {
-  static mapStateColors(scheme) {
+  static mapStateColors(scheme, term) {
     return {
       "element.hover": `${scheme.primaryContainer}40`,
       "element.active": `${scheme.secondaryContainer}80`,
@@ -12,25 +12,25 @@ export class StateColors {
       "ghost_element.disabled": `${scheme.onSurface}40`,
 
       "error.background": scheme.errorContainer,
-      "error.border": scheme.error,
+      "error.border": term.normal.red,
 
-      "warning.background": scheme.secondaryContainer,
-      "warning.border": scheme.secondary,
+      "warning.background": scheme.tertiaryContainer,
+      "warning.border": term.normal.yellow,
 
       "info.background": scheme.primaryContainer,
-      "info.border": scheme.primary,
+      "info.border": term.normal.blue,
 
-      "success.background": scheme.tertiaryContainer,
-      "success.border": scheme.tertiary,
+      "success.background": scheme.secondaryContainer,
+      "success.border": term.normal.green,
 
-      error: scheme.error,
-      warning: scheme.secondary,
-      info: scheme.primary,
-      success: scheme.tertiary,
+      error: term.normal.red,
+      warning: term.normal.yellow,
+      info: term.normal.blue,
+      success: term.normal.green,
 
-      hint: scheme.tertiary,
+      hint: term.normal.cyan,
       "hint.background": scheme.tertiaryContainer,
-      "hint.border": scheme.tertiary,
+      "hint.border": term.normal.cyan,
 
       predictive: scheme.primary,
       "predictive.background": scheme.primaryContainer,
