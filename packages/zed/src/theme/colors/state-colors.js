@@ -1,36 +1,36 @@
 export class StateColors {
   static mapStateColors(scheme, term) {
     return {
-      "element.hover": `${scheme.primaryContainer}40`,
-      "element.active": `${scheme.secondaryContainer}80`,
-      "element.selected": `${scheme.primaryContainer}80`,
-      "element.disabled": `${scheme.onSurface}20`,
+      "element.hover": scheme.surfaceContainerHigh,
+      "element.active": scheme.surfaceContainerHighest,
+      "element.selected": scheme.primaryContainer,
+      "element.disabled": scheme.surfaceContainer,
 
-      "ghost_element.hover": `${scheme.secondary}40`,
+      "ghost_element.hover": scheme.surfaceContainer,
       "ghost_element.active": scheme.surfaceContainerHigh,
-      "ghost_element.selected": `${scheme.tertiaryContainer}60`,
-      "ghost_element.disabled": `${scheme.onSurface}40`,
+      "ghost_element.selected": scheme.secondaryContainer,
+      "ghost_element.disabled": scheme.surfaceContainerLow,
 
       "error.background": scheme.errorContainer,
-      "error.border": term.normal.red,
+      "error.border": scheme.error,
 
       "warning.background": scheme.tertiaryContainer,
-      "warning.border": term.normal.yellow,
+      "warning.border": scheme.tertiary,
 
       "info.background": scheme.primaryContainer,
-      "info.border": term.normal.blue,
+      "info.border": scheme.primary,
 
       "success.background": scheme.secondaryContainer,
-      "success.border": term.normal.green,
+      "success.border": scheme.secondary,
 
-      error: term.normal.red,
-      warning: term.normal.yellow,
-      info: term.normal.blue,
-      success: term.normal.green,
+      error: scheme.error,
+      warning: scheme.tertiary,
+      info: scheme.primary,
+      success: scheme.secondary,
 
-      hint: term.normal.cyan,
+      hint: scheme.tertiary,
       "hint.background": scheme.tertiaryContainer,
-      "hint.border": term.normal.cyan,
+      "hint.border": scheme.tertiary,
 
       predictive: scheme.primary,
       "predictive.background": scheme.primaryContainer,

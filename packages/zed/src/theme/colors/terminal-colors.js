@@ -32,7 +32,7 @@ export class TerminalColors {
       "terminal.ansi.dim_cyan": term.dim.cyan,
       "terminal.ansi.dim_white": term.dim.white,
 
-      "terminal.background": scheme.surfaceDim,
+      "terminal.background": scheme.surfaceContainerLow,
     };
   }
 }

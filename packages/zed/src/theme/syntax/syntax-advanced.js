@@ -35,7 +35,7 @@ export class SyntaxAdvanced {
         font_weight: 500,
       },
       "support.function": {
-        color: scheme.error,
+        color: scheme.primary,
         font_style: "normal",
         font_weight: 500,
       },
@@ -83,7 +83,7 @@ export class SyntaxAdvanced {
         font_weight: 500,
       },
       "markup.link": {
-        color: scheme.error,
+        color: scheme.primary,
         font_style: "normal",
         font_weight: 500,
       },
@@ -93,13 +93,13 @@ export class SyntaxAdvanced {
         font_weight: 400,
       },
       "markup.raw": {
-        color: scheme.error,
+        color: scheme.tertiary,
         font_style: "normal",
         font_weight: 400,
       },
 
       "diff.added": {
-        color: scheme.tertiary,
+        color: scheme.secondary,
         font_style: "normal",
         font_weight: 500,
       },
@@ -109,7 +109,7 @@ export class SyntaxAdvanced {
         font_weight: 500,
       },
       "diff.changed": {
-        color: scheme.secondary,
+        color: scheme.tertiary,
         font_style: "normal",
         font_weight: 500,
       },

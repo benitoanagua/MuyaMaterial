@@ -9,7 +9,7 @@ export class SyntaxBase {
       "keyword.control": {
         color: scheme.primary,
         font_style: "normal",
-        font_weight: 700,
+        font_weight: 600,
       },
       "keyword.operator": {
         color: scheme.error,
@@ -23,7 +23,7 @@ export class SyntaxBase {
         font_weight: 600,
       },
       "type.builtin": {
-        color: scheme.tertiary,
+        color: scheme.primary,
         font_style: "italic",
         font_weight: 600,
       },
@@ -33,12 +33,12 @@ export class SyntaxBase {
         font_weight: 600,
       },
       struct: {
-        color: scheme.secondary,
+        color: scheme.primary,
         font_style: "normal",
         font_weight: 600,
       },
       enum: {
-        color: scheme.tertiary,
+        color: scheme.primary,
         font_style: "normal",
         font_weight: 600,
       },
@@ -54,12 +54,12 @@ export class SyntaxBase {
         font_weight: 600,
       },
       "function.builtin": {
-        color: scheme.error,
+        color: scheme.primary,
         font_style: "italic",
         font_weight: 600,
       },
       "function.method": {
-        color: scheme.secondary,
+        color: scheme.primary,
         font_style: "normal",
         font_weight: 600,
       },
@@ -75,7 +75,7 @@ export class SyntaxBase {
         font_weight: 500,
       },
       "variable.builtin": {
-        color: scheme.error,
+        color: scheme.primary,
         font_style: "italic",
         font_weight: 600,
       },
@@ -86,12 +86,12 @@ export class SyntaxBase {
         font_weight: 500,
       },
       "constant.builtin": {
-        color: scheme.secondary,
+        color: scheme.tertiary,
         font_style: "normal",
         font_weight: 600,
       },
       "constant.numeric": {
-        color: scheme.error,
+        color: scheme.tertiary,
         font_style: "normal",
         font_weight: 500,
       },
@@ -101,7 +101,7 @@ export class SyntaxBase {
         font_weight: 400,
       },
       "string.regexp": {
-        color: scheme.error,
+        color: scheme.secondary,
         font_style: "normal",
         font_weight: 600,
       },

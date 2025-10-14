@@ -1,25 +1,25 @@
 export class SpecialColors {
   static mapSpecialColors(scheme, term) {
     return {
-      created: term.normal.green,
+      created: scheme.secondary,
       "created.background": scheme.secondaryContainer,
-      "created.border": term.normal.green,
+      "created.border": scheme.secondary,
 
-      modified: term.normal.blue,
+      modified: scheme.primary,
       "modified.background": scheme.primaryContainer,
-      "modified.border": term.normal.blue,
+      "modified.border": scheme.primary,
 
-      deleted: term.normal.red,
+      deleted: scheme.error,
       "deleted.background": scheme.errorContainer,
-      "deleted.border": term.normal.red,
+      "deleted.border": scheme.error,
 
-      conflict: term.normal.yellow,
+      conflict: scheme.tertiary,
       "conflict.background": scheme.tertiaryContainer,
-      "conflict.border": term.normal.yellow,
+      "conflict.border": scheme.tertiary,
 
-      renamed: term.normal.green,
+      renamed: scheme.secondary,
       "renamed.background": scheme.secondaryContainer,
-      "renamed.border": term.normal.green,
+      "renamed.border": scheme.secondary,
 
       ignored: scheme.onSurfaceVariant,
       "ignored.background": scheme.surfaceContainer,
@@ -29,34 +29,34 @@ export class SpecialColors {
       "hidden.background": scheme.surfaceContainer,
       "hidden.border": scheme.outlineVariant,
 
-      unreachable: term.normal.red,
+      unreachable: scheme.error,
       "unreachable.background": scheme.errorContainer,
-      "unreachable.border": term.normal.red,
+      "unreachable.border": scheme.error,
 
       players: [
         {
           cursor: scheme.primary,
-          selection: `${scheme.primary}4d`,
+          selection: `${scheme.primaryContainer}66`,
           background: scheme.primary,
         },
         {
           cursor: scheme.secondary,
-          selection: `${scheme.secondary}4d`,
+          selection: `${scheme.secondaryContainer}66`,
           background: scheme.secondary,
         },
         {
           cursor: scheme.tertiary,
-          selection: `${scheme.tertiary}4d`,
+          selection: `${scheme.tertiaryContainer}66`,
           background: scheme.tertiary,
         },
         {
           cursor: term.normal.red,
-          selection: `${term.normal.red}4d`,
+          selection: `${scheme.errorContainer}66`,
           background: term.normal.red,
         },
       ],
 
-      "drop_target.background": `${scheme.primaryContainer}80`,
+      "drop_target.background": scheme.primaryContainer,
     };
   }
 }

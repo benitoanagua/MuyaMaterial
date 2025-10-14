@@ -1,31 +1,31 @@
 export class SpecificColors {
   static mapSpecificColors(scheme) {
     return {
-      border: `${scheme.outline}80`,
-      "border.variant": `${scheme.outlineVariant}60`,
-      "border.disabled": `${scheme.outline}40`,
-      "border.transparent": `${scheme.outline}20`,
+      border: scheme.outlineVariant,
+      "border.variant": scheme.outlineVariant,
+      "border.disabled": scheme.outline,
+      "border.transparent": scheme.outline,
       "border.focused": scheme.primary,
       "border.selected": scheme.secondary,
 
-      "scrollbar.thumb.background": `${scheme.primary}40`,
-      "scrollbar.thumb.border": `${scheme.primary}60`,
+      "scrollbar.thumb.background": scheme.primary,
+      "scrollbar.thumb.border": scheme.primary,
       "scrollbar.thumb.hover_background": scheme.primary,
-      "scrollbar.track.background": scheme.surfaceContainerLow,
-      "scrollbar.track.border": `${scheme.outlineVariant}40`,
+      "scrollbar.track.background": scheme.surfaceContainer,
+      "scrollbar.track.border": scheme.outlineVariant,
 
       accents: [scheme.primary, scheme.secondary, scheme.tertiary],
 
       "pane.focused_border": scheme.primary,
-      "pane_group.border": `${scheme.outlineVariant}40`,
+      "pane_group.border": scheme.outlineVariant,
       "panel.focused_border": scheme.primary,
 
-      "panel.indent_guide": `${scheme.outlineVariant}50`,
+      "panel.indent_guide": scheme.outlineVariant,
       "panel.indent_guide_active": scheme.primary,
       "panel.indent_guide_hover": scheme.secondary,
 
       "tab.active_background": scheme.background,
-      "tab.inactive_background": scheme.surfaceContainerLow,
+      "tab.inactive_background": scheme.surfaceContainerHigh,
 
       "background.appearance": "opaque",
     };
