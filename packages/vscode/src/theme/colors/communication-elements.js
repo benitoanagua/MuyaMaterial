@@ -1,4 +1,4 @@
-export default function getCommunicationElements(scheme) {
+export default function getCommunicationElements(scheme, term) {
   return {
     // Chat colors
     "chat.requestBorder": scheme.outlineVariant,
@@ -8,11 +8,11 @@ export default function getCommunicationElements(scheme) {
     "chat.avatarBackground": scheme.surfaceContainerHigh,
     "chat.avatarForeground": scheme.onSurfaceVariant,
     "chat.editedFileForeground": scheme.primary,
-    "chat.linesAddedForeground": scheme.secondary,
-    "chat.linesRemovedForeground": scheme.error,
-    "chat.requestCodeBorder": scheme.outline,
-    "chat.requestBubbleBackground": scheme.surfaceContainer,
-    "chat.requestBubbleHoverBackground": scheme.surfaceContainerHigh,
+    "chat.linesAddedForeground": `${term.normal.green}80`,
+    "chat.linesRemovedForeground": `${term.normal.red}80`,
+    "chat.requestCodeBorder": `${scheme.outlineVariant}80`,
+    "chat.requestBubbleBackground": `${scheme.surfaceContainer}80`,
+    "chat.requestBubbleHoverBackground": `${scheme.surfaceContainerHigh}80`,
     "chat.checkpointSeparator": scheme.outlineVariant,
 
     // Inline Chat colors

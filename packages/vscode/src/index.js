@@ -1,12 +1,17 @@
-import { createDynamicScheme, themeVariants } from "@muya-material/core";
+import {
+  createDynamicScheme,
+  generateTerminalColors,
+  themeVariants,
+} from "@muya-material/core";
 import { ThemeBuilder } from "./theme/theme-builder.js";
 
-console.log("🎨 Generating VSCode themes...");
+console.log("🎨 Generating VSCode themes with terminal colors...");
 
 try {
   const generatedThemes = ThemeBuilder.generateAllThemes(
     themeVariants,
-    createDynamicScheme
+    createDynamicScheme,
+    generateTerminalColors
   );
 
   console.log("\n✅ VSCode themes generated successfully:");

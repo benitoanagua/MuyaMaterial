@@ -1,4 +1,4 @@
-export default function getListsTreesAndSidebars(scheme) {
+export default function getListsTreesAndSidebars(scheme, term) {
   return {
     // Lists and trees
     "list.activeSelectionBackground": scheme.primaryContainer,
@@ -19,8 +19,8 @@ export default function getListsTreesAndSidebars(scheme) {
     "list.inactiveFocusBackground": scheme.surfaceContainer,
     "list.inactiveFocusOutline": scheme.outlineVariant,
     "list.invalidItemForeground": scheme.error,
-    "list.errorForeground": scheme.error,
-    "list.warningForeground": scheme.tertiary,
+    "list.errorForeground": term.normal.red,
+    "list.warningForeground": term.normal.yellow,
     "listFilterWidget.background": scheme.surfaceContainerLowest,
     "listFilterWidget.outline": scheme.outlineVariant,
     "listFilterWidget.noMatchesOutline": scheme.error,
@@ -51,26 +51,26 @@ export default function getListsTreesAndSidebars(scheme) {
     "activityBarTop.background": scheme.surfaceContainerHighest,
     "activityBarTop.activeBackground": scheme.surfaceContainer,
     "activityWarningBadge.foreground": scheme.onTertiary,
-    "activityWarningBadge.background": scheme.tertiary,
+    "activityWarningBadge.background": term.normal.yellow,
     "activityErrorBadge.foreground": scheme.onError,
-    "activityErrorBadge.background": scheme.error,
+    "activityErrorBadge.background": term.normal.red,
 
     // Minimap
     "minimap.background": scheme.surfaceContainer,
     "minimap.findMatchHighlight": `${scheme.tertiaryContainer}80`,
     "minimap.selectionHighlight": `${scheme.primaryContainer}66`,
-    "minimap.errorHighlight": scheme.error,
-    "minimap.warningHighlight": scheme.tertiary,
-    "minimap.selectionOccurrenceHighlight": scheme.outline,
+    "minimap.errorHighlight": term.normal.red,
+    "minimap.warningHighlight": term.normal.yellow,
+    "minimap.selectionOccurrenceHighlight": `${scheme.outlineVariant}40`,
     "minimap.foregroundOpacity": `${scheme.onSurface}1A`,
-    "minimap.infoHighlight": scheme.primary,
+    "minimap.infoHighlight": term.normal.blue,
     "minimap.chatEditHighlight": `${scheme.primaryContainer}4D`,
     "minimapSlider.background": `${scheme.outline}66`,
     "minimapSlider.hoverBackground": `${scheme.outline}99`,
     "minimapSlider.activeBackground": scheme.primary,
-    "minimapGutter.addedBackground": scheme.secondary,
+    "minimapGutter.addedBackground": term.normal.green,
     "minimapGutter.modifiedBackground": scheme.primary,
-    "minimapGutter.deletedBackground": scheme.error,
+    "minimapGutter.deletedBackground": term.normal.red,
     "editorMinimap.inlineChatInserted": `${scheme.secondaryContainer}66`,
 
     // Profiles

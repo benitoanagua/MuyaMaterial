@@ -1,16 +1,16 @@
-export default function getVersionControl(scheme) {
+export default function getVersionControl(scheme, term) {
   return {
     // Git colors
-    "gitDecoration.addedResourceForeground": scheme.tertiary,
-    "gitDecoration.modifiedResourceForeground": scheme.secondary,
-    "gitDecoration.deletedResourceForeground": scheme.error,
-    "gitDecoration.renamedResourceForeground": scheme.tertiary,
-    "gitDecoration.stageModifiedResourceForeground": scheme.primary,
-    "gitDecoration.stageDeletedResourceForeground": scheme.error,
-    "gitDecoration.untrackedResourceForeground": scheme.secondary,
+    "gitDecoration.addedResourceForeground": term.normal.green,
+    "gitDecoration.modifiedResourceForeground": term.normal.blue,
+    "gitDecoration.deletedResourceForeground": term.normal.red,
+    "gitDecoration.renamedResourceForeground": term.normal.cyan,
+    "gitDecoration.stageModifiedResourceForeground": term.normal.blue,
+    "gitDecoration.stageDeletedResourceForeground": term.normal.red,
+    "gitDecoration.untrackedResourceForeground": term.normal.green,
     "gitDecoration.ignoredResourceForeground": scheme.onSurfaceVariant,
-    "gitDecoration.conflictingResourceForeground": scheme.tertiary,
-    "gitDecoration.submoduleResourceForeground": scheme.primary,
+    "gitDecoration.conflictingResourceForeground": term.normal.yellow,
+    "gitDecoration.submoduleResourceForeground": term.normal.magenta,
     "git.blame.editorDecorationForeground": scheme.onSurfaceVariant,
 
     // Merge conflicts colors

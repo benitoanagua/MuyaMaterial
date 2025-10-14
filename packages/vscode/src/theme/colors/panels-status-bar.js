@@ -1,4 +1,4 @@
-export default function getPanelsAndStatusBar(scheme) {
+export default function getPanelsAndStatusBar(scheme, term) {
   return {
     // Panel colors
     "panel.background": scheme.surfaceContainerHigh,
@@ -43,11 +43,11 @@ export default function getPanelsAndStatusBar(scheme) {
     "statusBarItem.remoteForeground": scheme.onSecondary,
     "statusBarItem.remoteHoverBackground": scheme.secondaryContainer,
     "statusBarItem.remoteHoverForeground": scheme.onSecondary,
-    "statusBarItem.errorBackground": scheme.error,
+    "statusBarItem.errorBackground": term.normal.red,
     "statusBarItem.errorForeground": scheme.onError,
     "statusBarItem.errorHoverBackground": scheme.errorContainer,
     "statusBarItem.errorHoverForeground": scheme.onError,
-    "statusBarItem.warningBackground": scheme.tertiary,
+    "statusBarItem.warningBackground": term.normal.yellow,
     "statusBarItem.warningForeground": scheme.onTertiary,
     "statusBarItem.warningHoverBackground": scheme.tertiaryContainer,
     "statusBarItem.warningHoverForeground": scheme.onTertiary,

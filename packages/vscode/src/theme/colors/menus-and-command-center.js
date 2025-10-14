@@ -1,4 +1,4 @@
-export default function getMenusAndCommandCenter(scheme) {
+export default function getMenusAndCommandCenter(scheme, term) {
   return {
     // Title Bar colors
     "titleBar.activeBackground": scheme.surfaceContainerHighest,
@@ -28,6 +28,6 @@ export default function getMenusAndCommandCenter(scheme) {
     "commandCenter.inactiveForeground": `${scheme.onSurface}99`,
     "commandCenter.inactiveBorder": scheme.outlineVariant,
     "commandCenter.activeBorder": scheme.primary,
-    "commandCenter.debuggingBackground": scheme.error,
+    "commandCenter.debuggingBackground": `${term.normal.red}66`,
   };
 }

@@ -1,4 +1,4 @@
-export default function getEditorWidgetColors(scheme) {
+export default function getEditorWidgetColors(scheme, term) {
   return {
     "editorWidget.foreground": scheme.onSurface,
     "editorWidget.background": scheme.surfaceContainer,
@@ -35,11 +35,11 @@ export default function getEditorWidgetColors(scheme) {
     "debugExceptionWidget.border": scheme.outlineVariant,
 
     "editorMarkerNavigation.background": scheme.surfaceContainerLowest,
-    "editorMarkerNavigationError.background": scheme.error,
-    "editorMarkerNavigationWarning.background": scheme.tertiary,
-    "editorMarkerNavigationInfo.background": scheme.primary,
-    "editorMarkerNavigationError.headerBackground": `${scheme.error}20`,
-    "editorMarkerNavigationWarning.headerBackground": `${scheme.tertiary}20`,
-    "editorMarkerNavigationInfo.headerBackground": `${scheme.primary}20`,
+    "editorMarkerNavigationError.background": term.normal.red,
+    "editorMarkerNavigationWarning.background": term.normal.yellow,
+    "editorMarkerNavigationInfo.background": term.normal.blue,
+    "editorMarkerNavigationError.headerBackground": `${term.normal.red}20`,
+    "editorMarkerNavigationWarning.headerBackground": `${term.normal.yellow}20`,
+    "editorMarkerNavigationInfo.headerBackground": `${term.normal.blue}20`,
   };
 }

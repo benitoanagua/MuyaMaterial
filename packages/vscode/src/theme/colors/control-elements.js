@@ -1,4 +1,4 @@
-export default function getControlElements(scheme) {
+export default function getControlElements(scheme, term) {
   return {
     // Button control
     "button.background": scheme.primary,
@@ -44,14 +44,14 @@ export default function getControlElements(scheme) {
     "inputOption.activeForeground": scheme.primary,
     "inputOption.hoverBackground": scheme.surfaceContainer,
     "inputValidation.errorBackground": `${scheme.errorContainer}26`,
-    "inputValidation.errorForeground": scheme.error,
-    "inputValidation.errorBorder": scheme.error,
+    "inputValidation.errorForeground": term.normal.red,
+    "inputValidation.errorBorder": term.normal.red,
     "inputValidation.infoBackground": `${scheme.primaryContainer}26`,
-    "inputValidation.infoForeground": scheme.primary,
-    "inputValidation.infoBorder": scheme.primary,
-    "inputValidation.warningBackground": `${scheme.tertiaryContainer}26`,
-    "inputValidation.warningForeground": scheme.tertiary,
-    "inputValidation.warningBorder": scheme.tertiary,
+    "inputValidation.infoForeground": term.normal.blue,
+    "inputValidation.infoBorder": term.normal.blue,
+    "inputValidation.warningBackground": `${term.normal.yellow}26`,
+    "inputValidation.warningForeground": term.bright.yellow,
+    "inputValidation.warningBorder": term.dim.yellow,
 
     // Scrollbar control
     "scrollbar.shadow": `${scheme.outline}66`,

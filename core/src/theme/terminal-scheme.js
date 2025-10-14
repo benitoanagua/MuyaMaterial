@@ -9,8 +9,6 @@ import { getThemeConfig, defaultThemeConfig } from "./theme-config.js";
  * Detect if a color is warm or cool based on hue
  */
 const getColorTemperature = (hue) => {
-  // Warm: reds, oranges, yellows (0-60, 330-360)
-  // Cool: greens, blues, purples (120-300)
   return (hue >= 0 && hue <= 60) || (hue >= 330 && hue <= 360)
     ? "warm"
     : "cool";
@@ -21,15 +19,14 @@ const getColorTemperature = (hue) => {
  * Based on Material Design 3 color system
  */
 const getBaseColorHct = (colorName) => {
-  // Define ANSI colors with Material 3 HCT coordinates
   const baseColors = {
     black: { hue: 0, chroma: 0, tone: 0 },
-    red: { hue: 10, chroma: 100, tone: 53 }, // Material Red - más cálido
-    green: { hue: 145, chroma: 48, tone: 53 }, // Material Green - más natural
-    yellow: { hue: 80, chroma: 78, tone: 60 }, // Material Yellow - más luminoso
-    blue: { hue: 245, chroma: 80, tone: 53 }, // Material Blue - más puro
-    magenta: { hue: 330, chroma: 75, tone: 53 }, // Material Magenta - más rosado
-    cyan: { hue: 190, chroma: 48, tone: 53 }, // Material Cyan - más turquesa
+    red: { hue: 10, chroma: 100, tone: 53 },
+    green: { hue: 145, chroma: 48, tone: 53 },
+    yellow: { hue: 80, chroma: 78, tone: 60 },
+    blue: { hue: 245, chroma: 80, tone: 53 },
+    magenta: { hue: 330, chroma: 75, tone: 53 },
+    cyan: { hue: 190, chroma: 48, tone: 53 },
     white: { hue: 0, chroma: 0, tone: 100 },
   };
 
@@ -52,44 +49,30 @@ const getSeedColor = (seedColorType, themeConfig) => {
  * Apply subtle seed influence while preserving color identity
  * Material Design 3 approach
  */
-const applySeededVariation = (
-  baseHct,
-  seedHct,
-  baseTemp,
-  seedTemp,
-  brightness,
-  isDark
-) => {
-  // Minimal seed influence - preserve Material color identity
-  const hueInfluence = 0.04; // Solo 4% de influencia
+const applySeededVariation = (baseHct, seedHct, brightness, isDark) => {
+  const hueInfluence = 0.04;
 
-  // Preserve the base hue strongly
   let finalHue = baseHct.hue * (1 - hueInfluence) + seedHct.hue * hueInfluence;
 
-  // Keep hue within tight color family ranges
-  const hueTolerance = 12; // ±12 grados máximo
+  const hueTolerance = 12;
   if (Math.abs(finalHue - baseHct.hue) > hueTolerance) {
     finalHue = baseHct.hue + Math.sign(finalHue - baseHct.hue) * hueTolerance;
   }
   finalHue = finalHue % 360;
 
-  // Chroma adjustments - más sutiles para mantener Material look
   let chroma = baseHct.chroma;
   if (brightness === "bright") {
-    chroma = Math.min(baseHct.chroma * 1.12, 100); // Boost más sutil
+    chroma = Math.min(baseHct.chroma * 1.12, 100);
   } else if (brightness === "dim") {
-    chroma = Math.max(baseHct.chroma * 0.85, 25); // Reducción más sutil
+    chroma = Math.max(baseHct.chroma * 0.85, 25);
   }
 
-  // Seed chroma influence mínima (5%)
   const seedChromaInfluence = 0.05;
   chroma =
     chroma * (1 - seedChromaInfluence) + seedHct.chroma * seedChromaInfluence;
 
-  // Tone adjustments optimizados para Material 3
   let tone;
   if (isDark) {
-    // Dark theme - tonos más brillantes y vibrantes
     if (brightness === "bright") {
       tone = Math.min(baseHct.tone + 32, 87);
     } else if (brightness === "dim") {
@@ -98,7 +81,6 @@ const applySeededVariation = (
       tone = Math.min(baseHct.tone + 17, 75);
     }
   } else {
-    // Light theme - tonos más oscuros para contraste
     if (brightness === "bright") {
       tone = Math.max(baseHct.tone - 32, 25);
     } else if (brightness === "dim") {
@@ -126,7 +108,6 @@ export const generateTerminalColors = ({
   const seedHct = Hct.fromInt(argbFromHex(finalSeedColor));
   const seedTemp = getColorTemperature(seedHct.hue);
 
-  // ANSI colors with their temperatures
   const ansiColors = {
     black: "neutral",
     red: "warm",
@@ -141,9 +122,7 @@ export const generateTerminalColors = ({
   const generateColorVariant = (colorName, brightness) => {
     const baseTemp = ansiColors[colorName];
 
-    // Special handling for black and white
     if (colorName === "black" || colorName === "white") {
-      const baseHct = getBaseColorHct(colorName);
       let tone;
 
       if (colorName === "black") {
@@ -174,16 +153,13 @@ export const generateTerminalColors = ({
             : 97;
       }
 
-      // Influencia mínima del seed en neutrals (1% chroma)
       const hueShift = seedTemp === "warm" ? 20 : 280;
       return hexFromArgb(Hct.from(hueShift, 1, tone).toInt());
     }
 
-    // Get base color in HCT space
     const baseHct = getBaseColorHct(colorName);
     const baseHctObj = Hct.from(baseHct.hue, baseHct.chroma, baseHct.tone);
 
-    // Apply seeded variation
     const variedHct = applySeededVariation(
       baseHctObj,
       seedHct,
@@ -210,7 +186,6 @@ export const generateTerminalColors = ({
     },
   };
 
-  // Generate all variants
   Object.keys(ansiColors).forEach((colorName) => {
     result.normal[colorName] = generateColorVariant(colorName, "normal");
     result.bright[colorName] = generateColorVariant(colorName, "bright");
@@ -232,7 +207,6 @@ export const generateTerminalColorsForSeeds = ({
   const result = {};
 
   Object.entries(seedColors).forEach(([seedName, seedColor]) => {
-    // Create temporary config with the seed color
     const tempConfig = {
       ...(themeConfig || defaultThemeConfig),
       seedColorDefault: seedColor,

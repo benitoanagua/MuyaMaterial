@@ -39,30 +39,30 @@ import getVariousSettings from "./scopes/various.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export class ThemeBuilder {
-  static buildTheme(scheme, name) {
+  static buildTheme(scheme, terminalColors, name) {
     const theme = {
       name,
       type: scheme.isDark ? "dark" : "light",
       $schema: "vscode://schemas/color-theme",
       colors: {
-        ...getAdditionalElements(scheme),
-        ...getCommunicationElements(scheme),
-        ...getControlElements(scheme),
-        ...getEditorColors(scheme),
+        ...getAdditionalElements(scheme, terminalColors),
+        ...getCommunicationElements(scheme, terminalColors),
+        ...getControlElements(scheme, terminalColors),
+        ...getEditorColors(scheme, terminalColors),
         ...getEditorGroupsTabs(scheme),
-        ...getEditorWidgetColors(scheme),
+        ...getEditorWidgetColors(scheme, terminalColors),
         ...getExtensionsAndQuickPickers(scheme),
         ...getGeneralColors(scheme),
         ...getKeybindingsAndShortcuts(scheme),
-        ...getListsTreesSidebars(scheme),
-        ...getMenusAndCommandCenter(scheme),
-        ...getNotificationsAndBanners(scheme),
-        ...getPanelsStatusBar(scheme),
+        ...getListsTreesSidebars(scheme, terminalColors),
+        ...getMenusAndCommandCenter(scheme, terminalColors),
+        ...getNotificationsAndBanners(scheme, terminalColors),
+        ...getPanelsStatusBar(scheme, terminalColors),
         ...getSettingsAndBreadcrumbs(scheme),
         ...getSnippetsAndSymbols(scheme),
-        ...getTerminalAndDebugging(scheme),
-        ...getTestingAndWelcomePage(scheme),
-        ...getVersionControl(scheme),
+        ...getTerminalAndDebugging(scheme, terminalColors),
+        ...getTestingAndWelcomePage(scheme, terminalColors),
+        ...getVersionControl(scheme, terminalColors),
       },
       semanticHighlighting: true,
       tokenColors: [
@@ -97,7 +97,7 @@ export class ThemeBuilder {
     return themePath;
   }
 
-  static generateAllThemes(variants, createScheme) {
+  static generateAllThemes(variants, createScheme, generateTerminalColors) {
     const generated = [];
 
     for (const variant of variants) {
@@ -107,8 +107,14 @@ export class ThemeBuilder {
         seedColorType: variant.seedColor,
       });
 
+      const terminalColors = generateTerminalColors({
+        isDark: variant.isDark,
+        seedColorType: variant.seedColor,
+      });
+
       const theme = this.buildTheme(
         scheme,
+        terminalColors,
         `Muya Material - ${variant.name}`,
         variant.filename
       );

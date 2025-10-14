@@ -1,4 +1,4 @@
-export default function getAdditionalElements(scheme) {
+export default function getAdditionalElements(scheme, term) {
   return {
     // Notebook colors
     "notebook.editorBackground": scheme.surfaceContainerLow,
@@ -21,31 +21,30 @@ export default function getAdditionalElements(scheme) {
     "notebookScrollbarSlider.activeBackground": `${scheme.primary}66`,
     "notebookScrollbarSlider.background": `${scheme.outline}40`,
     "notebookScrollbarSlider.hoverBackground": `${scheme.primary}80`,
-    "notebookStatusErrorIcon.foreground": scheme.error,
-    "notebookStatusRunningIcon.foreground": scheme.primary,
-    "notebookStatusSuccessIcon.foreground": scheme.tertiary,
-    "notebookEditorOverviewRuler.runningCellForeground": scheme.primary,
+    "notebookStatusErrorIcon.foreground": term.normal.red,
+    "notebookStatusRunningIcon.foreground": term.normal.blue,
+    "notebookStatusSuccessIcon.foreground": term.normal.green,
+    "notebookEditorOverviewRuler.runningCellForeground": term.normal.blue,
 
     // Chart colors
     "charts.foreground": scheme.onSurface,
     "charts.lines": scheme.outlineVariant,
-    "charts.red": scheme.error,
-    "charts.blue": scheme.primary,
-    "charts.yellow": scheme.tertiary,
-    "charts.green": scheme.secondary,
-    "charts.cyan": scheme.tertiary,
-    "charts.orange": scheme.tertiary,
-    "charts.purple": scheme.primary,
+    "charts.red": term.normal.red,
+    "charts.blue": term.normal.blue,
+    "charts.yellow": term.normal.yellow,
+    "charts.green": term.normal.green,
+    "charts.orange": term.bright.yellow,
+    "charts.purple": term.normal.magenta,
     "chart.line": scheme.outlineVariant,
     "chart.axis": scheme.outline,
     "chart.guide": scheme.outlineVariant,
 
     // Ports colors
-    "ports.iconRunningProcessForeground": scheme.primary,
+    "ports.iconRunningProcessForeground": term.normal.blue,
 
     // Comments View colors
-    "commentsView.resolvedIcon": scheme.tertiary,
-    "commentsView.unresolvedIcon": scheme.primary,
+    "commentsView.resolvedIcon": term.normal.green,
+    "commentsView.unresolvedIcon": term.normal.blue,
 
     // Action Bar colors
     "actionBar.toggledBackground": scheme.primary,
@@ -57,9 +56,9 @@ export default function getAdditionalElements(scheme) {
     "gauge.background": scheme.surfaceContainer,
     "gauge.foreground": scheme.onSurface,
     "gauge.border": scheme.outline,
-    "gauge.warningBackground": scheme.tertiary,
-    "gauge.warningForeground": scheme.onTertiary,
-    "gauge.errorBackground": scheme.error,
-    "gauge.errorForeground": scheme.onError,
+    "gauge.warningBackground": term.normal.yellow,
+    "gauge.warningForeground": term.dim.yellow,
+    "gauge.errorBackground": term.normal.red,
+    "gauge.errorForeground": term.dim.red,
   };
 }
