@@ -1,9 +1,8 @@
 export default function getAdditionalElements(scheme, term) {
   return {
-    // Notebook colors
     "notebook.editorBackground": scheme.surfaceContainerLow,
     "notebook.cellBorderColor": scheme.outlineVariant,
-    "notebook.cellHoverBackground": scheme.primaryContainer,
+    "notebook.cellHoverBackground": scheme.surfaceContainer,
     "notebook.cellInsertionIndicator": scheme.primary,
     "notebook.cellStatusBarItemHoverBackground": scheme.surfaceContainerHigh,
     "notebook.cellToolbarSeparator": scheme.outlineVariant,
@@ -17,16 +16,15 @@ export default function getAdditionalElements(scheme, term) {
     "notebook.outputContainerBorderColor": scheme.outlineVariant,
     "notebook.selectedCellBackground": scheme.surfaceContainerHigh,
     "notebook.selectedCellBorder": scheme.outline,
-    "notebook.symbolHighlightBackground": `${scheme.secondary}1A`,
+    "notebook.symbolHighlightBackground": `${scheme.secondaryContainer}1A`,
     "notebookScrollbarSlider.activeBackground": `${scheme.primary}66`,
-    "notebookScrollbarSlider.background": `${scheme.outline}40`,
-    "notebookScrollbarSlider.hoverBackground": `${scheme.primary}80`,
-    "notebookStatusErrorIcon.foreground": term.normal.red,
-    "notebookStatusRunningIcon.foreground": term.normal.blue,
-    "notebookStatusSuccessIcon.foreground": term.normal.green,
-    "notebookEditorOverviewRuler.runningCellForeground": term.normal.blue,
+    "notebookScrollbarSlider.background": `${scheme.onSurfaceVariant}40`,
+    "notebookScrollbarSlider.hoverBackground": `${scheme.primary}4D`,
+    "notebookStatusErrorIcon.foreground": scheme.error,
+    "notebookStatusRunningIcon.foreground": scheme.primary,
+    "notebookStatusSuccessIcon.foreground": scheme.secondary,
+    "notebookEditorOverviewRuler.runningCellForeground": scheme.primary,
 
-    // Chart colors
     "charts.foreground": scheme.onSurface,
     "charts.lines": scheme.outlineVariant,
     "charts.red": term.normal.red,
@@ -39,26 +37,21 @@ export default function getAdditionalElements(scheme, term) {
     "chart.axis": scheme.outline,
     "chart.guide": scheme.outlineVariant,
 
-    // Ports colors
-    "ports.iconRunningProcessForeground": term.normal.blue,
+    "ports.iconRunningProcessForeground": scheme.primary,
 
-    // Comments View colors
-    "commentsView.resolvedIcon": term.normal.green,
-    "commentsView.unresolvedIcon": term.normal.blue,
+    "commentsView.resolvedIcon": scheme.secondary,
+    "commentsView.unresolvedIcon": scheme.primary,
 
-    // Action Bar colors
-    "actionBar.toggledBackground": scheme.primary,
+    "actionBar.toggledBackground": scheme.primaryContainer,
 
-    // Simple Find Widget colors
     "simpleFindWidget.sashBorder": scheme.outlineVariant,
 
-    // Gauge colors
     "gauge.background": scheme.surfaceContainer,
     "gauge.foreground": scheme.onSurface,
     "gauge.border": scheme.outline,
-    "gauge.warningBackground": term.normal.yellow,
-    "gauge.warningForeground": term.dim.yellow,
-    "gauge.errorBackground": term.normal.red,
-    "gauge.errorForeground": term.dim.red,
+    "gauge.warningBackground": scheme.tertiaryContainer,
+    "gauge.warningForeground": scheme.onTertiaryContainer,
+    "gauge.errorBackground": scheme.errorContainer,
+    "gauge.errorForeground": scheme.onErrorContainer,
   };
 }

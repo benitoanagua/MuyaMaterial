@@ -1,6 +1,5 @@
 export default function getNotificationsAndBanners(scheme, term) {
   return {
-    // Notification colors
     "notificationCenter.border": scheme.outlineVariant,
     "notificationCenterHeader.background": scheme.surfaceContainerLow,
     "notificationCenterHeader.foreground": scheme.onSurfaceVariant,
@@ -9,11 +8,10 @@ export default function getNotificationsAndBanners(scheme, term) {
     "notifications.border": scheme.surfaceContainerLowest,
     "notifications.foreground": scheme.onSurfaceVariant,
     "notificationLink.foreground": scheme.primary,
-    "notificationsErrorIcon.foreground": term.normal.red,
-    "notificationsWarningIcon.foreground": term.normal.yellow,
-    "notificationsInfoIcon.foreground": term.normal.blue,
+    "notificationsErrorIcon.foreground": scheme.error,
+    "notificationsWarningIcon.foreground": scheme.tertiary,
+    "notificationsInfoIcon.foreground": scheme.primary,
 
-    // Banner colors
     "banner.background": scheme.surfaceContainerHigh,
     "banner.foreground": scheme.onSurface,
     "banner.iconForeground": scheme.primary,

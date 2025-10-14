@@ -1,6 +1,5 @@
 export default function getSettingsAndBreadcrumbs(scheme) {
   return {
-    // Settings Editor colors
     "settings.headerForeground": scheme.onSurface,
     "settings.modifiedItemIndicator": scheme.primary,
     "settings.dropdownBackground": scheme.surfaceContainerLowest,
@@ -23,7 +22,6 @@ export default function getSettingsAndBreadcrumbs(scheme) {
     "settings.sashBorder": scheme.outlineVariant,
     "settings.settingsHeaderHoverForeground": scheme.primary,
 
-    // Breadcrumbs colors
     "breadcrumb.foreground": scheme.onSurfaceVariant,
     "breadcrumb.background": scheme.surfaceContainer,
     "breadcrumb.focusForeground": scheme.primary,

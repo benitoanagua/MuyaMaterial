@@ -23,11 +23,11 @@ export default function getEditorWidgetColors(scheme, term) {
 
     "editorGhostText.border": scheme.outlineVariant,
     "editorGhostText.background": scheme.surfaceContainer,
-    "editorGhostText.foreground": `${scheme.onSurface}80`,
+    "editorGhostText.foreground": scheme.onSurfaceVariant,
 
     "editorStickyScroll.background": scheme.surfaceContainer,
     "editorStickyScroll.border": scheme.outlineVariant,
-    "editorStickyScroll.shadow": `${scheme.outline}20`,
+    "editorStickyScroll.shadow": `${scheme.shadow}20`,
     "editorStickyScrollGutter.background": scheme.surfaceContainerHigh,
     "editorStickyScrollHover.background": scheme.surfaceContainerHigh,
 
@@ -35,11 +35,11 @@ export default function getEditorWidgetColors(scheme, term) {
     "debugExceptionWidget.border": scheme.outlineVariant,
 
     "editorMarkerNavigation.background": scheme.surfaceContainerLowest,
-    "editorMarkerNavigationError.background": term.normal.red,
-    "editorMarkerNavigationWarning.background": term.normal.yellow,
-    "editorMarkerNavigationInfo.background": term.normal.blue,
-    "editorMarkerNavigationError.headerBackground": `${term.normal.red}20`,
-    "editorMarkerNavigationWarning.headerBackground": `${term.normal.yellow}20`,
-    "editorMarkerNavigationInfo.headerBackground": `${term.normal.blue}20`,
+    "editorMarkerNavigationError.background": scheme.error,
+    "editorMarkerNavigationWarning.background": scheme.tertiary,
+    "editorMarkerNavigationInfo.background": scheme.primary,
+    "editorMarkerNavigationError.headerBackground": `${scheme.errorContainer}33`,
+    "editorMarkerNavigationWarning.headerBackground": `${scheme.tertiaryContainer}33`,
+    "editorMarkerNavigationInfo.headerBackground": `${scheme.primaryContainer}33`,
   };
 }

@@ -2,7 +2,7 @@
   "name": "muya-material",
   "displayName": "Muya Material",
   "description": "A modern Visual Studio Code theme inspired by Material Design 3 with Olive and Mystic color palettes",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "type": "module",
   "publisher": "benitoanagua",
   "engines": {

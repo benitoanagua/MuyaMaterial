@@ -1,19 +1,17 @@
 export default function getVersionControl(scheme, term) {
   return {
-    // Git colors
-    "gitDecoration.addedResourceForeground": term.normal.green,
-    "gitDecoration.modifiedResourceForeground": term.normal.blue,
-    "gitDecoration.deletedResourceForeground": term.normal.red,
-    "gitDecoration.renamedResourceForeground": term.normal.cyan,
-    "gitDecoration.stageModifiedResourceForeground": term.normal.blue,
-    "gitDecoration.stageDeletedResourceForeground": term.normal.red,
-    "gitDecoration.untrackedResourceForeground": term.normal.green,
+    "gitDecoration.addedResourceForeground": scheme.secondary,
+    "gitDecoration.modifiedResourceForeground": scheme.primary,
+    "gitDecoration.deletedResourceForeground": scheme.error,
+    "gitDecoration.renamedResourceForeground": scheme.tertiary,
+    "gitDecoration.stageModifiedResourceForeground": scheme.primary,
+    "gitDecoration.stageDeletedResourceForeground": scheme.error,
+    "gitDecoration.untrackedResourceForeground": scheme.secondary,
     "gitDecoration.ignoredResourceForeground": scheme.onSurfaceVariant,
-    "gitDecoration.conflictingResourceForeground": term.normal.yellow,
+    "gitDecoration.conflictingResourceForeground": scheme.tertiary,
     "gitDecoration.submoduleResourceForeground": term.normal.magenta,
     "git.blame.editorDecorationForeground": scheme.onSurfaceVariant,
 
-    // Merge conflicts colors
     "merge.currentHeaderBackground": `${scheme.primary}33`,
     "merge.currentContentBackground": `${scheme.primary}1A`,
     "merge.incomingHeaderBackground": `${scheme.secondary}33`,
@@ -40,7 +38,6 @@ export default function getVersionControl(scheme, term) {
     "mergeEditor.conflict.input1.background": `${scheme.primary}1A`,
     "mergeEditor.conflict.input2.background": `${scheme.secondary}1A`,
 
-    // Peek view colors
     "peekView.border": scheme.outlineVariant,
     "peekViewEditor.background": scheme.surfaceContainerLowest,
     "peekViewEditorGutter.background": scheme.surfaceContainer,
@@ -56,7 +53,6 @@ export default function getVersionControl(scheme, term) {
     "peekViewTitleDescription.foreground": scheme.onSurfaceVariant,
     "peekViewTitleLabel.foreground": scheme.onSurface,
 
-    // Source Control Graph colors
     "scmGraph.historyItemHoverLabelForeground": scheme.onSurface,
     "scmGraph.foreground1": scheme.primary,
     "scmGraph.foreground2": scheme.secondary,

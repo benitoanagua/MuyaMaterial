@@ -1,13 +1,11 @@
 export default function getMenusAndCommandCenter(scheme, term) {
   return {
-    // Title Bar colors
     "titleBar.activeBackground": scheme.surfaceContainerHighest,
     "titleBar.activeForeground": scheme.onSurface,
     "titleBar.inactiveBackground": scheme.surfaceContainerLow,
-    "titleBar.inactiveForeground": `${scheme.onSurface}CC`,
+    "titleBar.inactiveForeground": scheme.onSurfaceVariant,
     "titleBar.border": scheme.outlineVariant,
 
-    // Menu Bar colors
     "menubar.selectionForeground": scheme.onPrimary,
     "menubar.selectionBackground": scheme.primary,
     "menubar.selectionBorder": scheme.outlineVariant,
@@ -19,15 +17,14 @@ export default function getMenusAndCommandCenter(scheme, term) {
     "menu.separatorBackground": scheme.outlineVariant,
     "menu.border": scheme.outlineVariant,
 
-    // Command Center colors
     "commandCenter.foreground": scheme.onSurface,
     "commandCenter.activeForeground": scheme.onPrimary,
     "commandCenter.background": scheme.surfaceContainer,
     "commandCenter.activeBackground": scheme.primary,
     "commandCenter.border": scheme.outlineVariant,
-    "commandCenter.inactiveForeground": `${scheme.onSurface}99`,
+    "commandCenter.inactiveForeground": scheme.onSurfaceVariant,
     "commandCenter.inactiveBorder": scheme.outlineVariant,
     "commandCenter.activeBorder": scheme.primary,
-    "commandCenter.debuggingBackground": `${term.normal.red}66`,
+    "commandCenter.debuggingBackground": scheme.errorContainer,
   };
 }

@@ -1,6 +1,5 @@
 export default function getExtensionsAndQuickPickers(scheme) {
   return {
-    // Extensions colors
     "extensionButton.prominentForeground": scheme.onPrimary,
     "extensionButton.prominentBackground": scheme.primary,
     "extensionButton.prominentHoverBackground": scheme.primaryContainer,
@@ -17,7 +16,6 @@ export default function getExtensionsAndQuickPickers(scheme) {
     "extensionIcon.privateForeground": scheme.secondary,
     "mcpIcon.starForeground": scheme.tertiary,
 
-    // Quick picker colors
     "pickerGroup.border": scheme.outlineVariant,
     "pickerGroup.foreground": scheme.primary,
     "quickInput.background": scheme.surfaceContainerLow,

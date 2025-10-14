@@ -4,23 +4,20 @@ export default function getGeneralColors(scheme) {
     // contrastActiveBorder: scheme.primary,
     // contrastBorder: scheme.outline,
 
-    // Base colors
     focusBorder: scheme.primary,
     foreground: scheme.onBackground,
-    disabledForeground: `${scheme.onSurface}66`,
+    disabledForeground: scheme.onSurfaceVariant,
     "widget.border": scheme.outline,
-    "widget.shadow": `${scheme.outline}33`,
+    "widget.shadow": `${scheme.shadow}33`,
     "selection.background": `${scheme.primaryContainer}66`,
-    descriptionForeground: `${scheme.onSurfaceVariant}95`,
+    descriptionForeground: scheme.onSurfaceVariant,
     errorForeground: scheme.error,
     "icon.foreground": scheme.onSurface,
     "sash.hoverBorder": scheme.primary,
 
-    // Window border
     "window.activeBorder": scheme.primary,
     "window.inactiveBorder": scheme.outlineVariant,
 
-    // Text colors
     "textBlockQuote.background": scheme.surfaceContainer,
     "textBlockQuote.border": scheme.outlineVariant,
     "textCodeBlock.background": scheme.surfaceContainerLow,
@@ -30,16 +27,13 @@ export default function getGeneralColors(scheme) {
     "textPreformat.background": scheme.surfaceContainer,
     "textSeparator.foreground": scheme.outlineVariant,
 
-    // Action colors
     "toolbar.hoverBackground": scheme.surfaceContainerHigh,
     "toolbar.hoverOutline": scheme.primary,
     "toolbar.activeBackground": scheme.surfaceContainerHighest,
 
-    // Badge
     "badge.foreground": scheme.onPrimary,
     "badge.background": scheme.primary,
 
-    // Progress bar
     "progressBar.background": scheme.primary,
   };
 }
