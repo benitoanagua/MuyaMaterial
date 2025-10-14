@@ -25,6 +25,6 @@ export default function getMenusAndCommandCenter(scheme, term) {
     "commandCenter.inactiveForeground": scheme.onSurfaceVariant,
     "commandCenter.inactiveBorder": scheme.outlineVariant,
     "commandCenter.activeBorder": scheme.primary,
-    "commandCenter.debuggingBackground": scheme.errorContainer,
+    "commandCenter.debuggingBackground": `${scheme.errorContainer}66`,
   };
 }

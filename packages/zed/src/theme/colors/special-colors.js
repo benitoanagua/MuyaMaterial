@@ -36,27 +36,27 @@ export class SpecialColors {
       players: [
         {
           cursor: scheme.primary,
-          selection: `${scheme.onSurfaceVariant}80`,
           background: scheme.primary,
+          selection: `${scheme.primary}3D`,
         },
         {
           cursor: scheme.secondary,
-          selection: `${scheme.secondary}33`,
           background: scheme.secondary,
+          selection: `${scheme.secondary}3D`,
         },
         {
           cursor: scheme.tertiary,
-          selection: `${scheme.tertiary}33`,
           background: scheme.tertiary,
+          selection: `${scheme.tertiary}3D`,
         },
         {
           cursor: term.normal.red,
-          selection: `${term.normal.red}33`,
           background: term.normal.red,
+          selection: `${term.normal.red}3D`,
         },
       ],
 
-      "drop_target.background": `${scheme.outlineVariant}66`,
+      "drop_target.background": `${scheme.primaryContainer}66`,
     };
   }
 }
