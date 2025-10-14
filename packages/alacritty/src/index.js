@@ -1,5 +1,6 @@
 import {
   createDynamicScheme,
+  generateTerminalColors,
   themeVariants,
   defaultThemeConfig,
 } from "@muya-material/core";
@@ -17,6 +18,7 @@ try {
   const generatedThemes = AlacrittyThemeBuilder.generateAllThemes(
     themeVariants,
     createDynamicScheme,
+    generateTerminalColors,
     themeConfig
   );
 

@@ -7,8 +7,11 @@ import { AlacrittyColorsMapper } from "./alacritty-colors-mapper.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export class AlacrittyThemeBuilder {
-  static buildTheme(scheme, name) {
-    const colors = AlacrittyColorsMapper.mapSchemeToAlacritty(scheme);
+  static buildTheme(scheme, terminalColors, name) {
+    const colors = AlacrittyColorsMapper.mapSchemeToAlacritty(
+      scheme,
+      terminalColors
+    );
 
     // Build TOML object structure
     const tomlObject = this.buildTOMLObject(name, colors);
@@ -140,7 +143,13 @@ export class AlacrittyThemeBuilder {
     return themePath;
   }
 
-  static generateThemeForVariant(variant, createScheme, themeConfig = null) {
+  static generateThemeForVariant(
+    variant,
+    createScheme,
+    generateTerminalColors,
+    themeConfig = null
+  ) {
+    // Generate Material 3 scheme
     const scheme = createScheme({
       isDark: variant.isDark,
       contrastLevel: themeConfig?.contrastLevel ?? variant.contrastLevel,
@@ -148,16 +157,33 @@ export class AlacrittyThemeBuilder {
       themeConfig,
     });
 
-    const themeObject = this.buildTheme(scheme, variant.name);
+    // Generate terminal colors separately
+    const terminalColors = generateTerminalColors({
+      isDark: variant.isDark,
+      seedColorType: variant.seedColor,
+      themeConfig,
+    });
+
+    const themeObject = this.buildTheme(scheme, terminalColors, variant.name);
     const filename = this.toKebabCase(`muya-material-${variant.name}`);
     const path = this.saveTheme(themeObject, variant.name, filename);
 
     return { variant, path };
   }
 
-  static generateAllThemes(variants, createScheme, themeConfig = null) {
+  static generateAllThemes(
+    variants,
+    createScheme,
+    generateTerminalColors,
+    themeConfig = null
+  ) {
     return variants.map((variant) =>
-      this.generateThemeForVariant(variant, createScheme, themeConfig)
+      this.generateThemeForVariant(
+        variant,
+        createScheme,
+        generateTerminalColors,
+        themeConfig
+      )
     );
   }
 }

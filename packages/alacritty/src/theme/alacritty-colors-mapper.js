@@ -1,5 +1,5 @@
 export class AlacrittyColorsMapper {
-  static mapSchemeToAlacritty(scheme) {
+  static mapSchemeToAlacritty(scheme, terminalColors) {
     return {
       primary: {
         background: scheme.surface,
@@ -47,35 +47,36 @@ export class AlacrittyColorsMapper {
         background: scheme.surfaceContainerHighest,
         foreground: scheme.onSurface,
       },
+      // Use pre-generated Material 3 terminal colors
       normal: {
-        black: scheme.surfaceContainerLowest,
-        red: scheme.error,
-        green: scheme.tertiary,
-        yellow: scheme.secondary,
-        blue: scheme.primary,
-        magenta: scheme.secondaryContainer,
-        cyan: scheme.tertiaryContainer,
-        white: scheme.onSurface,
+        black: terminalColors.normal.black,
+        red: terminalColors.normal.red,
+        green: terminalColors.normal.green,
+        yellow: terminalColors.normal.yellow,
+        blue: terminalColors.normal.blue,
+        magenta: terminalColors.normal.magenta,
+        cyan: terminalColors.normal.cyan,
+        white: terminalColors.normal.white,
       },
       bright: {
-        black: scheme.surfaceContainerHigh,
-        red: scheme.onErrorContainer,
-        green: scheme.onTertiaryContainer,
-        yellow: scheme.onSecondaryContainer,
-        blue: scheme.onPrimaryContainer,
-        magenta: scheme.tertiary,
-        cyan: scheme.secondary,
-        white: scheme.inverseSurface,
+        black: terminalColors.bright.black,
+        red: terminalColors.bright.red,
+        green: terminalColors.bright.green,
+        yellow: terminalColors.bright.yellow,
+        blue: terminalColors.bright.blue,
+        magenta: terminalColors.bright.magenta,
+        cyan: terminalColors.bright.cyan,
+        white: terminalColors.bright.white,
       },
       dim: {
-        black: scheme.surface,
-        red: scheme.errorContainer,
-        green: scheme.tertiaryContainer,
-        yellow: scheme.secondaryContainer,
-        blue: scheme.primaryContainer,
-        magenta: scheme.surfaceVariant,
-        cyan: scheme.outlineVariant,
-        white: scheme.outline,
+        black: terminalColors.dim.black,
+        red: terminalColors.dim.red,
+        green: terminalColors.dim.green,
+        yellow: terminalColors.dim.yellow,
+        blue: terminalColors.dim.blue,
+        magenta: terminalColors.dim.magenta,
+        cyan: terminalColors.dim.cyan,
+        white: terminalColors.dim.white,
       },
     };
   }
