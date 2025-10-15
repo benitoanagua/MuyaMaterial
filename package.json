@@ -9,6 +9,7 @@
     "build:zed": "npm run build --workspace=packages/zed",
     "build:zellij": "npm run build --workspace=packages/zellij",
     "build:alacritty": "npm run build --workspace=packages/alacritty",
+    "build:starship": "npm run build --workspace=packages/starship",
     "test": "npm run test --workspaces",
     "dev": "npm run dev --workspaces",
     "clean": "npm run clean --workspaces"

@@ -37,6 +37,15 @@ importers:
         specifier: workspace:*
         version: link:../../core
 
+  packages/starship:
+    dependencies:
+      '@iarna/toml':
+        specifier: ^2.2.5
+        version: 2.2.5
+      '@muya-material/core':
+        specifier: workspace:*
+        version: link:../../core
+
   packages/vscode:
     dependencies:
       '@muya-material/core':
