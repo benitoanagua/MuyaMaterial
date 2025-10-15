@@ -3,9 +3,9 @@ export class AlacrittyColorsMapper {
     return {
       primary: {
         background: scheme.surface,
-        foreground: scheme.onSurface,
-        dim_foreground: scheme.onSurfaceVariant,
-        bright_foreground: scheme.inverseSurface,
+        foreground: scheme.onSurfaceVariant,
+        dim_foreground: scheme.outline,
+        bright_foreground: scheme.onSurface,
       },
       cursor: {
         text: scheme.onPrimary,
@@ -40,14 +40,13 @@ export class AlacrittyColorsMapper {
         },
       },
       line_indicator: {
-        foreground: scheme.onSurfaceVariant,
+        foreground: scheme.outline,
         background: scheme.surfaceContainerHigh,
       },
       footer_bar: {
         background: scheme.surfaceContainerHighest,
         foreground: scheme.onSurface,
       },
-      // Use pre-generated Material 3 terminal colors
       normal: {
         black: terminalColors.normal.black,
         red: terminalColors.normal.red,
@@ -56,7 +55,7 @@ export class AlacrittyColorsMapper {
         blue: terminalColors.normal.blue,
         magenta: terminalColors.normal.magenta,
         cyan: terminalColors.normal.cyan,
-        white: terminalColors.normal.white,
+        white: scheme.onSurfaceVariant,
       },
       bright: {
         black: terminalColors.bright.black,
@@ -66,7 +65,7 @@ export class AlacrittyColorsMapper {
         blue: terminalColors.bright.blue,
         magenta: terminalColors.bright.magenta,
         cyan: terminalColors.bright.cyan,
-        white: terminalColors.bright.white,
+        white: scheme.outline,
       },
       dim: {
         black: terminalColors.dim.black,
@@ -76,7 +75,7 @@ export class AlacrittyColorsMapper {
         blue: terminalColors.dim.blue,
         magenta: terminalColors.dim.magenta,
         cyan: terminalColors.dim.cyan,
-        white: terminalColors.dim.white,
+        white: scheme.onSurface,
       },
     };
   }
