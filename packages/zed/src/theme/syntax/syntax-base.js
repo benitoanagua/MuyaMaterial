@@ -1,65 +1,65 @@
 export class SyntaxBase {
-  static mapBaseSyntax(scheme) {
+  static mapBaseSyntax(scheme, term) {
     return {
       keyword: {
-        color: scheme.secondary,
+        color: term.normal.blue,
         font_style: "normal",
         font_weight: 600,
       },
       "keyword.control": {
-        color: scheme.primary,
+        color: term.normal.blue,
         font_style: "normal",
         font_weight: 600,
       },
       "keyword.operator": {
-        color: scheme.error,
+        color: term.normal.red,
         font_style: "normal",
         font_weight: 600,
       },
 
       type: {
-        color: scheme.primary,
+        color: term.normal.cyan,
         font_style: "normal",
         font_weight: 600,
       },
       "type.builtin": {
-        color: scheme.primary,
+        color: term.normal.cyan,
         font_style: "italic",
         font_weight: 600,
       },
       class: {
-        color: scheme.primary,
+        color: term.normal.cyan,
         font_style: "normal",
         font_weight: 600,
       },
       struct: {
-        color: scheme.primary,
+        color: term.normal.cyan,
         font_style: "normal",
         font_weight: 600,
       },
       enum: {
-        color: scheme.primary,
+        color: term.normal.cyan,
         font_style: "normal",
         font_weight: 600,
       },
       interface: {
-        color: scheme.primary,
+        color: term.normal.cyan,
         font_style: "italic",
         font_weight: 600,
       },
 
       function: {
-        color: scheme.primary,
+        color: term.normal.blue,
         font_style: "normal",
         font_weight: 600,
       },
       "function.builtin": {
-        color: scheme.primary,
+        color: term.normal.blue,
         font_style: "italic",
         font_weight: 600,
       },
       "function.method": {
-        color: scheme.primary,
+        color: term.normal.blue,
         font_style: "normal",
         font_weight: 600,
       },
@@ -70,49 +70,49 @@ export class SyntaxBase {
         font_weight: 400,
       },
       "variable.parameter": {
-        color: scheme.tertiary,
+        color: term.normal.yellow,
         font_style: "normal",
         font_weight: 500,
       },
       "variable.builtin": {
-        color: scheme.primary,
+        color: term.normal.blue,
         font_style: "italic",
         font_weight: 600,
       },
 
       constant: {
-        color: scheme.tertiary,
+        color: term.normal.magenta,
         font_style: "normal",
         font_weight: 500,
       },
       "constant.builtin": {
-        color: scheme.tertiary,
+        color: term.normal.magenta,
         font_style: "normal",
         font_weight: 600,
       },
       "constant.numeric": {
-        color: scheme.tertiary,
+        color: term.normal.magenta,
         font_style: "normal",
         font_weight: 500,
       },
       string: {
-        color: scheme.tertiary,
+        color: term.normal.yellow,
         font_style: "normal",
         font_weight: 400,
       },
       "string.regexp": {
-        color: scheme.secondary,
+        color: term.normal.red,
         font_style: "normal",
         font_weight: 600,
       },
 
       comment: {
-        color: scheme.outline,
+        color: term.normal.green,
         font_style: "italic",
         font_weight: 400,
       },
       "comment.documentation": {
-        color: scheme.secondary,
+        color: term.normal.green,
         font_style: "italic",
         font_weight: 400,
       },

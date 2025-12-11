@@ -1,19 +1,19 @@
 export class SyntaxAdvanced {
-  static mapAdvancedSyntax(scheme) {
+  static mapAdvancedSyntax(scheme, term) {
     return {
       property: {
-        color: scheme.secondary,
+        color: term.normal.blue,
         font_style: "normal",
         font_weight: 500,
       },
       attribute: {
-        color: scheme.tertiary,
+        color: term.normal.magenta,
         font_style: "normal",
         font_weight: 500,
       },
 
       operator: {
-        color: scheme.error,
+        color: term.normal.red,
         font_style: "normal",
         font_weight: 500,
       },
@@ -24,92 +24,92 @@ export class SyntaxAdvanced {
         font_weight: 400,
       },
       "punctuation.delimiter": {
-        color: scheme.error,
+        color: term.normal.red,
         font_style: "normal",
         font_weight: 500,
       },
 
       support: {
-        color: scheme.primary,
+        color: term.normal.cyan,
         font_style: "normal",
         font_weight: 500,
       },
       "support.function": {
-        color: scheme.primary,
+        color: term.normal.cyan,
         font_style: "normal",
         font_weight: 500,
       },
 
       entity: {
-        color: scheme.primary,
+        color: term.normal.cyan,
         font_style: "normal",
         font_weight: 500,
       },
       "entity.name": {
-        color: scheme.primary,
+        color: term.normal.cyan,
         font_style: "normal",
         font_weight: 600,
       },
 
       tag: {
-        color: scheme.secondary,
+        color: term.normal.cyan,
         font_style: "normal",
         font_weight: 600,
       },
       "entity.name.tag": {
-        color: scheme.secondary,
+        color: term.normal.cyan,
         font_style: "normal",
         font_weight: 600,
       },
       "entity.other.attribute-name": {
-        color: scheme.tertiary,
+        color: term.normal.magenta,
         font_style: "normal",
         font_weight: 500,
       },
 
       "markup.heading": {
-        color: scheme.primary,
+        color: term.normal.blue,
         font_style: "normal",
         font_weight: 700,
       },
       "markup.bold": {
-        color: scheme.primary,
+        color: term.normal.cyan,
         font_style: "normal",
         font_weight: 700,
       },
       "markup.italic": {
-        color: scheme.secondary,
+        color: term.normal.magenta,
         font_style: "italic",
         font_weight: 500,
       },
       "markup.link": {
-        color: scheme.primary,
+        color: term.normal.blue,
         font_style: "normal",
         font_weight: 500,
       },
       "markup.quote": {
-        color: scheme.tertiary,
+        color: term.normal.green,
         font_style: "italic",
         font_weight: 400,
       },
       "markup.raw": {
-        color: scheme.tertiary,
+        color: term.normal.yellow,
         font_style: "normal",
         font_weight: 400,
       },
 
       "diff.added": {
-        color: scheme.secondary,
+        color: term.normal.green,
         font_style: "normal",
         font_weight: 500,
       },
       "diff.removed": {
-        color: scheme.error,
+        color: term.normal.red,
         font_style: "normal",
         font_weight: 500,
       },
       "diff.changed": {
-        color: scheme.tertiary,
+        color: term.normal.yellow,
         font_style: "normal",
         font_weight: 500,
       },

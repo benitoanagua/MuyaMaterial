@@ -12,7 +12,7 @@ export class ZedColorsMapper {
       ...ElevationColors.mapElevationColors(scheme),
       ...StateColors.mapStateColors(scheme, terminalColors),
       ...TextColors.mapTextColors(scheme),
-      ...EditorColors.mapEditorColors(scheme),
+      ...EditorColors.mapEditorColors(scheme, terminalColors),
       ...SpecialColors.mapSpecialColors(scheme, terminalColors),
       ...TerminalColors.mapTerminalColors(scheme, terminalColors),
       ...SpecificColors.mapSpecificColors(scheme),

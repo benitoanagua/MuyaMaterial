@@ -9,7 +9,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export class ZedThemeBuilder {
   static buildTheme(scheme, terminalColors, name, appearance) {
     const style = ZedColorsMapper.mapSchemeToZed(scheme, terminalColors);
-    const syntax = ZedSyntaxMapper.mapSchemeToSyntax(scheme);
+    const syntax = ZedSyntaxMapper.mapSchemeToSyntax(scheme, terminalColors);
 
     const theme = {
       $schema: "https://zed.dev/schema/themes/v0.2.0.json",
@@ -39,7 +39,7 @@ export class ZedThemeBuilder {
           variant.scheme,
           variant.terminalColors
         ),
-        syntax: ZedSyntaxMapper.mapSchemeToSyntax(variant.scheme),
+        syntax: ZedSyntaxMapper.mapSchemeToSyntax(variant.scheme, variant.terminalColors),
       },
     }));
 

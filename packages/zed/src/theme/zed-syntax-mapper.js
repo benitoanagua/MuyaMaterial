@@ -3,10 +3,10 @@ import { SyntaxEspecific } from "./syntax/syntax-especific.js";
 import { SyntaxAdvanced } from "./syntax/syntax-advanced.js";
 
 export class ZedSyntaxMapper {
-  static mapSchemeToSyntax(scheme) {
-    const baseSyntax = SyntaxBase.mapBaseSyntax(scheme);
-    const syntaxEspecific = SyntaxEspecific.mapEspecificSyntax(scheme);
-    const advancedSyntax = SyntaxAdvanced.mapAdvancedSyntax(scheme);
+  static mapSchemeToSyntax(scheme, term) {
+    const baseSyntax = SyntaxBase.mapBaseSyntax(scheme, term);
+    const syntaxEspecific = SyntaxEspecific.mapEspecificSyntax(scheme, term);
+    const advancedSyntax = SyntaxAdvanced.mapAdvancedSyntax(scheme, term);
 
     const syntax = {
       ...baseSyntax,
