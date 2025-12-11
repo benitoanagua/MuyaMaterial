@@ -1,4 +1,4 @@
-export default function getVariousSettings(scheme) {
+export default function getVariousSettings(scheme, term) {
   return [
     {
       name: "Punctuation and syntax symbols",
@@ -20,22 +20,23 @@ export default function getVariousSettings(scheme) {
         "punctuation.section.bracket",
       ],
       settings: {
-        foreground: scheme.tertiary,
+        foreground: term.normal.blue,
       },
     },
     {
-      name: "Invalid or deprecated code",
-      scope: ["invalid", "invalid.illegal", "invalid.deprecated"],
+      name: "Invalid syntax",
+      scope: ["invalid", "invalid.illegal"],
       settings: {
-        foreground: scheme.error,
+        foreground: scheme.onError,
+        background: scheme.errorContainer,
       },
     },
     {
-      name: "Documentation tags",
-      scope: ["keyword.other.documentation", "entity.name.tag.documentation"],
+      name: "Deprecated elements",
+      scope: ["invalid.deprecated"],
       settings: {
-        foreground: scheme.primary,
-        fontStyle: "italic",
+        foreground: scheme.onErrorContainer,
+        background: scheme.error,
       },
     },
   ];

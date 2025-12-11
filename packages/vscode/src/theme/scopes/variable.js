@@ -1,4 +1,4 @@
-export default function getVariableSettings(scheme) {
+export default function getVariableSettings(scheme, term) {
   return [
     {
       name: "Local variables",
@@ -11,7 +11,7 @@ export default function getVariableSettings(scheme) {
       name: "Function parameters",
       scope: ["variable.parameter", "variable.parameter.function"],
       settings: {
-        foreground: scheme.tertiary,
+        foreground: term.normal.yellow,
       },
     },
     {
@@ -22,26 +22,14 @@ export default function getVariableSettings(scheme) {
         "variable.other.object.property",
       ],
       settings: {
-        foreground: scheme.secondary,
+        foreground: term.normal.blue,
       },
     },
     {
-      name: "Language-specific variables (this, self, etc.)",
-      scope: [
-        "variable.language",
-        "variable.language.this",
-        "variable.language.super",
-      ],
+      name: "Environment variables",
+      scope: ["variable.other.environment"],
       settings: {
-        foreground: scheme.onSurface,
-        fontStyle: "italic",
-      },
-    },
-    {
-      name: "Constant variables",
-      scope: ["variable.other.constant", "variable.other.enummember"],
-      settings: {
-        foreground: scheme.tertiary,
+        foreground: term.normal.green,
       },
     },
   ];

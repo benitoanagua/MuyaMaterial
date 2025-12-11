@@ -1,4 +1,4 @@
-export default function getKeywordSettings(scheme) {
+export default function getKeywordSettings(scheme, term) {
   return {
     name: "Keywords and operators",
     scope: [
@@ -11,7 +11,7 @@ export default function getKeywordSettings(scheme) {
       "keyword.other",
     ],
     settings: {
-      foreground: scheme.secondary,
+      foreground: term.normal.blue,
     },
   };
 }

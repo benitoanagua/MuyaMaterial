@@ -1,4 +1,4 @@
-export default function getCommentSettings(scheme) {
+export default function getCommentSettings(scheme, term) {
   return {
     name: "Comments",
     scope: [
@@ -9,7 +9,7 @@ export default function getCommentSettings(scheme) {
       "punctuation.definition.comment",
     ],
     settings: {
-      foreground: scheme.outline,
+      foreground: term.normal.green,
       fontStyle: "italic",
     },
   };

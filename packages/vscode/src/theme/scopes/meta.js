@@ -1,4 +1,4 @@
-export default function getMetaSettings(scheme) {
+export default function getMetaSettings(scheme, term) {
   return {
     name: "Meta programming and complex structures",
     scope: [

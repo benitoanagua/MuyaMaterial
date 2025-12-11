@@ -1,10 +1,10 @@
-export default function getSupportSettings(scheme) {
+export default function getSupportSettings(scheme, term) {
   return [
     {
       name: "Built-in functions and classes",
       scope: ["support.function", "support.class", "support.type"],
       settings: {
-        foreground: scheme.primary,
+        foreground: term.normal.cyan,
         fontStyle: "bold",
       },
     },
@@ -12,7 +12,7 @@ export default function getSupportSettings(scheme) {
       name: "Constants and variables from libraries",
       scope: ["support.constant", "support.variable"],
       settings: {
-        foreground: scheme.secondary,
+        foreground: term.normal.magenta,
       },
     },
   ];

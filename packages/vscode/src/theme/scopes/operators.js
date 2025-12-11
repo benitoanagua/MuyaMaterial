@@ -1,4 +1,4 @@
-export default function getOperatorSettings(scheme) {
+export default function getOperatorSettings(scheme, term) {
   return {
     name: "Operators",
     scope: [
@@ -26,7 +26,7 @@ export default function getOperatorSettings(scheme) {
       "keyword.operator",
     ],
     settings: {
-      foreground: scheme.error,
+      foreground: term.normal.red,
     },
   };
 }

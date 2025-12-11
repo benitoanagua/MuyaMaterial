@@ -1,4 +1,4 @@
-export default function getEntitySettings(scheme) {
+export default function getEntitySettings(scheme, term) {
   return [
     {
       name: "Class names, types, and structural entities",
@@ -13,7 +13,7 @@ export default function getEntitySettings(scheme) {
         "entity.name.section",
       ],
       settings: {
-        foreground: scheme.primary,
+        foreground: term.normal.cyan,
         fontStyle: "bold",
       },
     },
@@ -21,19 +21,11 @@ export default function getEntitySettings(scheme) {
       name: "Function and method names",
       scope: [
         "entity.name.function",
-        "entity.name.function.constructor",
         "entity.name.method",
+        "entity.name.constructor",
       ],
       settings: {
-        foreground: scheme.primary,
-        fontStyle: "italic",
-      },
-    },
-    {
-      name: "Inherited class and implementation",
-      scope: ["entity.other.inherited-class", "entity.other.attribute-name"],
-      settings: {
-        foreground: scheme.secondary,
+        foreground: term.normal.blue,
       },
     },
   ];

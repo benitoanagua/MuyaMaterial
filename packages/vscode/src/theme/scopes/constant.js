@@ -1,4 +1,4 @@
-export default function getConstantSettings(scheme) {
+export default function getConstantSettings(scheme, term) {
   return {
     name: "Constants and numeric values",
     scope: [
@@ -15,7 +15,7 @@ export default function getConstantSettings(scheme) {
       "constant.other",
     ],
     settings: {
-      foreground: scheme.tertiary,
+      foreground: term.normal.magenta,
     },
   };
 }

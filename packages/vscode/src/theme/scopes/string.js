@@ -1,4 +1,4 @@
-export default function getStringSettings(scheme) {
+export default function getStringSettings(scheme, term) {
   return {
     name: "Strings and text",
     scope: [
@@ -11,7 +11,7 @@ export default function getStringSettings(scheme) {
       "punctuation.definition.string",
     ],
     settings: {
-      foreground: scheme.tertiary,
+      foreground: term.normal.yellow,
     },
   };
 }

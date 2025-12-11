@@ -1,4 +1,4 @@
-export default function getMarkupSettings(scheme) {
+export default function getMarkupSettings(scheme, term) {
   return [
     {
       name: "Markdown headings",
@@ -9,7 +9,7 @@ export default function getMarkupSettings(scheme) {
       ],
       settings: {
         fontStyle: "bold",
-        foreground: scheme.primary,
+        foreground: term.normal.blue,
       },
     },
     {
@@ -17,7 +17,7 @@ export default function getMarkupSettings(scheme) {
       scope: ["markup.bold", "punctuation.definition.bold"],
       settings: {
         fontStyle: "bold",
-        foreground: scheme.secondary,
+        foreground: term.normal.cyan,
       },
     },
     {
@@ -25,68 +25,61 @@ export default function getMarkupSettings(scheme) {
       scope: ["markup.italic", "punctuation.definition.italic"],
       settings: {
         fontStyle: "italic",
-        foreground: scheme.onSurface,
+        foreground: term.normal.magenta,
       },
     },
     {
-      name: "Markdown quote",
-      scope: ["markup.quote", "punctuation.definition.quote.begin.markdown"],
-      settings: {
-        foreground: scheme.onSurfaceVariant,
-        fontStyle: "italic",
-      },
-    },
-    {
-      name: "Markdown inline code",
-      scope: ["markup.inline.raw", "markup.raw.inline"],
-      settings: {
-        foreground: scheme.tertiary,
-      },
-    },
-    {
-      name: "Markdown code block",
-      scope: ["markup.raw.block", "markup.fenced_code.block"],
-      settings: {
-        foreground: scheme.onSurface,
-      },
-    },
-    {
-      name: "Markdown link",
-      scope: ["markup.underline.link", "string.other.link.title.markdown"],
-      settings: {
-        foreground: scheme.primary,
-      },
-    },
-    {
-      name: "Markdown inserted (diff)",
-      scope: "markup.inserted",
-      settings: {
-        foreground: scheme.secondary,
-      },
-    },
-    {
-      name: "Markdown deleted (diff)",
-      scope: "markup.deleted",
-      settings: {
-        foreground: scheme.error,
-      },
-    },
-    {
-      name: "Markdown changed",
-      scope: "markup.changed",
-      settings: {
-        foreground: scheme.tertiary,
-      },
-    },
-    {
-      name: "Markdown list marker",
+      name: "Markdown links",
       scope: [
-        "punctuation.definition.list.begin.markdown",
-        "markup.list.unnumbered",
-        "markup.list.numbered",
+        "markup.underline.link",
+        "markup.underline.link.image",
+        "string.other.link.title.markdown",
+        "string.other.link.description.markdown",
       ],
       settings: {
-        foreground: scheme.secondary,
+        foreground: term.normal.green,
+      },
+    },
+    {
+      name: "Markdown code",
+      scope: [
+        "markup.inline.raw",
+        "markup.fenced_code.block",
+        "markup.quote.markdown",
+      ],
+      settings: {
+        foreground: term.normal.yellow,
+      },
+    },
+    {
+      name: "Markdown lists",
+      scope: [
+        "markup.list.unnumbered",
+        "markup.list.numbered",
+        "punctuation.definition.list.begin",
+      ],
+      settings: {
+        foreground: term.normal.blue,
+      },
+    },
+    {
+      name: "HTML/XML tags",
+      scope: [
+        "meta.tag",
+        "punctuation.definition.tag",
+        "entity.name.tag",
+      ],
+      settings: {
+        foreground: term.normal.cyan,
+      },
+    },
+    {
+      name: "HTML/XML attributes",
+      scope: [
+        "entity.other.attribute-name",
+      ],
+      settings: {
+        foreground: term.normal.magenta,
       },
     },
   ];
