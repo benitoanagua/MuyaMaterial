@@ -1,164 +1,168 @@
 import { describe, it } from "vitest";
-import { createDynamicScheme, themeVariants } from "../src/index";
+import { createDynamicScheme } from "../src/index";
+import { generateTerminalColors } from "../src/theme/terminal-scheme";
+import { defaultThemeConfig, themeVariants } from "../src/theme/theme-config.js";
 import chalk from "chalk";
 
 chalk.level = 3;
 
-// Color contrast pairs for Material Design 3 validation
-const pairs = [
-  { bg: "primary", fg: "onPrimary" },
-  { bg: "secondary", fg: "onSecondary" },
-  { bg: "tertiary", fg: "onTertiary" },
-  { bg: "error", fg: "onError" },
-  { bg: "surface", fg: "onSurface" },
-  { bg: "primaryContainer", fg: "onPrimaryContainer" },
-  { bg: "secondaryContainer", fg: "onSecondaryContainer" },
-  { bg: "tertiaryContainer", fg: "onTertiaryContainer" },
-];
-
-// Create visual color block for testing
-const block = (bgHex, fgHex, label) => {
-  const text = chalk.hex(fgHex)(` ${label.padEnd(12)} ${bgHex} `);
-  return chalk.bgHex(bgHex)(text.repeat(2));
+// Helper function to determine if a background color is light or dark
+const isLightColor = (hexColor) => {
+  // Remove # if present
+  const hex = hexColor.replace('#', '');
+  
+  // Convert hex to RGB
+  const r = parseInt(hex.substr(0, 2), 16);
+  const g = parseInt(hex.substr(2, 2), 16);
+  const b = parseInt(hex.substr(4, 2), 16);
+  
+  // Calculate luminance using ITU-R BT.709 formula
+  const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  
+  // Return true if color is light (arbitrary threshold)
+  return luminance > 128;
 };
 
-// Theme icons for visual distinction
-const themeIcons = {
-  "Olive Dark": "🌿🌙",
-  "Mystic Dark": "🔮🌙",
-  "Olive Light": "🌿☀️",
-  "Mystic Light": "🔮☀️",
+// Helper function to create colored blocks with good contrast text
+const colorBlock = (bgColor, text, width = 32) => {
+  const textColor = isLightColor(bgColor) ? '#000000' : '#FFFFFF';
+  // Pad the text to ensure consistent width
+  const paddedText = text.padEnd(width);
+  return chalk.bgHex(bgColor).hex(textColor)(` ${paddedText} `);
 };
 
-// Seed color indicators
-const seedColors = {
-  "Olive Dark": "#7D944C",
-  "Mystic Dark": "#6B5693",
-  "Olive Light": "#7D944C",
-  "Mystic Light": "#6B5693",
-};
+// Generate all theme schemes
+const themeSchemes = themeVariants.map(variant => {
+  const scheme = createDynamicScheme({
+    isDark: variant.isDark,
+    contrastLevel: variant.contrastLevel,
+    seedColorType: variant.seedColor,
+  });
+  
+  const terminalColors = generateTerminalColors({
+    isDark: variant.isDark,
+    seedColorType: variant.seedColor,
+    themeConfig: defaultThemeConfig,
+  });
+  
+  return {
+    name: variant.name,
+    scheme,
+    terminalColors
+  };
+});
 
-describe("🎨 Color Wall - MD3 Official Contrast Validation", () => {
-  themeVariants.forEach(({ name, isDark, contrastLevel, seedColor }) => {
-    it(`${themeIcons[name] || "🎨"} ${name}`, () => {
-      const scheme = createDynamicScheme({
-        isDark,
-        contrastLevel,
-        seedColorType: seedColor,
-      });
-
-      console.log("");
-      console.log(
-        chalk.bold.underline.hex("#ff79c6")(`${name.toUpperCase()} THEME`)
-      );
-      console.log(
-        chalk.dim(
-          `Seed Color: ${
-            seedColors[name]
-          } | Contrast: ${contrastLevel} | Mode: ${isDark ? "Dark" : "Light"}`
-        )
-      );
-      console.log("");
-
-      // Primary color pairs
-      console.log(chalk.bold.hex("#00bcd4")("🎯 PRIMARY COLORS"));
-      pairs.slice(0, 4).forEach(({ bg, fg }) => {
-        console.log(block(scheme[bg], scheme[fg], bg.toUpperCase()));
-      });
-
-      console.log("");
-
-      // Surface and container colors
-      console.log(chalk.bold.hex("#4caf50")("🏗️ SURFACES & CONTAINERS"));
-      pairs.slice(4).forEach(({ bg, fg }) => {
-        console.log(block(scheme[bg], scheme[fg], bg.toUpperCase()));
-      });
-
-      // Additional surface variants for comprehensive testing
-      const surfaceVariants = [
-        { bg: "surfaceContainer", fg: "onSurface", label: "SURFACE_CTR" },
-        { bg: "surfaceContainerHigh", fg: "onSurface", label: "SURFACE_HIGH" },
-        { bg: "surfaceVariant", fg: "onSurfaceVariant", label: "SURFACE_VAR" },
-      ];
-
-      surfaceVariants.forEach(({ bg, fg, label }) => {
-        console.log(block(scheme[bg], scheme[fg], label));
-      });
-
-      console.log("");
-
-      // Color scheme summary
-      console.log(chalk.bold.hex("#ff9800")("📊 SCHEME SUMMARY"));
-      console.log(
-        chalk.dim(
-          `Primary: ${scheme.primary} | Secondary: ${scheme.secondary} | Tertiary: ${scheme.tertiary}`
-        )
-      );
-      console.log(
-        chalk.dim(
-          `Background: ${scheme.background} | Surface: ${scheme.surface} | Error: ${scheme.error}`
-        )
-      );
-      console.log("");
+describe("📊 Muya Material - Theme Comparison Table", () => {
+  it("Dynamic Schemes Complete Colors Comparison", () => {
+    console.log(chalk.bold.underline("\n🎨 Dynamic Schemes - Complete Colors"));
+    
+    // Header row with consistent width
+    const header = themeSchemes.map(theme => 
+      chalk.bold(theme.name.padEnd(32))
+    ).join(' | ');
+    console.log(chalk.dim('---'));
+    console.log(header);
+    console.log(chalk.dim('---'));
+    
+    // Define ALL dynamic scheme colors in the exact order specified
+    const allColors = [
+      { label: 'primary', getter: (scheme) => scheme.primary },
+      { label: 'onPrimary', getter: (scheme) => scheme.onPrimary },
+      { label: 'primaryContainer', getter: (scheme) => scheme.primaryContainer },
+      { label: 'onPrimaryContainer', getter: (scheme) => scheme.onPrimaryContainer },
+      { label: 'secondary', getter: (scheme) => scheme.secondary },
+      { label: 'onSecondary', getter: (scheme) => scheme.onSecondary },
+      { label: 'secondaryContainer', getter: (scheme) => scheme.secondaryContainer },
+      { label: 'onSecondaryContainer', getter: (scheme) => scheme.onSecondaryContainer },
+      { label: 'tertiary', getter: (scheme) => scheme.tertiary },
+      { label: 'onTertiary', getter: (scheme) => scheme.onTertiary },
+      { label: 'tertiaryContainer', getter: (scheme) => scheme.tertiaryContainer },
+      { label: 'onTertiaryContainer', getter: (scheme) => scheme.onTertiaryContainer },
+      { label: 'error', getter: (scheme) => scheme.error },
+      { label: 'onError', getter: (scheme) => scheme.onError },
+      { label: 'errorContainer', getter: (scheme) => scheme.errorContainer },
+      { label: 'onErrorContainer', getter: (scheme) => scheme.onErrorContainer },
+      { label: 'background', getter: (scheme) => scheme.background },
+      { label: 'onBackground', getter: (scheme) => scheme.onBackground },
+      { label: 'surface', getter: (scheme) => scheme.surface },
+      { label: 'surfaceDim', getter: (scheme) => scheme.surfaceDim },
+      { label: 'surfaceBright', getter: (scheme) => scheme.surfaceBright },
+      { label: 'surfaceContainerLowest', getter: (scheme) => scheme.surfaceContainerLowest },
+      { label: 'surfaceContainerLow', getter: (scheme) => scheme.surfaceContainerLow },
+      { label: 'surfaceContainer', getter: (scheme) => scheme.surfaceContainer },
+      { label: 'surfaceContainerHigh', getter: (scheme) => scheme.surfaceContainerHigh },
+      { label: 'surfaceContainerHighest', getter: (scheme) => scheme.surfaceContainerHighest },
+      { label: 'onSurface', getter: (scheme) => scheme.onSurface },
+      { label: 'surfaceVariant', getter: (scheme) => scheme.surfaceVariant },
+      { label: 'onSurfaceVariant', getter: (scheme) => scheme.onSurfaceVariant },
+      { label: 'outline', getter: (scheme) => scheme.outline },
+      { label: 'outlineVariant', getter: (scheme) => scheme.outlineVariant },
+      { label: 'shadow', getter: (scheme) => scheme.shadow },
+      { label: 'scrim', getter: (scheme) => scheme.scrim },
+      { label: 'inverseSurface', getter: (scheme) => scheme.inverseSurface },
+      { label: 'inverseOnSurface', getter: (scheme) => scheme.inverseOnSurface },
+      { label: 'inversePrimary', getter: (scheme) => scheme.inversePrimary },
+    ];
+    
+    // Display each color row
+    allColors.forEach(color => {
+      const row = themeSchemes.map(theme => 
+        colorBlock(color.getter(theme.scheme), `${color.label}: ${color.getter(theme.scheme)}`)
+      ).join(' | ');
+      console.log(row);
     });
   });
-
-  // Additional test for color scheme consistency
-  describe("🔍 Color Scheme Validation", () => {
-    it("should generate consistent color schemes across variants", () => {
-      const schemes = themeVariants.map((variant) => ({
-        name: variant.name,
-        scheme: createDynamicScheme({
-          isDark: variant.isDark,
-          contrastLevel: variant.contrastLevel,
-          seedColorType: variant.seedColor,
-        }),
-      }));
-
-      console.log("");
-      console.log(
-        chalk.bold.underline.hex("#e91e63")("THEME COMPARISON MATRIX")
-      );
-      console.log("");
-
-      // Compare primary colors across themes
-      schemes.forEach(({ name, scheme }) => {
-        const icon = themeIcons[name] || "🎨";
-        console.log(chalk.bold(`${icon} ${name}:`));
-        console.log(
-          `  Primary: ${chalk.hex(scheme.primary).bold(scheme.primary)}`
-        );
-        console.log(
-          `  Secondary: ${chalk.hex(scheme.secondary).bold(scheme.secondary)}`
-        );
-        console.log(
-          `  Background: ${chalk
-            .hex(scheme.background)
-            .bold(scheme.background)}`
-        );
-        console.log("");
-      });
-    });
-
-    it("should maintain proper contrast ratios", () => {
-      themeVariants.forEach((variant) => {
-        const scheme = createDynamicScheme({
-          isDark: variant.isDark,
-          contrastLevel: variant.contrastLevel,
-          seedColorType: variant.seedColor,
-        });
-
-        // Basic contrast validation (visual inspection)
-        console.log(chalk.bold(`\n🧪 Testing ${variant.name} contrast pairs:`));
-        pairs.forEach(({ bg, fg }) => {
-          const bgColor = scheme[bg];
-          const fgColor = scheme[fg];
-          const sample = chalk.bgHex(bgColor).hex(fgColor)(
-            ` ${fg.toUpperCase()} on ${bg.toUpperCase()} `
-          );
-          console.log(`  ${sample} (${bgColor} / ${fgColor})`);
-        });
-      });
+  
+  it("Terminal Schemes Complete Colors Comparison", () => {
+    console.log(chalk.bold.underline("\n💻 Terminal Schemes - Complete Colors"));
+    
+    // Header row with consistent width
+    const header = themeSchemes.map(theme => 
+      chalk.bold(theme.name.padEnd(32))
+    ).join(' | ');
+    console.log(chalk.dim('---'));
+    console.log(header);
+    console.log(chalk.dim('---'));
+    
+    // Define ALL terminal colors as generated in terminal-scheme.js
+    const allTerminalColors = [
+      // Normal colors
+      { label: 'black', getter: (colors) => colors.normal.black },
+      { label: 'red', getter: (colors) => colors.normal.red },
+      { label: 'green', getter: (colors) => colors.normal.green },
+      { label: 'yellow', getter: (colors) => colors.normal.yellow },
+      { label: 'blue', getter: (colors) => colors.normal.blue },
+      { label: 'magenta', getter: (colors) => colors.normal.magenta },
+      { label: 'cyan', getter: (colors) => colors.normal.cyan },
+      { label: 'white', getter: (colors) => colors.normal.white },
+      
+      // Bright colors
+      { label: 'brightBlack', getter: (colors) => colors.bright.black },
+      { label: 'brightRed', getter: (colors) => colors.bright.red },
+      { label: 'brightGreen', getter: (colors) => colors.bright.green },
+      { label: 'brightYellow', getter: (colors) => colors.bright.yellow },
+      { label: 'brightBlue', getter: (colors) => colors.bright.blue },
+      { label: 'brightMagenta', getter: (colors) => colors.bright.magenta },
+      { label: 'brightCyan', getter: (colors) => colors.bright.cyan },
+      { label: 'brightWhite', getter: (colors) => colors.bright.white },
+      
+      // Dim colors
+      { label: 'dimBlack', getter: (colors) => colors.dim.black },
+      { label: 'dimRed', getter: (colors) => colors.dim.red },
+      { label: 'dimGreen', getter: (colors) => colors.dim.green },
+      { label: 'dimYellow', getter: (colors) => colors.dim.yellow },
+      { label: 'dimBlue', getter: (colors) => colors.dim.blue },
+      { label: 'dimMagenta', getter: (colors) => colors.dim.magenta },
+      { label: 'dimCyan', getter: (colors) => colors.dim.cyan },
+      { label: 'dimWhite', getter: (colors) => colors.dim.white },
+    ];
+    
+    // Display each terminal color row
+    allTerminalColors.forEach(color => {
+      const row = themeSchemes.map(theme => 
+        colorBlock(color.getter(theme.terminalColors), `${color.label}: ${color.getter(theme.terminalColors)}`)
+      ).join(' | ');
+      console.log(row);
     });
   });
 });
