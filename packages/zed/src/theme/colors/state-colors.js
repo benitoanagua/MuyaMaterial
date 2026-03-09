@@ -1,41 +1,41 @@
 export class StateColors {
   static mapStateColors(scheme, term) {
     return {
-      "element.hover": scheme.surfaceContainerHigh,
-      "element.active": scheme.surfaceContainerHighest,
-      "element.selected": scheme.primaryContainer,
-      "element.disabled": scheme.surfaceContainer,
+      // Element States
+      "element.hover": scheme.surfaceContainer,
+      "element.active": scheme.surfaceContainerHigh,
+      "element.selected": scheme.secondaryContainer,
+      "element.disabled": `${scheme.onSurface}1F`,
 
-      "ghost_element.background": scheme.surface,
-      "ghost_element.hover": scheme.surfaceContainerHigh,
-      "ghost_element.active": scheme.surfaceContainerHighest,
+      "ghost_element.hover": scheme.surfaceContainerLow,
+      "ghost_element.active": scheme.surfaceContainer,
       "ghost_element.selected": scheme.secondaryContainer,
-      "ghost_element.disabled": scheme.surfaceContainer,
+      "ghost_element.disabled": `${scheme.onSurface}1F`,
 
+      // Feedback States (Material Design 3 Semantic)
+      error: scheme.error,
       "error.background": scheme.errorContainer,
       "error.border": scheme.error,
 
-      "warning.background": scheme.tertiaryContainer,
-      "warning.border": scheme.tertiary,
+      warning: term.normal.yellow, // M3 doesn't have a standard 'warning', using yellow
+      "warning.background": `${term.normal.yellow}33`,
+      "warning.border": term.normal.yellow,
 
+      info: scheme.primary,
       "info.background": scheme.primaryContainer,
       "info.border": scheme.primary,
 
-      "success.background": scheme.secondaryContainer,
-      "success.border": scheme.secondary,
+      success: term.normal.green,
+      "success.background": `${term.normal.green}33`,
+      "success.border": term.normal.green,
 
-      error: scheme.error,
-      warning: scheme.tertiary,
-      info: scheme.primary,
-      success: scheme.secondary,
+      hint: scheme.onSecondaryContainer,
+      "hint.background": scheme.secondaryContainer,
+      "hint.border": scheme.secondary,
 
-      hint: scheme.onSurfaceVariant,
-      "hint.background": scheme.surfaceContainer,
-      "hint.border": scheme.outlineVariant,
-
-      predictive: scheme.onSurfaceVariant,
-      "predictive.background": scheme.surfaceContainer,
-      "predictive.border": scheme.primary,
+      predictive: scheme.secondary,
+      "predictive.background": `${scheme.secondaryContainer}4D`,
+      "predictive.border": scheme.outlineVariant,
     };
   }
 }

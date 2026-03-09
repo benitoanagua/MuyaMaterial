@@ -1,17 +1,17 @@
 import { SyntaxBase } from "./syntax/syntax-base.js";
-import { SyntaxEspecific } from "./syntax/syntax-especific.js";
+import { SyntaxSpecific } from "./syntax/syntax-specific.js";
 import { SyntaxAdvanced } from "./syntax/syntax-advanced.js";
 
 export class ZedSyntaxMapper {
   static mapSchemeToSyntax(scheme, term) {
     const baseSyntax = SyntaxBase.mapBaseSyntax(scheme, term);
-    const syntaxEspecific = SyntaxEspecific.mapEspecificSyntax(scheme, term);
+    const specificSyntax = SyntaxSpecific.mapSpecificSyntax(scheme, term);
     const advancedSyntax = SyntaxAdvanced.mapAdvancedSyntax(scheme, term);
 
     const syntax = {
       ...baseSyntax,
-      ...syntaxEspecific,
       ...advancedSyntax,
+      ...specificSyntax,
     };
 
     return this.validateSyntax(syntax);

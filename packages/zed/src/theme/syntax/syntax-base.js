@@ -1,46 +1,38 @@
 export class SyntaxBase {
   static mapBaseSyntax(scheme, term) {
     return {
+      // Keywords & Storage
       keyword: {
-        color: term.normal.blue,
+        color: term.normal.magenta,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 700,
       },
       "keyword.control": {
-        color: term.normal.blue,
+        color: term.normal.magenta,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 700,
       },
-      "keyword.operator": {
-        color: term.normal.red,
+      storage: {
+        color: term.normal.magenta,
         font_style: "normal",
-        font_weight: 600,
+        font_weight: 700,
+      },
+      "storage.type": {
+        color: term.normal.magenta,
+        font_style: "normal",
+        font_weight: 700,
       },
 
+      // Types & Classes
       type: {
         color: term.normal.cyan,
         font_style: "normal",
         font_weight: 600,
       },
-      "type.builtin": {
-        color: term.normal.cyan,
-        font_style: "italic",
-        font_weight: 600,
-      },
       class: {
         color: term.normal.cyan,
         font_style: "normal",
-        font_weight: 600,
-      },
-      struct: {
-        color: term.normal.cyan,
-        font_style: "normal",
-        font_weight: 600,
-      },
-      enum: {
-        color: term.normal.cyan,
-        font_style: "normal",
-        font_weight: 600,
+        font_weight: 700,
       },
       interface: {
         color: term.normal.cyan,
@@ -48,7 +40,13 @@ export class SyntaxBase {
         font_weight: 600,
       },
 
+      // Functions & Methods
       function: {
+        color: term.normal.blue,
+        font_style: "normal",
+        font_weight: 600,
+      },
+      "function.method": {
         color: term.normal.blue,
         font_style: "normal",
         font_weight: 600,
@@ -58,12 +56,8 @@ export class SyntaxBase {
         font_style: "italic",
         font_weight: 600,
       },
-      "function.method": {
-        color: term.normal.blue,
-        font_style: "normal",
-        font_weight: 600,
-      },
 
+      // Variables & Parameters
       variable: {
         color: scheme.onSurface,
         font_style: "normal",
@@ -79,7 +73,13 @@ export class SyntaxBase {
         font_style: "italic",
         font_weight: 600,
       },
+      "variable.other.member": {
+        color: scheme.onSurface,
+        font_style: "normal",
+        font_weight: 500,
+      },
 
+      // Constants
       constant: {
         color: term.normal.magenta,
         font_style: "normal",
@@ -87,7 +87,7 @@ export class SyntaxBase {
       },
       "constant.builtin": {
         color: term.normal.magenta,
-        font_style: "normal",
+        font_style: "italic",
         font_weight: 600,
       },
       "constant.numeric": {
@@ -95,6 +95,8 @@ export class SyntaxBase {
         font_style: "normal",
         font_weight: 500,
       },
+
+      // Strings & Regex
       string: {
         color: term.normal.yellow,
         font_style: "normal",
@@ -106,14 +108,37 @@ export class SyntaxBase {
         font_weight: 600,
       },
 
+      // Comments
       comment: {
-        color: term.normal.green,
+        color: term.dim.green,
         font_style: "italic",
         font_weight: 400,
       },
       "comment.documentation": {
-        color: term.normal.green,
+        color: term.dim.green,
         font_style: "italic",
+        font_weight: 400,
+      },
+
+      // Punctuation & Operators
+      operator: {
+        color: term.normal.red,
+        font_style: "normal",
+        font_weight: 600,
+      },
+      punctuation: {
+        color: scheme.onSurfaceVariant,
+        font_style: "normal",
+        font_weight: 400,
+      },
+      "punctuation.delimiter": {
+        color: scheme.onSurfaceVariant,
+        font_style: "normal",
+        font_weight: 400,
+      },
+      "punctuation.bracket": {
+        color: scheme.onSurfaceVariant,
+        font_style: "normal",
         font_weight: 400,
       },
     };

@@ -1,65 +1,21 @@
 export class SyntaxAdvanced {
   static mapAdvancedSyntax(scheme, term) {
     return {
-      property: {
-        color: term.normal.blue,
+      // Tags & Attributes
+      tag: {
+        color: term.normal.cyan,
         font_style: "normal",
-        font_weight: 500,
+        font_weight: 700,
+      },
+      "entity.name.tag": {
+        color: term.normal.cyan,
+        font_style: "normal",
+        font_weight: 700,
       },
       attribute: {
         color: term.normal.magenta,
         font_style: "normal",
         font_weight: 500,
-      },
-
-      operator: {
-        color: term.normal.red,
-        font_style: "normal",
-        font_weight: 500,
-      },
-
-      punctuation: {
-        color: scheme.onSurfaceVariant,
-        font_style: "normal",
-        font_weight: 400,
-      },
-      "punctuation.delimiter": {
-        color: term.normal.red,
-        font_style: "normal",
-        font_weight: 500,
-      },
-
-      support: {
-        color: term.normal.cyan,
-        font_style: "normal",
-        font_weight: 500,
-      },
-      "support.function": {
-        color: term.normal.cyan,
-        font_style: "normal",
-        font_weight: 500,
-      },
-
-      entity: {
-        color: term.normal.cyan,
-        font_style: "normal",
-        font_weight: 500,
-      },
-      "entity.name": {
-        color: term.normal.cyan,
-        font_style: "normal",
-        font_weight: 600,
-      },
-
-      tag: {
-        color: term.normal.cyan,
-        font_style: "normal",
-        font_weight: 600,
-      },
-      "entity.name.tag": {
-        color: term.normal.cyan,
-        font_style: "normal",
-        font_weight: 600,
       },
       "entity.other.attribute-name": {
         color: term.normal.magenta,
@@ -67,18 +23,31 @@ export class SyntaxAdvanced {
         font_weight: 500,
       },
 
+      // Properties
+      property: {
+        color: term.normal.blue,
+        font_style: "normal",
+        font_weight: 500,
+      },
+      "variable.other.property": {
+        color: term.normal.blue,
+        font_style: "normal",
+        font_weight: 500,
+      },
+
+      // Markdown & Markup
       "markup.heading": {
         color: term.normal.blue,
         font_style: "normal",
         font_weight: 700,
       },
       "markup.bold": {
-        color: term.normal.cyan,
+        color: term.normal.magenta,
         font_style: "normal",
         font_weight: 700,
       },
       "markup.italic": {
-        color: term.normal.magenta,
+        color: term.normal.cyan,
         font_style: "italic",
         font_weight: 500,
       },
@@ -87,8 +56,13 @@ export class SyntaxAdvanced {
         font_style: "normal",
         font_weight: 500,
       },
-      "markup.quote": {
+      "markup.underline.link": {
         color: term.normal.green,
+        font_style: "normal",
+        font_weight: 400,
+      },
+      "markup.quote": {
+        color: term.dim.green,
         font_style: "italic",
         font_weight: 400,
       },
@@ -97,7 +71,13 @@ export class SyntaxAdvanced {
         font_style: "normal",
         font_weight: 400,
       },
+      "markup.list": {
+        color: term.normal.blue,
+        font_style: "normal",
+        font_weight: 600,
+      },
 
+      // Diff
       "diff.added": {
         color: term.normal.green,
         font_style: "normal",
@@ -114,17 +94,12 @@ export class SyntaxAdvanced {
         font_weight: 500,
       },
 
+      // Status
       invalid: {
-        color: scheme.error,
-        font_style: "normal",
-        font_weight: 500,
-      },
-      "invalid.illegal": {
         color: scheme.error,
         font_style: "normal",
         font_weight: 600,
       },
-
       deprecated: {
         color: scheme.outline,
         font_style: "italic",
